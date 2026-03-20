@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 668bc86f38268374a98d805ca3285d85, type: 3}
+  m_Name: IreneDialogue
+  m_EditorClassIdentifier: Assembly-CSharp::NPCDialogue
+  npcName: 'Irene Ravens '
+  npcPortrait: {fileID: -3321559734207901511, guid: dda0ae592567b19479888c742072a940, type: 3}
+  dialogueLines:
+  - (sin voltearse)
+  - "  La historia no es una lista de eventos\u2026 es una colecci\xF3n de decisiones
+    humanas."
+  - "(Se gira lentamente. Sus ojos se detienen en ti m\xE1s tiempo del necesario.) "
+  - "T\xFA eres el/la estudiante nuevo/a, \xBFcorrecto? "
+  autoProgressLines: 01000000
+  autoProgressDelay: 1.5
+  typingSpeed: 0.05
+  voiceSound: {fileID: 8300000, guid: 0bca8f4432c1f2247aa8cc427432ce1f, type: 3}
+  voicePitch: 1
