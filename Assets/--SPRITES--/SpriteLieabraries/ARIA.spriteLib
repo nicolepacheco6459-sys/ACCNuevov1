@@ -1,0 +1,130 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &1
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a5e6fedc2472449cead18ef23b5cb30d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.2D.Animation.Runtime::UnityEngine.U2D.Animation.SpriteLibrarySourceAsset
+  m_Library:
+  - m_Name: Idle
+    m_Hash: 1008081451
+    m_CategoryList: []
+    m_OverrideEntries:
+    - m_Name: ARIA IDLE_0
+      m_Hash: 542512049
+      m_Sprite: {fileID: 4558000643457964072, guid: f37b47b6b46150349bdfc405c6e6e620, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: 4558000643457964072, guid: f37b47b6b46150349bdfc405c6e6e620, type: 3}
+    - m_Name: ARIA IDLE_1
+      m_Hash: 391193383
+      m_Sprite: {fileID: -1608012763558701532, guid: f37b47b6b46150349bdfc405c6e6e620, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: -1608012763558701532, guid: f37b47b6b46150349bdfc405c6e6e620, type: 3}
+    - m_Name: ARIA IDLE_2
+      m_Hash: 240677533
+      m_Sprite: {fileID: 6294509208133467807, guid: f37b47b6b46150349bdfc405c6e6e620, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: 6294509208133467807, guid: f37b47b6b46150349bdfc405c6e6e620, type: 3}
+    - m_Name: ARIA IDLE_3
+      m_Hash: 962544139
+      m_Sprite: {fileID: 4404447211573741478, guid: f37b47b6b46150349bdfc405c6e6e620, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: 4404447211573741478, guid: f37b47b6b46150349bdfc405c6e6e620, type: 3}
+    m_FromMain: 0
+    m_EntryOverrideCount: 4
+  - m_Name: Walk
+    m_Hash: 765711723
+    m_CategoryList: []
+    m_OverrideEntries:
+    - m_Name: ARIA_DOWN_0
+      m_Hash: 980790979
+      m_Sprite: {fileID: -4529153843404124406, guid: d07398b096081064e8a1f567d5c24f54, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: -4529153843404124406, guid: d07398b096081064e8a1f567d5c24f54, type: 3}
+    - m_Name: ARIA_DOWN_1
+      m_Hash: 225615445
+      m_Sprite: {fileID: 4876563904058724047, guid: d07398b096081064e8a1f567d5c24f54, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: 4876563904058724047, guid: d07398b096081064e8a1f567d5c24f54, type: 3}
+    - m_Name: ARIA_DOWN_2
+      m_Hash: 343658479
+      m_Sprite: {fileID: 8497639414213140612, guid: d07398b096081064e8a1f567d5c24f54, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: 8497639414213140612, guid: d07398b096081064e8a1f567d5c24f54, type: 3}
+    - m_Name: ARIA_DOWN_3
+      m_Hash: 595394425
+      m_Sprite: {fileID: -5907956516636637036, guid: d07398b096081064e8a1f567d5c24f54, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: -5907956516636637036, guid: d07398b096081064e8a1f567d5c24f54, type: 3}
+    - m_Name: ARIA_LEFT_0
+      m_Hash: 629285459
+      m_Sprite: {fileID: 7027733383915960640, guid: e46c0a2665ae0934099be371ef4d88ac, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: 7027733383915960640, guid: e46c0a2665ae0934099be371ef4d88ac, type: 3}
+    - m_Name: ARIA_LEFT_1
+      m_Hash: 310710981
+      m_Sprite: {fileID: -4765222151969613665, guid: e46c0a2665ae0934099be371ef4d88ac, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: -4765222151969613665, guid: e46c0a2665ae0934099be371ef4d88ac, type: 3}
+    - m_Name: ARIA_LEFT_2
+      m_Hash: 193741695
+      m_Sprite: {fileID: 598273867375630961, guid: e46c0a2665ae0934099be371ef4d88ac, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: 598273867375630961, guid: e46c0a2665ae0934099be371ef4d88ac, type: 3}
+    - m_Name: ARIA_LEFT_3
+      m_Hash: 1015772137
+      m_Sprite: {fileID: -8445291124523870249, guid: e46c0a2665ae0934099be371ef4d88ac, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: -8445291124523870249, guid: e46c0a2665ae0934099be371ef4d88ac, type: 3}
+    - m_Name: ARIA_RIGHT_0
+      m_Hash: 262153147
+      m_Sprite: {fileID: 3961743810502866728, guid: 368c0ad0358ee754da245cab56939b94, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: 3961743810502866728, guid: 368c0ad0358ee754da245cab56939b94, type: 3}
+    - m_Name: ARIA_RIGHT_1
+      m_Hash: 950473517
+      m_Sprite: {fileID: -3726660694527450330, guid: 368c0ad0358ee754da245cab56939b94, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: -3726660694527450330, guid: 368c0ad0358ee754da245cab56939b94, type: 3}
+    - m_Name: ARIA_RIGHT_2
+      m_Hash: 565068439
+      m_Sprite: {fileID: 4587583423402167652, guid: 368c0ad0358ee754da245cab56939b94, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: 4587583423402167652, guid: 368c0ad0358ee754da245cab56939b94, type: 3}
+    - m_Name: ARIA_RIGHT_3
+      m_Hash: 380203521
+      m_Sprite: {fileID: -5903510086687653715, guid: 368c0ad0358ee754da245cab56939b94, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: -5903510086687653715, guid: 368c0ad0358ee754da245cab56939b94, type: 3}
+    - m_Name: ARIA_UP_0
+      m_Hash: 480437823
+      m_Sprite: {fileID: -8336779070250952126, guid: 2acd7ea027a12f2499bc6880eae210a4, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: -8336779070250952126, guid: 2acd7ea027a12f2499bc6880eae210a4, type: 3}
+    - m_Name: ARIA_UP_1
+      m_Hash: 732288681
+      m_Sprite: {fileID: 4873497820179650894, guid: 2acd7ea027a12f2499bc6880eae210a4, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: 4873497820179650894, guid: 2acd7ea027a12f2499bc6880eae210a4, type: 3}
+    - m_Name: ARIA_UP_2
+      m_Hash: 850167571
+      m_Sprite: {fileID: -3321121032948787352, guid: 2acd7ea027a12f2499bc6880eae210a4, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: -3321121032948787352, guid: 2acd7ea027a12f2499bc6880eae210a4, type: 3}
+    - m_Name: ARIA_UP_3
+      m_Hash: 95139717
+      m_Sprite: {fileID: -4466988492512312561, guid: 2acd7ea027a12f2499bc6880eae210a4, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: -4466988492512312561, guid: 2acd7ea027a12f2499bc6880eae210a4, type: 3}
+    m_FromMain: 0
+    m_EntryOverrideCount: 16
+  m_PrimaryLibraryGUID: 
+  m_ModificationHash: 639124549719878508
+  m_Version: 1

@@ -15,10 +15,20 @@ MonoBehaviour:
   npcName: Sam Leclerc
   npcPortrait: {fileID: -4661074936579171809, guid: 117a68d2aeb8b5e428c84b86b3193479, type: 3}
   dialogueLines:
-  - "(te se\xF1ala con una cuchara de madera)"
-  - "\xA1Ah! Debes ser el/la estudiante nuevo/a. Puedo oler la curiosidad desde aqu\xED."
-  autoProgressLines: 0100
+  - "(Te se\xF1ala con una cuchara de madera)"
+  - "\xA1Ah! Tue eres el estudiante nuevo/a?qu\xED?"
+  - "Jajajaj! Lo sab\xEDa mi intuici\xF3n nunca falla"
+  - Ah con que tenemos un graciocito...
+  - "Oh! Disculpa mis modales soy Sam Leclerc, el maestro de cocina aqu\xED"
+  autoProgressLines: 0000
+  endDialogueLines: 00000101
   autoProgressDelay: 1.5
   typingSpeed: 0.05
   voiceSound: {fileID: 8300000, guid: 0bca8f4432c1f2247aa8cc427432ce1f, type: 3}
   voicePitch: 1
+  choices:
+  - dialogueIndex: 1
+    choices:
+    - Si, soy yo...
+    - "Nah que va yo llevo aqu\xED desde el a\xF1o pasado"
+    nextDialogueIndexes: 0200000003000000

@@ -1,0 +1,135 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &1
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a5e6fedc2472449cead18ef23b5cb30d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.2D.Animation.Runtime::UnityEngine.U2D.Animation.SpriteLibrarySourceAsset
+  m_Library:
+  - m_Name: Idle
+    m_Hash: 1008081451
+    m_CategoryList: []
+    m_OverrideEntries:
+    - m_Name: SKYLER IDLE_0
+      m_Hash: 138870167
+      m_Sprite: {fileID: -3892713993895875022, guid: 70fa48dee67dd1346b95c49cf83002c8, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: -3892713993895875022, guid: 70fa48dee67dd1346b95c49cf83002c8, type: 3}
+    - m_Name: SKYLER IDLE_1
+      m_Hash: 1061276929
+      m_Sprite: {fileID: -670751710614423642, guid: 70fa48dee67dd1346b95c49cf83002c8, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: -670751710614423642, guid: 70fa48dee67dd1346b95c49cf83002c8, type: 3}
+    - m_Name: SKYLER IDLE_2
+      m_Hash: 642292923
+      m_Sprite: {fileID: 5935992970041822742, guid: 70fa48dee67dd1346b95c49cf83002c8, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: 5935992970041822742, guid: 70fa48dee67dd1346b95c49cf83002c8, type: 3}
+    - m_Name: SKYLER IDLE_3
+      m_Hash: 290434093
+      m_Sprite: {fileID: 4759982958877968795, guid: 70fa48dee67dd1346b95c49cf83002c8, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: 4759982958877968795, guid: 70fa48dee67dd1346b95c49cf83002c8, type: 3}
+    - m_Name: SKYLER IDLE_4
+      m_Hash: 254491022
+      m_Sprite: {fileID: -2113936127270178191, guid: 70fa48dee67dd1346b95c49cf83002c8, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: -2113936127270178191, guid: 70fa48dee67dd1346b95c49cf83002c8, type: 3}
+    m_FromMain: 0
+    m_EntryOverrideCount: 5
+  - m_Name: Walk
+    m_Hash: 765711723
+    m_CategoryList: []
+    m_OverrideEntries:
+    - m_Name: SKYLER_DOWN_0
+      m_Hash: 308625637
+      m_Sprite: {fileID: -6063030548662273601, guid: 8e8e823f1477a904cbcdad3d91c5d8a4, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: -6063030548662273601, guid: 8e8e823f1477a904cbcdad3d91c5d8a4, type: 3}
+    - m_Name: SKYLER_DOWN_1
+      m_Hash: 627208307
+      m_Sprite: {fileID: 2970382449297610296, guid: 8e8e823f1477a904cbcdad3d91c5d8a4, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: 2970382449297610296, guid: 8e8e823f1477a904cbcdad3d91c5d8a4, type: 3}
+    - m_Name: SKYLER_DOWN_2
+      m_Hash: 1013653961
+      m_Sprite: {fileID: -4662033681391690249, guid: 8e8e823f1477a904cbcdad3d91c5d8a4, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: -4662033681391690249, guid: 8e8e823f1477a904cbcdad3d91c5d8a4, type: 3}
+    - m_Name: SKYLER_DOWN_3
+      m_Hash: 191631711
+      m_Sprite: {fileID: 8171957489626017911, guid: 8e8e823f1477a904cbcdad3d91c5d8a4, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: 8171957489626017911, guid: 8e8e823f1477a904cbcdad3d91c5d8a4, type: 3}
+    - m_Name: SKYLER_LEFT_0
+      m_Hash: 227724405
+      m_Sprite: {fileID: 7661163885411039143, guid: 6928482beb303ef4ea076dac0dc7089e, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: 7661163885411039143, guid: 6928482beb303ef4ea076dac0dc7089e, type: 3}
+    - m_Name: SKYLER_LEFT_1
+      m_Hash: 982908131
+      m_Sprite: {fileID: -8531962198914390236, guid: 6928482beb303ef4ea076dac0dc7089e, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: -8531962198914390236, guid: 6928482beb303ef4ea076dac0dc7089e, type: 3}
+    - m_Name: SKYLER_LEFT_2
+      m_Hash: 597470553
+      m_Sprite: {fileID: 3827989532205343278, guid: 6928482beb303ef4ea076dac0dc7089e, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: 3827989532205343278, guid: 6928482beb303ef4ea076dac0dc7089e, type: 3}
+    - m_Name: SKYLER_LEFT_3
+      m_Hash: 345742799
+      m_Sprite: {fileID: -143459169749196132, guid: 6928482beb303ef4ea076dac0dc7089e, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: -143459169749196132, guid: 6928482beb303ef4ea076dac0dc7089e, type: 3}
+    - m_Name: SKYLER_RIGHT_0
+      m_Hash: 486913704
+      m_Sprite: {fileID: -9195495229360723237, guid: 97705df1969af1146bf6adc9eef963f8, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: -9195495229360723237, guid: 97705df1969af1146bf6adc9eef963f8, type: 3}
+    - m_Name: SKYLER_RIGHT_1
+      m_Hash: 704808510
+      m_Sprite: {fileID: 1436449531629720208, guid: 97705df1969af1146bf6adc9eef963f8, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: 1436449531629720208, guid: 97705df1969af1146bf6adc9eef963f8, type: 3}
+    - m_Name: SKYLER_RIGHT_2
+      m_Hash: 856414084
+      m_Sprite: {fileID: 4526610123728316946, guid: 97705df1969af1146bf6adc9eef963f8, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: 4526610123728316946, guid: 97705df1969af1146bf6adc9eef963f8, type: 3}
+    - m_Name: SKYLER_RIGHT_3
+      m_Hash: 67954450
+      m_Sprite: {fileID: -8527759595702667953, guid: 97705df1969af1146bf6adc9eef963f8, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: -8527759595702667953, guid: 97705df1969af1146bf6adc9eef963f8, type: 3}
+    - m_Name: SKYLER_UP_0
+      m_Hash: 719445310
+      m_Sprite: {fileID: -8726112115499493655, guid: 0ce21c1c7c1e42a48aed3853cc924b06, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: -8726112115499493655, guid: 0ce21c1c7c1e42a48aed3853cc924b06, type: 3}
+    - m_Name: SKYLER_UP_1
+      m_Hash: 501673384
+      m_Sprite: {fileID: 6553942273861351594, guid: 0ce21c1c7c1e42a48aed3853cc924b06, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: 6553942273861351594, guid: 0ce21c1c7c1e42a48aed3853cc924b06, type: 3}
+    - m_Name: SKYLER_UP_2
+      m_Hash: 82820114
+      m_Sprite: {fileID: -6341922230048567202, guid: 0ce21c1c7c1e42a48aed3853cc924b06, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: -6341922230048567202, guid: 0ce21c1c7c1e42a48aed3853cc924b06, type: 3}
+    - m_Name: SKYLER_UP_3
+      m_Hash: 870878340
+      m_Sprite: {fileID: 4768801682431760791, guid: 0ce21c1c7c1e42a48aed3853cc924b06, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: 4768801682431760791, guid: 0ce21c1c7c1e42a48aed3853cc924b06, type: 3}
+    m_FromMain: 0
+    m_EntryOverrideCount: 16
+  m_PrimaryLibraryGUID: 
+  m_ModificationHash: 639124556061155379
+  m_Version: 1

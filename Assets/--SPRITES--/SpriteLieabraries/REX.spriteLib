@@ -1,0 +1,125 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &1
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a5e6fedc2472449cead18ef23b5cb30d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.2D.Animation.Runtime::UnityEngine.U2D.Animation.SpriteLibrarySourceAsset
+  m_Library:
+  - m_Name: Idle
+    m_Hash: 1008081451
+    m_CategoryList: []
+    m_OverrideEntries:
+    - m_Name: REX_IDLE_0
+      m_Hash: 545093074
+      m_Sprite: {fileID: 4829922949842587331, guid: 76744a89c8036bd48ac7b1c8ba7a8831, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: 4829922949842587331, guid: 76744a89c8036bd48ac7b1c8ba7a8831, type: 3}
+    - m_Name: REX_IDLE_1
+      m_Hash: 393889092
+      m_Sprite: {fileID: 9155951986469813343, guid: 76744a89c8036bd48ac7b1c8ba7a8831, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: 9155951986469813343, guid: 76744a89c8036bd48ac7b1c8ba7a8831, type: 3}
+    - m_Name: REX_IDLE_2
+      m_Hash: 242423038
+      m_Sprite: {fileID: 1387674654924666060, guid: 76744a89c8036bd48ac7b1c8ba7a8831, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: 1387674654924666060, guid: 76744a89c8036bd48ac7b1c8ba7a8831, type: 3}
+    m_FromMain: 0
+    m_EntryOverrideCount: 3
+  - m_Name: Walk
+    m_Hash: 765711723
+    m_CategoryList: []
+    m_OverrideEntries:
+    - m_Name: REX_DOWN_0
+      m_Hash: 545155170
+      m_Sprite: {fileID: -5192341314008335342, guid: 1e91a1260a989e745918301c2fd214e6, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: -5192341314008335342, guid: 1e91a1260a989e745918301c2fd214e6, type: 3}
+    - m_Name: REX_DOWN_1
+      m_Hash: 393828596
+      m_Sprite: {fileID: -3459834131676529582, guid: 1e91a1260a989e745918301c2fd214e6, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: -3459834131676529582, guid: 1e91a1260a989e745918301c2fd214e6, type: 3}
+    - m_Name: REX_DOWN_2
+      m_Hash: 242223438
+      m_Sprite: {fileID: -1229915353185533342, guid: 1e91a1260a989e745918301c2fd214e6, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: -1229915353185533342, guid: 1e91a1260a989e745918301c2fd214e6, type: 3}
+    - m_Name: REX_DOWN_3
+      m_Hash: 964114904
+      m_Sprite: {fileID: 4263478943375017957, guid: 1e91a1260a989e745918301c2fd214e6, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: 4263478943375017957, guid: 1e91a1260a989e745918301c2fd214e6, type: 3}
+    - m_Name: REX_LEFT_0
+      m_Hash: 1066001650
+      m_Sprite: {fileID: -7071395578680025392, guid: 34d61499f24ca4a4a9b5e109e2fc1a1f, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: -7071395578680025392, guid: 34d61499f24ca4a4a9b5e109e2fc1a1f, type: 3}
+    - m_Name: REX_LEFT_1
+      m_Hash: 143578212
+      m_Sprite: {fileID: -3862392215503747343, guid: 34d61499f24ca4a4a9b5e109e2fc1a1f, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: -3862392215503747343, guid: 34d61499f24ca4a4a9b5e109e2fc1a1f, type: 3}
+    - m_Name: REX_LEFT_2
+      m_Hash: 294094302
+      m_Sprite: {fileID: -8543381597935895466, guid: 34d61499f24ca4a4a9b5e109e2fc1a1f, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: -8543381597935895466, guid: 34d61499f24ca4a4a9b5e109e2fc1a1f, type: 3}
+    - m_Name: REX_LEFT_3
+      m_Hash: 645969224
+      m_Sprite: {fileID: -1891718881263645901, guid: 34d61499f24ca4a4a9b5e109e2fc1a1f, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: -1891718881263645901, guid: 34d61499f24ca4a4a9b5e109e2fc1a1f, type: 3}
+    - m_Name: REX_RIGHT_0
+      m_Hash: 778812163
+      m_Sprite: {fileID: 8064532788308407397, guid: 256fe42f96134ac438538945994139d4, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: 8064532788308407397, guid: 256fe42f96134ac438538945994139d4, type: 3}
+    - m_Name: REX_RIGHT_1
+      m_Hash: 426544021
+      m_Sprite: {fileID: -4408429355068434954, guid: 256fe42f96134ac438538945994139d4, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: -4408429355068434954, guid: 256fe42f96134ac438538945994139d4, type: 3}
+    - m_Name: REX_RIGHT_2
+      m_Hash: 6674991
+      m_Sprite: {fileID: 7937920489714956951, guid: 256fe42f96134ac438538945994139d4, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: 7937920489714956951, guid: 256fe42f96134ac438538945994139d4, type: 3}
+    - m_Name: REX_RIGHT_3
+      m_Hash: 929229497
+      m_Sprite: {fileID: -3148414159870941971, guid: 256fe42f96134ac438538945994139d4, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: -3148414159870941971, guid: 256fe42f96134ac438538945994139d4, type: 3}
+    - m_Name: REX_UP_0
+      m_Hash: 890831771
+      m_Sprite: {fileID: 5865819980307823002, guid: d8daf3efeafbf7e42bc7ff57ddbdc504, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: 5865819980307823002, guid: d8daf3efeafbf7e42bc7ff57ddbdc504, type: 3}
+    - m_Name: REX_UP_1
+      m_Hash: 35533581
+      m_Sprite: {fileID: -5623345034551367742, guid: d8daf3efeafbf7e42bc7ff57ddbdc504, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: -5623345034551367742, guid: d8daf3efeafbf7e42bc7ff57ddbdc504, type: 3}
+    - m_Name: REX_UP_2
+      m_Hash: 454517431
+      m_Sprite: {fileID: -6748588851907335554, guid: d8daf3efeafbf7e42bc7ff57ddbdc504, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: -6748588851907335554, guid: d8daf3efeafbf7e42bc7ff57ddbdc504, type: 3}
+    - m_Name: REX_UP_3
+      m_Hash: 739267105
+      m_Sprite: {fileID: -2592690244595220460, guid: d8daf3efeafbf7e42bc7ff57ddbdc504, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: -2592690244595220460, guid: d8daf3efeafbf7e42bc7ff57ddbdc504, type: 3}
+    m_FromMain: 0
+    m_EntryOverrideCount: 16
+  m_PrimaryLibraryGUID: 
+  m_ModificationHash: 639124551780451648
+  m_Version: 1

@@ -1,0 +1,125 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &1
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a5e6fedc2472449cead18ef23b5cb30d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.2D.Animation.Runtime::UnityEngine.U2D.Animation.SpriteLibrarySourceAsset
+  m_Library:
+  - m_Name: Idle
+    m_Hash: 1008081451
+    m_CategoryList: []
+    m_OverrideEntries:
+    - m_Name: LEONARDO IDLE_0
+      m_Hash: 830226346
+      m_Sprite: {fileID: 7631926505054894895, guid: b39d8019cc7e59440b1867d80d0134da, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: 7631926505054894895, guid: b39d8019cc7e59440b1867d80d0134da, type: 3}
+    - m_Name: LEONARDO IDLE_1
+      m_Hash: 108728124
+      m_Sprite: {fileID: -5821947642478252387, guid: b39d8019cc7e59440b1867d80d0134da, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: -5821947642478252387, guid: b39d8019cc7e59440b1867d80d0134da, type: 3}
+    - m_Name: LEONARDO IDLE_2
+      m_Hash: 527588998
+      m_Sprite: {fileID: 7336750570392714829, guid: b39d8019cc7e59440b1867d80d0134da, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: 7336750570392714829, guid: b39d8019cc7e59440b1867d80d0134da, type: 3}
+    m_FromMain: 0
+    m_EntryOverrideCount: 3
+  - m_Name: Walk
+    m_Hash: 765711723
+    m_CategoryList: []
+    m_OverrideEntries:
+    - m_Name: LEONARDO-DOWN_0
+      m_Hash: 279462874
+      m_Sprite: {fileID: 9155375314938411962, guid: 1862597027c1a0648a115678c8a8af7d, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: 9155375314938411962, guid: 1862597027c1a0648a115678c8a8af7d, type: 3}
+    - m_Name: LEONARDO-DOWN_1
+      m_Hash: 665809740
+      m_Sprite: {fileID: 4703048836917838746, guid: 1862597027c1a0648a115678c8a8af7d, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: 4703048836917838746, guid: 1862597027c1a0648a115678c8a8af7d, type: 3}
+    - m_Name: LEONARDO-DOWN_2
+      m_Hash: 1051075318
+      m_Sprite: {fileID: 5987460440672414368, guid: 1862597027c1a0648a115678c8a8af7d, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: 5987460440672414368, guid: 1862597027c1a0648a115678c8a8af7d, type: 3}
+    - m_Name: LEONARDO-DOWN_3
+      m_Hash: 161550944
+      m_Sprite: {fileID: 4298458888352055424, guid: 1862597027c1a0648a115678c8a8af7d, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: 4298458888352055424, guid: 1862597027c1a0648a115678c8a8af7d, type: 3}
+    - m_Name: LEONARDO_LEFT_0
+      m_Hash: 883428936
+      m_Sprite: {fileID: 9166858479831144796, guid: 0a92766bb4fe6ee45a236d90b74c5bf4, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: 9166858479831144796, guid: 0a92766bb4fe6ee45a236d90b74c5bf4, type: 3}
+    - m_Name: LEONARDO_LEFT_1
+      m_Hash: 61816542
+      m_Sprite: {fileID: -1994366942222609188, guid: 0a92766bb4fe6ee45a236d90b74c5bf4, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: -1994366942222609188, guid: 0a92766bb4fe6ee45a236d90b74c5bf4, type: 3}
+    - m_Name: LEONARDO_LEFT_2
+      m_Hash: 447115108
+      m_Sprite: {fileID: 832016684809208422, guid: 0a92766bb4fe6ee45a236d90b74c5bf4, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: 832016684809208422, guid: 0a92766bb4fe6ee45a236d90b74c5bf4, type: 3}
+    - m_Name: LEONARDO_LEFT_3
+      m_Hash: 765550578
+      m_Sprite: {fileID: -6907700680886857990, guid: 0a92766bb4fe6ee45a236d90b74c5bf4, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: -6907700680886857990, guid: 0a92766bb4fe6ee45a236d90b74c5bf4, type: 3}
+    - m_Name: LEONARDO_RIGHT_0
+      m_Hash: 93634683
+      m_Sprite: {fileID: -7073305776732107029, guid: 61c9c9e7aa5defa4c9aac4951726386f, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: -7073305776732107029, guid: 61c9c9e7aa5defa4c9aac4951726386f, type: 3}
+    - m_Name: LEONARDO_RIGHT_1
+      m_Hash: 848556269
+      m_Sprite: {fileID: -6206168784430006603, guid: 61c9c9e7aa5defa4c9aac4951726386f, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: -6206168784430006603, guid: 61c9c9e7aa5defa4c9aac4951726386f, type: 3}
+    - m_Name: LEONARDO_RIGHT_2
+      m_Hash: 731554135
+      m_Sprite: {fileID: -6404291124765952260, guid: 61c9c9e7aa5defa4c9aac4951726386f, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: -6404291124765952260, guid: 61c9c9e7aa5defa4c9aac4951726386f, type: 3}
+    - m_Name: LEONARDO_RIGHT_3
+      m_Hash: 480088513
+      m_Sprite: {fileID: 7956607626336752247, guid: 61c9c9e7aa5defa4c9aac4951726386f, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: 7956607626336752247, guid: 61c9c9e7aa5defa4c9aac4951726386f, type: 3}
+    - m_Name: LEONARDO_UP_0
+      m_Hash: 607553065
+      m_Sprite: {fileID: 8231248766262334974, guid: a79da54adcf73b949899f44c14768674, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: 8231248766262334974, guid: a79da54adcf73b949899f44c14768674, type: 3}
+    - m_Name: LEONARDO_UP_1
+      m_Hash: 322025151
+      m_Sprite: {fileID: 439271149236772630, guid: a79da54adcf73b949899f44c14768674, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: 439271149236772630, guid: a79da54adcf73b949899f44c14768674, type: 3}
+    - m_Name: LEONARDO_UP_2
+      m_Hash: 171501317
+      m_Sprite: {fileID: -5013782518838628093, guid: a79da54adcf73b949899f44c14768674, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: -5013782518838628093, guid: a79da54adcf73b949899f44c14768674, type: 3}
+    - m_Name: LEONARDO_UP_3
+      m_Hash: 1027594131
+      m_Sprite: {fileID: 5825890779716600350, guid: a79da54adcf73b949899f44c14768674, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: 5825890779716600350, guid: a79da54adcf73b949899f44c14768674, type: 3}
+    m_FromMain: 0
+    m_EntryOverrideCount: 16
+  m_PrimaryLibraryGUID: 
+  m_ModificationHash: 639124551131233510
+  m_Version: 1

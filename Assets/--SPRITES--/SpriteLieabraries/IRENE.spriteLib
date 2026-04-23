@@ -1,0 +1,135 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &1
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a5e6fedc2472449cead18ef23b5cb30d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.2D.Animation.Runtime::UnityEngine.U2D.Animation.SpriteLibrarySourceAsset
+  m_Library:
+  - m_Name: Idle
+    m_Hash: 1008081451
+    m_CategoryList: []
+    m_OverrideEntries:
+    - m_Name: IRENE IDLE_0
+      m_Hash: 260289083
+      m_Sprite: {fileID: -7607187548539564294, guid: 529632d2eb2608049bd2d66d72473ede, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: -7607187548539564294, guid: 529632d2eb2608049bd2d66d72473ede, type: 3}
+    - m_Name: IRENE IDLE_1
+      m_Hash: 948208301
+      m_Sprite: {fileID: 1853897167396801414, guid: 529632d2eb2608049bd2d66d72473ede, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: 1853897167396801414, guid: 529632d2eb2608049bd2d66d72473ede, type: 3}
+    - m_Name: IRENE IDLE_2
+      m_Hash: 562942743
+      m_Sprite: {fileID: 3584807476079447668, guid: 529632d2eb2608049bd2d66d72473ede, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: 3584807476079447668, guid: 529632d2eb2608049bd2d66d72473ede, type: 3}
+    - m_Name: IRENE IDLE_3
+      m_Hash: 378200961
+      m_Sprite: {fileID: -1996318867269831215, guid: 529632d2eb2608049bd2d66d72473ede, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: -1996318867269831215, guid: 529632d2eb2608049bd2d66d72473ede, type: 3}
+    - m_Name: IRENE IDLE_4
+      m_Hash: 149845538
+      m_Sprite: {fileID: 7972391904440553272, guid: 529632d2eb2608049bd2d66d72473ede, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: 7972391904440553272, guid: 529632d2eb2608049bd2d66d72473ede, type: 3}
+    m_FromMain: 0
+    m_EntryOverrideCount: 5
+  - m_Name: Walk
+    m_Hash: 765711723
+    m_CategoryList: []
+    m_OverrideEntries:
+    - m_Name: IRENE_DOWN_0
+      m_Hash: 362811209
+      m_Sprite: {fileID: -4691051570937594024, guid: 28c483b1eac7b7c4e9e9c9befc8ffe1c, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: -4691051570937594024, guid: 28c483b1eac7b7c4e9e9c9befc8ffe1c, type: 3}
+    - m_Name: IRENE_DOWN_1
+      m_Hash: 581386207
+      m_Sprite: {fileID: -2379383141957409336, guid: 28c483b1eac7b7c4e9e9c9befc8ffe1c, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: -2379383141957409336, guid: 28c483b1eac7b7c4e9e9c9befc8ffe1c, type: 3}
+    - m_Name: IRENE_DOWN_2
+      m_Hash: 1001287269
+      m_Sprite: {fileID: 6255217504603490712, guid: 28c483b1eac7b7c4e9e9c9befc8ffe1c, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: 6255217504603490712, guid: 28c483b1eac7b7c4e9e9c9befc8ffe1c, type: 3}
+    - m_Name: IRENE_DOWN_3
+      m_Hash: 212426483
+      m_Sprite: {fileID: 2524170679738642398, guid: 28c483b1eac7b7c4e9e9c9befc8ffe1c, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: 2524170679738642398, guid: 28c483b1eac7b7c4e9e9c9befc8ffe1c, type: 3}
+    - m_Name: IRENE_LEFT_0
+      m_Hash: 173507545
+      m_Sprite: {fileID: 3576265496775656410, guid: a199a5367f09fec46bfd586bf2a7b356, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: 3576265496775656410, guid: a199a5367f09fec46bfd586bf2a7b356, type: 3}
+    - m_Name: IRENE_LEFT_1
+      m_Hash: 1028698959
+      m_Sprite: {fileID: -8507300280851722117, guid: a199a5367f09fec46bfd586bf2a7b356, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: -8507300280851722117, guid: a199a5367f09fec46bfd586bf2a7b356, type: 3}
+    - m_Name: IRENE_LEFT_2
+      m_Hash: 609870581
+      m_Sprite: {fileID: -5531499330520838959, guid: a199a5367f09fec46bfd586bf2a7b356, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: -5531499330520838959, guid: a199a5367f09fec46bfd586bf2a7b356, type: 3}
+    - m_Name: IRENE_LEFT_3
+      m_Hash: 324981347
+      m_Sprite: {fileID: 1504953177947961923, guid: a199a5367f09fec46bfd586bf2a7b356, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: 1504953177947961923, guid: a199a5367f09fec46bfd586bf2a7b356, type: 3}
+    - m_Name: IRENE_RIGHT_0
+      m_Hash: 40016932
+      m_Sprite: {fileID: -6991408127787375721, guid: 035fd1ad8b7fffe4283572092d82adbd, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: -6991408127787375721, guid: 035fd1ad8b7fffe4283572092d82adbd, type: 3}
+    - m_Name: IRENE_RIGHT_1
+      m_Hash: 895855794
+      m_Sprite: {fileID: 5165261810943057384, guid: 035fd1ad8b7fffe4283572092d82adbd, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: 5165261810943057384, guid: 035fd1ad8b7fffe4283572092d82adbd, type: 3}
+    - m_Name: IRENE_RIGHT_2
+      m_Hash: 745340168
+      m_Sprite: {fileID: -471873988808824101, guid: 035fd1ad8b7fffe4283572092d82adbd, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: -471873988808824101, guid: 035fd1ad8b7fffe4283572092d82adbd, type: 3}
+    - m_Name: IRENE_RIGHT_3
+      m_Hash: 460049822
+      m_Sprite: {fileID: 1217306609290728690, guid: 035fd1ad8b7fffe4283572092d82adbd, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: 1217306609290728690, guid: 035fd1ad8b7fffe4283572092d82adbd, type: 3}
+    - m_Name: IRENE_UP_0
+      m_Hash: 109808787
+      m_Sprite: {fileID: 1271972713700702584, guid: 9f241bfe618c007459233325e57537bf, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: 1271972713700702584, guid: 9f241bfe618c007459233325e57537bf, type: 3}
+    - m_Name: IRENE_UP_1
+      m_Hash: 831306757
+      m_Sprite: {fileID: -4371413715862149600, guid: 9f241bfe618c007459233325e57537bf, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: -4371413715862149600, guid: 9f241bfe618c007459233325e57537bf, type: 3}
+    - m_Name: IRENE_UP_2
+      m_Hash: 679865791
+      m_Sprite: {fileID: -2839211674824033564, guid: 9f241bfe618c007459233325e57537bf, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: -2839211674824033564, guid: 9f241bfe618c007459233325e57537bf, type: 3}
+    - m_Name: IRENE_UP_3
+      m_Hash: 528669993
+      m_Sprite: {fileID: 1639479634899806905, guid: 9f241bfe618c007459233325e57537bf, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: 1639479634899806905, guid: 9f241bfe618c007459233325e57537bf, type: 3}
+    m_FromMain: 0
+    m_EntryOverrideCount: 16
+  m_PrimaryLibraryGUID: 
+  m_ModificationHash: 639124550346737401
+  m_Version: 1
