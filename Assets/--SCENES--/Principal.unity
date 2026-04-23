@@ -13118,6 +13118,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 93965c66d8737894ebd9abfd4758fb11, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SaveController
+  inventoryController: {fileID: 0}
+  player: {fileID: 0}
+  confiner: {fileID: 0}
 --- !u!4 &1771711117
 Transform:
   m_ObjectHideFlags: 0
@@ -13145,12 +13148,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f9659d8031f63a341a99fbca5d0afd46, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
+  itemDictionary: {fileID: 0}
   inventoryPanel: {fileID: 571816324}
   slotPrefab: {fileID: 6036845242418806289, guid: a01ead7d7a422a04a87218b624610f17, type: 3}
   slotCount: 24
-  itemPrefabs:
-  - {fileID: 4524552856328155496, guid: c3e870a46a4378b41874e09d76ae9812, type: 3}
-  - {fileID: 0}
+  initialItemPrefabs: []
 --- !u!1 &1825805131
 GameObject:
   m_ObjectHideFlags: 0

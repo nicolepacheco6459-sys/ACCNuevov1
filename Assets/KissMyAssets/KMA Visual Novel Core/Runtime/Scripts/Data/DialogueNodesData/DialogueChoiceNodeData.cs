@@ -1,0 +1,21 @@
+using System;
+using System.Collections.Generic;
+using UnityEngine;
+
+namespace KissMyAssets.VisualNovelCore.Runtime
+{
+    [Serializable]
+    public class DialogueChoiceNodeData : BaseDialogueNodeData
+    {
+        public override EDialogueNodeType NodeType => EDialogueNodeType.Choice;
+
+        [field: SerializeField] public string Text { get; set; }
+
+        [field: SerializeField] public List<ChoiceOptionData> Options { get; set; } = new List<ChoiceOptionData>();
+
+        public override BaseDialogueNodeModel CreateModel()
+        {
+            return new ChoiceNodeModel(this);
+        }
+    }
+}

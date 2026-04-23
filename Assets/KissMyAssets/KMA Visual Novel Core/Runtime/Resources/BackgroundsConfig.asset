@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 61c2c3ceebccbe243914fb2a1fc4ae8b, type: 3}
+  m_Name: BackgroundsConfig
+  m_EditorClassIdentifier: 
+  _entries:
+  - Guid:
+      _value: fa8ae866-41a5-4bc8-afb6-1a9d9a822c98
+    Data:
+      Name: Forest
+      Sprite: {fileID: 21300000, guid: fb5e63269685bf2479362ed2952963a6, type: 3}
+  - Guid:
+      _value: e35766d7-88c4-4270-a5aa-89c913dd860f
+    Data:
+      Name: Road
+      Sprite: {fileID: 21300000, guid: 549b562bf14c18749b9bcec6e4c18874, type: 3}
+  - Guid:
+      _value: 40e70463-4f76-4b8f-8960-7884efdb44ed
+    Data:
+      Name: Village
+      Sprite: {fileID: 21300000, guid: e7e0c31e5453ec34f965007921eb9993, type: 3}
