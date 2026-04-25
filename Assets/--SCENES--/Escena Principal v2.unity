@@ -44350,6 +44350,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 985921518}
+  - component: {fileID: 985921520}
+  - component: {fileID: 985921519}
   m_Layer: 0
   m_Name: NPC_SAM
   m_TagString: Untagged
@@ -44374,6 +44376,40 @@ Transform:
   - {fileID: 496015010}
   m_Father: {fileID: 579244877}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &985921519
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 985921517}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6cb8bd8c3f7eec645ab3651d6fcdd4f3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AffinityUI
+  characterID: Sam_NPC
+  hearts: []
+--- !u!114 &985921520
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 985921517}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9141fe9c0e368504481fcfc0e9d8e911, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::NPCInteractionSystem
+  characterID: Sam_NPC
+  dialogueStage1: {fileID: 11400000, guid: 52c51590be125524f988ddb23425104b, type: 2}
+  dialogueStage2: {fileID: 11400000, guid: 64393fbb4df99034ea76c29370868619, type: 2}
+  dialogueStage3: {fileID: 11400000, guid: 7719c398c0716124c95b0d2ffac1f489, type: 2}
+  goodEnding: {fileID: 11400000, guid: 6c43ee668916a2c4f852398fe414b15c, type: 2}
+  neutralEnding: {fileID: 11400000, guid: 97c7b7604d83ed748917963263210999, type: 2}
+  badEnding: {fileID: 11400000, guid: 282e3bcc5c1a39940a23814cb9faf3c5, type: 2}
+  minigameSceneName: 
 --- !u!1 &1000308006
 GameObject:
   m_ObjectHideFlags: 0
