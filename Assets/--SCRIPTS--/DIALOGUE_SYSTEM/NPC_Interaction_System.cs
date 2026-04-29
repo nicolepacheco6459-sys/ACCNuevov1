@@ -35,27 +35,19 @@ public class NPCInteractionSystem : MonoBehaviour
         if (stage == 0)
         {
             StartDialogue(dialogueStage1);
-            LoadMinigame();
         }
         else if (stage == 1)
         {
             StartDialogue(dialogueStage2);
-            LoadMinigame();
         }
         else if (stage == 2)
         {
             StartDialogue(dialogueStage3);
-            LoadMinigame();
         }
         else
         {
             LaunchEnding();
         }
-    }
-
-    void LoadMinigame()
-    {
-        SceneManager.LoadScene(minigameSceneName);
     }
 
     void LaunchEnding()
@@ -72,7 +64,14 @@ public class NPCInteractionSystem : MonoBehaviour
 
     void StartDialogue(ScriptableObject dialogue)
     {
-        Object.FindFirstObjectByType<MonoBehaviour>().SendMessage("StartDialogue", dialogue);
+        if (KMA_DialogueManager.Instance != null)
+        {
+            KMA_DialogueManager.Instance.StartDialogue(dialogue);
+        }
+        else
+        {
+            Debug.LogError("KMA_DialogueManager no encontrado en la escena");
+        }
     }
 
     private void OnTriggerEnter(Collider other)

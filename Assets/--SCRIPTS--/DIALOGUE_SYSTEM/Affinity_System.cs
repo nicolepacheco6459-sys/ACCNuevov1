@@ -1,4 +1,4 @@
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
 
 public class AffinitySystem : MonoBehaviour
@@ -9,22 +9,51 @@ public class AffinitySystem : MonoBehaviour
 
     private void Awake()
     {
+        // 🔒 Evita duplicados
+        if (Instance != null && Instance != this)
+        {
+            Destroy(gameObject);
+            return;
+        }
+
         Instance = this;
         DontDestroyOnLoad(gameObject);
+
+        Debug.Log("AffinitySystem inicializado correctamente");
     }
 
+    // ❤️ Añadir afinidad
     public void AddAffinity(string characterID, int amount)
     {
+        if (string.IsNullOrEmpty(characterID))
+        {
+            Debug.LogError("characterID está vacío en AddAffinity");
+            return;
+        }
+
         if (!affinity.ContainsKey(characterID))
+        {
             affinity[characterID] = 0;
+        }
 
         affinity[characterID] += amount;
+
+        Debug.Log($"Afinidad de {characterID}: {affinity[characterID]}");
     }
 
+    // 📊 Obtener afinidad
     public int GetAffinity(string characterID)
     {
-        if (!affinity.ContainsKey(characterID))
+        if (string.IsNullOrEmpty(characterID))
+        {
+            Debug.LogError("characterID está vacío en GetAffinity");
             return 0;
+        }
+
+        if (!affinity.ContainsKey(characterID))
+        {
+            return 0;
+        }
 
         return affinity[characterID];
     }
