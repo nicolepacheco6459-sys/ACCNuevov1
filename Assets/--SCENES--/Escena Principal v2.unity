@@ -9634,7 +9634,7 @@ GameObject:
   - component: {fileID: 268827053}
   - component: {fileID: 268827052}
   m_Layer: 3
-  m_Name: P1.2_Waypoint
+  m_Name: P3_Waypoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9667,7 +9667,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 984f762417b4fe54eac9d929b1f154cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  mapBoundary: {fileID: 481496420}
+  mapBoundary: {fileID: 1313044105}
   direction: 2
 --- !u!61 &268827053
 BoxCollider2D:
@@ -50302,7 +50302,7 @@ GameObject:
   - component: {fileID: 988847750}
   - component: {fileID: 988847749}
   m_Layer: 3
-  m_Name: P1.2_Waypoint
+  m_Name: P1_Waypoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

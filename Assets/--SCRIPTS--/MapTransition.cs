@@ -7,12 +7,18 @@ public class MapTransition : MonoBehaviour
     [SerializeField] private Direction direction;
 
     private CinemachineConfiner2D confiner;
+    private CinemachineCamera _mainCamera;
 
     private enum Direction { Up, Down, Left, Right }
 
     private void Awake()
     {
         confiner = Object.FindFirstObjectByType<CinemachineConfiner2D>();
+        
+        // Buscar la cámara por nombre
+        GameObject camObj = GameObject.Find("CmCam");
+        if (camObj != null)
+            _mainCamera = camObj.GetComponent<CinemachineCamera>();
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -26,6 +32,7 @@ public class MapTransition : MonoBehaviour
             }
 
             UpdatePlayerPosition(collision.gameObject);
+            UpdateCameraPosition(collision.gameObject);
 
             MapController_Manual.Instance?.HighlighArea(mapBoundary.name);
             MapController_Dynamic.Instance?.UpdateCurrentArea(mapBoundary.name);
@@ -53,5 +60,17 @@ public class MapTransition : MonoBehaviour
         }
 
         player.transform.position = newPos;
+    }
+
+    private void UpdateCameraPosition(GameObject player)
+    {
+        if (_mainCamera != null)
+        {
+            _mainCamera.transform.position = new Vector3(
+                player.transform.position.x,
+                player.transform.position.y,
+                _mainCamera.transform.position.z
+            );
+        }
     }
 }
