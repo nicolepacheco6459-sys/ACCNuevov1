@@ -1,18 +1,27 @@
-using UnityEngine;
+ï»¿using UnityEngine;
+using KissMyAssets.VisualNovelCore.Runtime;
 
 public class KMA_DialogueManager : MonoBehaviour
 {
     public static KMA_DialogueManager Instance;
 
-    public MonoBehaviour dialogueWindow; // aquí irá NovelSampleDialogueWindow
+    public NovelSampleDialogueWindow dialogueWindow;
 
     private void Awake()
     {
         Instance = this;
     }
 
-    public void StartDialogue(ScriptableObject dialogue)
+    public async void StartDialogue()
     {
-        dialogueWindow.SendMessage("StartDialogue", dialogue, SendMessageOptions.DontRequireReceiver);
+        if (dialogueWindow == null)
+        {
+            Debug.LogError("DialogueWindow NO asignado en KMA_DialogueManager");
+            return;
+        }
+
+        Debug.Log("â–¶ Iniciando diÃ¡logo KMA");
+
+        await dialogueWindow.PlayDialogues();
     }
 }

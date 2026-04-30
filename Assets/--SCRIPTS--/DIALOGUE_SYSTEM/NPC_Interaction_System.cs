@@ -1,48 +1,64 @@
-using UnityEngine;
-using UnityEngine.SceneManagement;
+﻿using UnityEngine;
+using KissMyAssets.VisualNovelCore.Runtime;
+using System.Collections.Generic;
 
-public class NPCInteractionSystem : MonoBehaviour
+public class NPCInteractionSystem : MonoBehaviour, IInteractable
 {
     public string characterID;
 
     [Header("Dialogues por etapa")]
-    public ScriptableObject dialogueStage1;
-    public ScriptableObject dialogueStage2;
-    public ScriptableObject dialogueStage3;
+    public DialogueSceneConfig dialogueStage1;
+    public DialogueSceneConfig dialogueStage2;
+    public DialogueSceneConfig dialogueStage3;
 
     [Header("Finales")]
-    public ScriptableObject goodEnding;
-    public ScriptableObject neutralEnding;
-    public ScriptableObject badEnding;
+    public DialogueSceneConfig goodEnding;
+    public DialogueSceneConfig neutralEnding;
+    public DialogueSceneConfig badEnding;
 
-    [Header("Minijuego")]
-    public string minigameSceneName;
+    private bool isInteracting = false;
 
-    private bool playerInRange = false;
+    // =========================
+    // INTERFACE (InteractionDetector usa esto)
+    // =========================
 
-    void Update()
+    public bool CanInteract()
     {
-        if (playerInRange && Input.GetKeyDown(KeyCode.E))
-        {
-            HandleInteraction();
-        }
+        return !isInteracting;
     }
+
+    public void Interact()
+    {
+        HandleInteraction();
+    }
+
+    // =========================
+    // LÓGICA PRINCIPAL
+    // =========================
 
     void HandleInteraction()
     {
+        if (CharacterProgress.Instance == null || AffinitySystem.Instance == null)
+        {
+            Debug.LogError("Falta CharacterProgress o AffinitySystem en la escena");
+            return;
+        }
+
+        isInteracting = true;
+
         int stage = CharacterProgress.Instance.GetProgress(characterID);
 
         if (stage == 0)
         {
-            StartDialogue(dialogueStage1);
+            PlayDialogue(dialogueStage1);
         }
         else if (stage == 1)
         {
-            StartDialogue(dialogueStage2);
+            PlayDialogue(dialogueStage2);
         }
         else if (stage == 2)
         {
-            StartDialogue(dialogueStage3);
+            PlayDialogue(dialogueStage3);
         }
         else
         {
@@ -50,39 +66,69 @@ public class NPCInteractionSystem : MonoBehaviour
         }
     }
 
+    // =========================
+    // FINALES
+    // =========================
+
     void LaunchEnding()
     {
         int affinity = AffinitySystem.Instance.GetAffinity(characterID);
 
         if (affinity >= 50)
-            StartDialogue(goodEnding);
+            PlayDialogue(goodEnding);
         else if (affinity >= 20)
-            StartDialogue(neutralEnding);
+            PlayDialogue(neutralEnding);
         else
-            StartDialogue(badEnding);
+            PlayDialogue(badEnding);
     }
 
-    void StartDialogue(ScriptableObject dialogue)
+    // =========================
+    // EJECUTAR DIÁLOGO KMA
+    // =========================
+
+    void PlayDialogue(DialogueSceneConfig dialogue)
     {
-        if (KMA_DialogueManager.Instance != null)
-        {
-            KMA_DialogueManager.Instance.StartDialogue(dialogue);
-        }
-        else
+        if (KMA_DialogueManager.Instance == null)
         {
             Debug.LogError("KMA_DialogueManager no encontrado en la escena");
+            return;
         }
+
+        var window = KMA_DialogueManager.Instance.dialogueWindow as NovelSampleDialogueWindow;
+
+        if (window == null)
+        {
+            Debug.LogError("DialogueWindow no es NovelSampleDialogueWindow");
+            return;
+        }
+
+        if (dialogue == null)
+        {
+            Debug.LogError("DialogueSceneConfig no asignado en NPC");
+            return;
+        }
+
+        // 🔥 Cambia el diálogo dinámicamente
+        window.GetType()
+            .GetField("_dialogueScenes", System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance)
+            .SetValue(window, new List<DialogueSceneConfig> { dialogue });
+
+        // 🔥 Ejecuta el diálogo
+        KMA_DialogueManager.Instance.StartDialogue();
+
+        // 🔥 Permitir volver a interactuar después (opcional)
+        Invoke(nameof(ResetInteraction), 1f);
     }
 
-    private void OnTriggerEnter(Collider other)
+    void ResetInteraction()
     {
-        if (other.CompareTag("Player"))
-            playerInRange = true;
+        isInteracting = false;
     }
-
-    private void OnTriggerExit(Collider other)
+    public void Interaction()
     {
-        if (other.CompareTag("Player"))
-            playerInRange = false;
+        Debug.Log("Interactuando con NPC nuevo sistema");
+        HandleInteraction();
     }
 }
+
+
