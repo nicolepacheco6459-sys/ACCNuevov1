@@ -17,11 +17,9 @@ public class SoundEffectManager : MonoBehaviour
             audioSource = GetComponent<AudioSource>();
             soundEffectLibrary = GetComponent<SoundEffectLibrary>();
 
-            // ensure we're preserving the root GameObject
-            GameObject root = gameObject.transform.root.gameObject;
-            if (root != gameObject)
-                Debug.LogWarning("SoundEffectManager is not on a root GameObject; DontDestroyOnLoad will be applied to the root instead.");
-            DontDestroyOnLoad(root);
+            // Make this object root to avoid the warning
+            transform.SetParent(null);
+            DontDestroyOnLoad(gameObject);
        }
        else
        {
