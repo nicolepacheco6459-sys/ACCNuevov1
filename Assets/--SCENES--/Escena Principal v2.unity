@@ -43484,6 +43484,9 @@ GameObject:
   - component: {fileID: 818473890}
   - component: {fileID: 818473892}
   - component: {fileID: 818473891}
+  - component: {fileID: 818473895}
+  - component: {fileID: 818473894}
+  - component: {fileID: 818473893}
   m_Layer: 0
   m_Name: LEONARDO
   m_TagString: Untagged
@@ -43679,6 +43682,71 @@ MonoBehaviour:
   m_EditorClassIdentifier: Unity.2D.Animation.Runtime::UnityEngine.U2D.Animation.SpriteLibrary
   m_Library: []
   m_SpriteLibraryAsset: {fileID: 7108339969198208228, guid: aa6663bae77d402488704cf2085142e4, type: 3}
+--- !u!114 &818473893
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 818473884}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9141fe9c0e368504481fcfc0e9d8e911, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::NPCInteractionSystem
+  characterID: Leonardo_NPC
+  dialogueStage1: {fileID: 11400000, guid: a10476000e980764e90fc4bfbef87ff3, type: 2}
+  dialogueStage2: {fileID: 11400000, guid: 5687ccd83bbe1634a81de861b617328a, type: 2}
+  dialogueStage3: {fileID: 11400000, guid: c972079026c3c064dab9a40804151c0e, type: 2}
+  goodEnding: {fileID: 11400000, guid: 8b78175e46def4c468e5ab1e950bc47a, type: 2}
+  neutralEnding: {fileID: 11400000, guid: 8c8ba40e84e498141acf0c8c3bd071af, type: 2}
+  badEnding: {fileID: 11400000, guid: a8275bd2a619204428da889a8b15dd48, type: 2}
+--- !u!114 &818473894
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 818473884}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6cb8bd8c3f7eec645ab3651d6fcdd4f3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AffinityUI
+  characterID: Leonardo_NPC
+  hearts:
+  - {fileID: 1107952947}
+  - {fileID: 7030637}
+  - {fileID: 402678141}
+  - {fileID: 748422510}
+  - {fileID: 489708405}
+--- !u!50 &818473895
+Rigidbody2D:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 818473884}
+  m_BodyType: 2
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDamping: 0
+  m_AngularDamping: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &825724315
 GameObject:
   m_ObjectHideFlags: 0
@@ -47827,7 +47895,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9141fe9c0e368504481fcfc0e9d8e911, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::NPCInteractionSystem
-  characterID: Aria
+  characterID: Aria_NPC
   dialogueStage1: {fileID: 11400000, guid: 191126ff90af8094ba103042ef7131e6, type: 2}
   dialogueStage2: {fileID: 11400000, guid: 2f1d0c054a8ec6342a72a3331e7e17f6, type: 2}
   dialogueStage3: {fileID: 11400000, guid: c799111491ff7de4fa1704021add4348, type: 2}
@@ -47846,7 +47914,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6cb8bd8c3f7eec645ab3651d6fcdd4f3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AffinityUI
-  characterID: Aria
+  characterID: Aria_NPC
   hearts:
   - {fileID: 1107952947}
   - {fileID: 7030637}
@@ -47909,7 +47977,7 @@ RectTransform:
   m_GameObject: {fileID: 1576940993}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 2.2728748, y: 0.44823244, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1107952945}
@@ -47921,7 +47989,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -1329, y: -770}
+  m_AnchoredPosition: {x: -1392.7, y: -739}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0, y: 0}
 --- !u!114 &1576940995
@@ -47951,7 +48019,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -48432,7 +48500,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_AspectMode: 0
-  m_AspectRatio: 6.512856
+  m_AspectRatio: 6.515714
 --- !u!114 &1713435070
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -48945,6 +49013,9 @@ GameObject:
   - component: {fileID: 1868743157}
   - component: {fileID: 1868743159}
   - component: {fileID: 1868743158}
+  - component: {fileID: 1868743162}
+  - component: {fileID: 1868743161}
+  - component: {fileID: 1868743160}
   m_Layer: 0
   m_Name: REX
   m_TagString: Untagged
@@ -49140,6 +49211,71 @@ MonoBehaviour:
   m_EditorClassIdentifier: Unity.2D.Animation.Runtime::UnityEngine.U2D.Animation.SpriteLibrary
   m_Library: []
   m_SpriteLibraryAsset: {fileID: 7108339969198208228, guid: ba01b3d061221f94295c2c15002ad309, type: 3}
+--- !u!114 &1868743160
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1868743151}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9141fe9c0e368504481fcfc0e9d8e911, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::NPCInteractionSystem
+  characterID: Rex_NPC
+  dialogueStage1: {fileID: 11400000, guid: 3d51e46aae409024882741e9ce6be1ee, type: 2}
+  dialogueStage2: {fileID: 11400000, guid: 515d94d8b24123c4e88b5fea6755a8a5, type: 2}
+  dialogueStage3: {fileID: 11400000, guid: 5a6c8b78a7242f641896664e66d9caf6, type: 2}
+  goodEnding: {fileID: 11400000, guid: 224ff673f8be0e2458befd3873bc1256, type: 2}
+  neutralEnding: {fileID: 11400000, guid: 2cb779498326fd64b98e4f4865ce7afd, type: 2}
+  badEnding: {fileID: 11400000, guid: bd843afe6c033374bbe42a825ec0cbe4, type: 2}
+--- !u!114 &1868743161
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1868743151}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6cb8bd8c3f7eec645ab3651d6fcdd4f3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AffinityUI
+  characterID: Rex_NPC
+  hearts:
+  - {fileID: 1107952947}
+  - {fileID: 7030637}
+  - {fileID: 402678141}
+  - {fileID: 748422510}
+  - {fileID: 489708405}
+--- !u!50 &1868743162
+Rigidbody2D:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1868743151}
+  m_BodyType: 2
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDamping: 0
+  m_AngularDamping: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &1870653903
 GameObject:
   m_ObjectHideFlags: 0

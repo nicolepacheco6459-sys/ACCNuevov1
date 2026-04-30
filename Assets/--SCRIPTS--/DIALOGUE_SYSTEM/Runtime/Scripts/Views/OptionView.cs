@@ -1,4 +1,4 @@
-using Cysharp.Threading.Tasks;
+﻿using Cysharp.Threading.Tasks;
 using System;
 using TMPro;
 using UnityEngine;
@@ -6,37 +6,56 @@ using UnityEngine.UI;
 
 namespace KissMyAssets.VisualNovelCore.Runtime
 {
-    /// <summary>
-    /// Represents a single clickable option in a choice node.
-    /// </summary>
     public class OptionView : MonoBehaviour
     {
         [SerializeField] private Button _button;
         [SerializeField] private TextMeshProUGUI _text;
 
-        /// <summary>
-        /// Initializes the option, sets its text, and waits asynchronously until the user clicks the button.
-        /// </summary>
-        /// <param name="optionModel">The model containing the option data.</param>
-        /// <returns>The <see cref="Guid"/> of the next node associated with this option.</returns>
-        public async UniTask<Guid> WaitForChoice(ChoiceOptionModel optionModel)
+        public async UniTask<Guid> WaitForChoice(ChoiceOptionModel optionModel, int optionIndex)
         {
-            // Use UniTaskCompletionSource to convert the event-based click into an awaitable Task
-            var completionSource = new UniTaskCompletionSource();
+            var completionSource = new UniTaskCompletionSource<Guid>();
 
+            // Texto visible de la opción
             _text.text = optionModel.DialogueText.Text;
 
-            // Add a temporary listener that completes the task when clicked
-            Action onClickAction = () => completionSource.TrySetResult();
+            Action onClickAction = () =>
+            {
+                Debug.Log("Opción elegida: " + _text.text);
+
+                // 🔥 AFINIDAD SEGÚN POSICIÓN
+                int affinity = GetAffinityByIndex(optionIndex);
+
+                // 🔥 APLICAR AFINIDAD
+                if (AffinityChoiceHandler.Instance != null)
+                {
+                    AffinityChoiceHandler.Instance.ApplyChoiceValue(affinity);
+                }
+
+                // 🔥 CONTINUAR DIÁLOGO
+                completionSource.TrySetResult(optionModel.RelatedNodeId);
+            };
+
             _button.onClick.AddListener(onClickAction.Invoke);
 
-            // Wait until the button is clicked
-            await completionSource.Task;
+            var result = await completionSource.Task;
 
-            // Clean up the listener after the task is completed
             _button.onClick.RemoveListener(onClickAction.Invoke);
 
-            return optionModel.RelatedNodeId;
+            return result;
+        }
+
+        // =========================
+        // AFINIDAD POR ÍNDICE
+        // =========================
+        private int GetAffinityByIndex(int index)
+        {
+            switch (index)
+            {
+                case 0: return 10;   // buena
+                case 1: return 5;    // neutral
+                case 2: return -5;   // mala
+                default: return 0;
+            }
         }
     }
 }

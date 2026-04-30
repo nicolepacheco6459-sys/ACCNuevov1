@@ -123,23 +123,28 @@ namespace KissMyAssets.VisualNovelCore.Runtime
 
         public async UniTask WaitForSkip()
         {
-            var taskSource = new UniTaskCompletionSource();
-
             if (_skipButton != null)
                 _skipButton.gameObject.SetActive(true);
 
-            Action onSkipAction = () => taskSource.TrySetResult();
-
-            if (_skipButton != null)
-                _skipButton.onClick.AddListener(onSkipAction.Invoke);
-
-            await taskSource.Task;
-
-            if (_skipButton != null)
+            while (true)
             {
-                _skipButton.onClick.RemoveListener(onSkipAction.Invoke);
-                _skipButton.gameObject.SetActive(false);
+                // 🖱 Click
+                if (Input.GetMouseButtonDown(0))
+                    break;
+
+                // ⌨️ Tecla E
+                if (Input.GetKeyDown(KeyCode.E))
+                    break;
+
+                // ⌨️ Space (opcional)
+                if (Input.GetKeyDown(KeyCode.Space))
+                    break;
+
+                await Cysharp.Threading.Tasks.UniTask.Yield();
             }
+
+            if (_skipButton != null)
+                _skipButton.gameObject.SetActive(false);
         }
     }
 }
