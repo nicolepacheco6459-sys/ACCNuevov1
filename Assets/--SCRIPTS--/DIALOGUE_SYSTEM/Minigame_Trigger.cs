@@ -8,6 +8,12 @@ public class MinigameTrigger : MonoBehaviour, IInteractable
 
     public bool CanInteract()
     {
+        if (GameProgressManager.Instance == null)
+        {
+            Debug.LogWarning("GameProgressManager no encontrado");
+            return false;
+        }
+
         return GameProgressManager.Instance.IsMinigameUnlocked(minigameID);
     }
 

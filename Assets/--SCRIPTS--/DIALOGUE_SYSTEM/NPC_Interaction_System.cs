@@ -4,6 +4,7 @@ using System.Collections.Generic;
 
 public class NPCInteractionSystem : MonoBehaviour, IInteractable
 {
+    [Header("ID del personaje")]
     public string characterID;
 
     [Header("Dialogues por etapa")]
@@ -19,7 +20,7 @@ public class NPCInteractionSystem : MonoBehaviour, IInteractable
     private bool isInteracting = false;
 
     // =========================
-    // INTERFACE (InteractionDetector usa esto)
+    // INTERFACE
     // =========================
 
     public bool CanInteract()
@@ -29,6 +30,9 @@ public class NPCInteractionSystem : MonoBehaviour, IInteractable
 
     public void Interact()
     {
+        if (isInteracting) return;
+
+        isInteracting = true;
         HandleInteraction();
     }
 
@@ -38,16 +42,38 @@ public class NPCInteractionSystem : MonoBehaviour, IInteractable
 
     void HandleInteraction()
     {
-        if (CharacterProgress.Instance == null || AffinitySystem.Instance == null)
+        // 🔥 VALIDACIÓN IMPORTANTE
+        if (string.IsNullOrEmpty(characterID))
         {
-            Debug.LogError("Falta CharacterProgress o AffinitySystem en la escena");
+            Debug.LogError("NPC sin characterID asignado");
             return;
         }
 
-        isInteracting = true;
+        // 🔥 ASIGNAR PERSONAJE ACTUAL PARA AFINIDAD
+        if (AffinityChoiceHandler.Instance != null)
+        {
+            AffinityChoiceHandler.Instance.currentCharacterID = characterID;
+        }
 
-        int stage = CharacterProgress.Instance.GetProgress(characterID);
+        // 🔥 ACTUALIZAR UI DE AFINIDAD
+        if (AffinityUI.Instance != null)
+        {
+            AffinityUI.Instance.SetCharacter(characterID);
+        }
 
+        // 🔥 OBTENER PROGRESO
+        int stage = 0;
+
+        if (CharacterProgress.Instance != null)
+        {
+            stage = CharacterProgress.Instance.GetProgress(characterID);
+        }
+        else
+        {
+            Debug.LogWarning("CharacterProgress no encontrado");
+        }
+
+        // 🔥 SELECCIÓN DE DIÁLOGO
         if (stage == 0)
         {
             PlayDialogue(dialogueStage1);
@@ -72,6 +98,12 @@ public class NPCInteractionSystem : MonoBehaviour, IInteractable
 
     void LaunchEnding()
     {
+        if (AffinitySystem.Instance == null)
+        {
+            Debug.LogError("AffinitySystem no encontrado");
+            return;
+        }
+
         int affinity = AffinitySystem.Instance.GetAffinity(characterID);
 
         if (affinity >= 50)
@@ -83,14 +115,14 @@ public class NPCInteractionSystem : MonoBehaviour, IInteractable
     }
 
     // =========================
-    // EJECUTAR DIÁLOGO KMA
+    // EJECUTAR DIÁLOGO
     // =========================
 
     void PlayDialogue(DialogueSceneConfig dialogue)
     {
         if (KMA_DialogueManager.Instance == null)
         {
-            Debug.LogError("KMA_DialogueManager no encontrado en la escena");
+            Debug.LogError("KMA_DialogueManager no encontrado");
             return;
         }
 
@@ -108,26 +140,21 @@ public class NPCInteractionSystem : MonoBehaviour, IInteractable
             return;
         }
 
-        // 🔥 Cambia el diálogo dinámicamente
+        // 🔥 CAMBIAR DIÁLOGO DINÁMICAMENTE
         window.GetType()
             .GetField("_dialogueScenes", System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance)
             .SetValue(window, new List<DialogueSceneConfig> { dialogue });
 
-        // 🔥 Ejecuta el diálogo
+        // 🔥 INICIAR DIÁLOGO
         KMA_DialogueManager.Instance.StartDialogue();
 
-        // 🔥 Permitir volver a interactuar después (opcional)
-        Invoke(nameof(ResetInteraction), 1f);
+        // 🔥 LIBERAR INTERACCIÓN DESPUÉS DE UN MOMENTO
+        Invoke(nameof(ResetInteraction), 1.5f);
     }
 
     void ResetInteraction()
     {
         isInteracting = false;
-    }
-    public void Interaction()
-    {
-        Debug.Log("Interactuando con NPC nuevo sistema");
-        HandleInteraction();
     }
 }
 

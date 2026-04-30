@@ -3,41 +3,45 @@ using UnityEngine.UI;
 
 public class AffinityUI : MonoBehaviour
 {
+    public static AffinityUI Instance;
+
+    [Header("Personaje actual")]
     public string characterID;
+
+    [Header("Corazones")]
     public Image[] hearts;
 
-    void Start()
+    private void Awake()
     {
-        // 🔥 TEST: fuerza afinidad para verificar que se vean los corazones
-        if (AffinitySystem.Instance != null)
-        {
-            AffinitySystem.Instance.AddAffinity(characterID, 60);
-            Debug.Log("Afinidad inicial forzada para test");
-        }
-        else
-        {
-            Debug.LogError("AffinitySystem no encontrado en escena");
-        }
+        Instance = this;
+    }
+
+    public void SetCharacter(string id)
+    {
+        characterID = id;
+        UpdateHearts();
     }
 
     void Update()
     {
-        if (AffinitySystem.Instance == null)
+        UpdateHearts();
+    }
+
+    void UpdateHearts()
+    {
+        if (AffinitySystem.Instance == null || hearts == null || hearts.Length == 0)
             return;
 
-        if (hearts == null || hearts.Length == 0)
-        {
-            Debug.LogError("Hearts no asignados en AffinityUI");
+        if (string.IsNullOrEmpty(characterID))
             return;
-        }
 
         int affinity = AffinitySystem.Instance.GetAffinity(characterID);
+
         int level = affinity / 20;
 
         for (int i = 0; i < hearts.Length; i++)
         {
-            if (hearts[i] != null)
-                hearts[i].enabled = i < level;
+            hearts[i].enabled = i < level;
         }
     }
 }

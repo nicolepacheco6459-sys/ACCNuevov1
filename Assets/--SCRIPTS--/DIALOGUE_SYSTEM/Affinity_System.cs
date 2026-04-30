@@ -27,18 +27,14 @@ public class AffinitySystem : MonoBehaviour
     {
         if (string.IsNullOrEmpty(characterID))
         {
-            Debug.LogError("characterID está vacío en AddAffinity");
+            Debug.LogWarning("Intento de sumar afinidad sin characterID");
             return;
         }
 
         if (!affinity.ContainsKey(characterID))
-        {
             affinity[characterID] = 0;
-        }
 
         affinity[characterID] += amount;
-
-        Debug.Log($"Afinidad de {characterID}: {affinity[characterID]}");
     }
 
     // 📊 Obtener afinidad

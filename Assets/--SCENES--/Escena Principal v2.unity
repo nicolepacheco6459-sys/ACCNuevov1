@@ -225,7 +225,6 @@ GameObject:
   - component: {fileID: 48416208}
   - component: {fileID: 48416212}
   - component: {fileID: 48416211}
-  - component: {fileID: 48416210}
   m_Layer: 0
   m_Name: IRENE
   m_TagString: Untagged
@@ -421,25 +420,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Unity.2D.Animation.Runtime::UnityEngine.U2D.Animation.SpriteLibrary
   m_Library: []
   m_SpriteLibraryAsset: {fileID: 7108339969198208228, guid: c641c5e455fa40d4ea8be747722190bb, type: 3}
---- !u!114 &48416210
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 48416201}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6cb8bd8c3f7eec645ab3651d6fcdd4f3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::AffinityUI
-  characterID: Irene_NPC
-  hearts:
-  - {fileID: 1107952947}
-  - {fileID: 7030637}
-  - {fileID: 402678141}
-  - {fileID: 748422510}
-  - {fileID: 489708405}
 --- !u!114 &48416211
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -653,6 +633,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 825724316}
+  - {fileID: 794257616}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &86385101
@@ -666,6 +647,7 @@ GameObject:
   - component: {fileID: 86385103}
   - component: {fileID: 86385102}
   - component: {fileID: 86385104}
+  - component: {fileID: 86385105}
   m_Layer: 0
   m_Name: GAME MANAGER
   m_TagString: Untagged
@@ -712,6 +694,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d188585b5ea074842bee7f16c8f84e14, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CharacterProgress
+--- !u!114 &86385105
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 86385101}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ade7709e9463be340abc1b8e8e1bf89b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::GameProgressManager
 --- !u!1 &102418888
 GameObject:
   m_ObjectHideFlags: 0
@@ -727,7 +721,6 @@ GameObject:
   - component: {fileID: 102418894}
   - component: {fileID: 102418896}
   - component: {fileID: 102418895}
-  - component: {fileID: 102418899}
   - component: {fileID: 102418898}
   - component: {fileID: 102418897}
   m_Layer: 0
@@ -971,25 +964,6 @@ MonoBehaviour:
   goodEnding: {fileID: 11400000, guid: 0f986bb220a9fe5408658006fb0b8a84, type: 2}
   neutralEnding: {fileID: 11400000, guid: 07fdfc67c9ffa7b4d92d436997808bac, type: 2}
   badEnding: {fileID: 11400000, guid: 551f54a6b919d6048b15bcad313c26fe, type: 2}
---- !u!114 &102418899
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 102418888}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6cb8bd8c3f7eec645ab3651d6fcdd4f3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::AffinityUI
-  characterID: Skyler_NPC
-  hearts:
-  - {fileID: 1107952947}
-  - {fileID: 7030637}
-  - {fileID: 402678141}
-  - {fileID: 748422510}
-  - {fileID: 489708405}
 --- !u!1 &141145870
 GameObject:
   m_ObjectHideFlags: 0
@@ -41849,7 +41823,6 @@ GameObject:
   - component: {fileID: 496015016}
   - component: {fileID: 496015020}
   - component: {fileID: 496015019}
-  - component: {fileID: 496015018}
   m_Layer: 0
   m_Name: SAM
   m_TagString: Untagged
@@ -42045,25 +42018,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Unity.2D.Animation.Runtime::UnityEngine.U2D.Animation.SpriteLibrary
   m_Library: []
   m_SpriteLibraryAsset: {fileID: 7108339969198208228, guid: 41652be1228e1b644844bf69bc469a9a, type: 3}
---- !u!114 &496015018
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 496015009}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6cb8bd8c3f7eec645ab3651d6fcdd4f3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::AffinityUI
-  characterID: Sam_NPC
-  hearts:
-  - {fileID: 1107952947}
-  - {fileID: 7030637}
-  - {fileID: 402678141}
-  - {fileID: 748422510}
-  - {fileID: 489708405}
 --- !u!114 &496015019
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -43212,6 +43166,99 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 748422508}
   m_CullTransparentMesh: 1
+--- !u!1 &775206596
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 775206597}
+  - component: {fileID: 775206599}
+  - component: {fileID: 775206598}
+  m_Layer: 0
+  m_Name: Memory_MG
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &775206597
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 775206596}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -3.76, y: -6.45, z: 0}
+  m_LocalScale: {x: 3.3413377, y: 3.3413377, z: 3.3413377}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1895750885}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &775206598
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 775206596}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 96eb6ce8b33f5a641bab69b4658bf3ca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::MinigameTrigger
+  minigameID: Memory_MG
+  sceneName: Memorygame
+--- !u!61 &775206599
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 775206596}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Size: {x: 1, y: 1}
+  m_EdgeRadius: 0
 --- !u!1 &781059811
 GameObject:
   m_ObjectHideFlags: 0
@@ -43332,6 +43379,57 @@ MonoBehaviour:
   m_EditorClassIdentifier: Unity.InputSystem::UnityEngine.InputSystem.InputActionReference
   m_Asset: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   m_ActionId: 32b35790-4ed0-4e9a-aa41-69ac6d629449
+--- !u!1 &794257615
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 794257616}
+  - component: {fileID: 794257617}
+  m_Layer: 0
+  m_Name: AffinityUI
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &794257616
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 794257615}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 83008810}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &794257617
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 794257615}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6cb8bd8c3f7eec645ab3651d6fcdd4f3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AffinityUI
+  characterID: Irene_NPC
+  hearts:
+  - {fileID: 1107952947}
+  - {fileID: 7030637}
+  - {fileID: 402678141}
+  - {fileID: 748422510}
+  - {fileID: 489708405}
 --- !u!1001 &812362724
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -43485,7 +43583,6 @@ GameObject:
   - component: {fileID: 818473892}
   - component: {fileID: 818473891}
   - component: {fileID: 818473895}
-  - component: {fileID: 818473894}
   - component: {fileID: 818473893}
   m_Layer: 0
   m_Name: LEONARDO
@@ -43701,25 +43798,6 @@ MonoBehaviour:
   goodEnding: {fileID: 11400000, guid: 8b78175e46def4c468e5ab1e950bc47a, type: 2}
   neutralEnding: {fileID: 11400000, guid: 8c8ba40e84e498141acf0c8c3bd071af, type: 2}
   badEnding: {fileID: 11400000, guid: a8275bd2a619204428da889a8b15dd48, type: 2}
---- !u!114 &818473894
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 818473884}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6cb8bd8c3f7eec645ab3651d6fcdd4f3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::AffinityUI
-  characterID: Leonardo_NPC
-  hearts:
-  - {fileID: 1107952947}
-  - {fileID: 7030637}
-  - {fileID: 402678141}
-  - {fileID: 748422510}
-  - {fileID: 489708405}
 --- !u!50 &818473895
 Rigidbody2D:
   serializedVersion: 5
@@ -47686,7 +47764,6 @@ GameObject:
   - component: {fileID: 1567652015}
   - component: {fileID: 1567652014}
   - component: {fileID: 1567652018}
-  - component: {fileID: 1567652017}
   - component: {fileID: 1567652016}
   m_Layer: 0
   m_Name: ARIA
@@ -47902,25 +47979,6 @@ MonoBehaviour:
   goodEnding: {fileID: 11400000, guid: b24c81f4d1da3ee45a01b96893afdb64, type: 2}
   neutralEnding: {fileID: 11400000, guid: b6a99d5239338964988dfa89fcbefa12, type: 2}
   badEnding: {fileID: 11400000, guid: d9e9db5fa0e22594282bf8c9ba135dc3, type: 2}
---- !u!114 &1567652017
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1567652007}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6cb8bd8c3f7eec645ab3651d6fcdd4f3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::AffinityUI
-  characterID: Aria_NPC
-  hearts:
-  - {fileID: 1107952947}
-  - {fileID: 7030637}
-  - {fileID: 402678141}
-  - {fileID: 748422510}
-  - {fileID: 489708405}
 --- !u!50 &1567652018
 Rigidbody2D:
   serializedVersion: 5
@@ -48500,7 +48558,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_AspectMode: 0
-  m_AspectRatio: 6.5148396
+  m_AspectRatio: 6.5145807
 --- !u!114 &1713435070
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -49014,7 +49072,6 @@ GameObject:
   - component: {fileID: 1868743159}
   - component: {fileID: 1868743158}
   - component: {fileID: 1868743162}
-  - component: {fileID: 1868743161}
   - component: {fileID: 1868743160}
   m_Layer: 0
   m_Name: REX
@@ -49230,25 +49287,6 @@ MonoBehaviour:
   goodEnding: {fileID: 11400000, guid: 224ff673f8be0e2458befd3873bc1256, type: 2}
   neutralEnding: {fileID: 11400000, guid: 2cb779498326fd64b98e4f4865ce7afd, type: 2}
   badEnding: {fileID: 11400000, guid: bd843afe6c033374bbe42a825ec0cbe4, type: 2}
---- !u!114 &1868743161
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1868743151}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6cb8bd8c3f7eec645ab3651d6fcdd4f3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::AffinityUI
-  characterID: Rex_NPC
-  hearts:
-  - {fileID: 1107952947}
-  - {fileID: 7030637}
-  - {fileID: 402678141}
-  - {fileID: 748422510}
-  - {fileID: 489708405}
 --- !u!50 &1868743162
 Rigidbody2D:
   serializedVersion: 5
@@ -49474,6 +49512,38 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2133028178}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1895750884
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1895750885}
+  m_Layer: 0
+  m_Name: MINIGAMES-COLIDERS
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1895750885
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1895750884}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 23.42, y: 6.06, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 775206597}
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1928120866
 GameObject:
@@ -50744,3 +50814,4 @@ SceneRoots:
   - {fileID: 468903076}
   - {fileID: 1650945751}
   - {fileID: 86385103}
+  - {fileID: 1895750885}
