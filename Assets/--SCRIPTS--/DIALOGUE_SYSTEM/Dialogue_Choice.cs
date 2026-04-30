@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class DialogueChoiceHandler : MonoBehaviour
+public class Dialogue_ChoiceHandler : MonoBehaviour
 {
     public void AddAffinity(string characterID, int value)
     {
