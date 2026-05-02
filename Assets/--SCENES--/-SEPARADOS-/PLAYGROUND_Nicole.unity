@@ -372,6 +372,7 @@ GameObject:
   - component: {fileID: 23790740}
   - component: {fileID: 23790739}
   - component: {fileID: 23790738}
+  - component: {fileID: 23790746}
   m_Layer: 0
   m_Name: ARIA
   m_TagString: Untagged
@@ -613,6 +614,18 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
+--- !u!114 &23790746
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 23790736}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 99a830c4bcb317b4c8227a3bb7fe0dc6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::NPC_PauseMovement
 --- !u!1 &28492142
 GameObject:
   m_ObjectHideFlags: 0
@@ -85828,6 +85841,7 @@ GameObject:
   - component: {fileID: 727747491}
   - component: {fileID: 727747490}
   - component: {fileID: 727747489}
+  - component: {fileID: 727747497}
   m_Layer: 0
   m_Name: LEONARDO
   m_TagString: Untagged
@@ -86069,6 +86083,18 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
+--- !u!114 &727747497
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 727747487}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 99a830c4bcb317b4c8227a3bb7fe0dc6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::NPC_PauseMovement
 --- !u!1 &730146071
 GameObject:
   m_ObjectHideFlags: 0
@@ -86646,6 +86672,7 @@ GameObject:
   - component: {fileID: 871037146}
   - component: {fileID: 871037145}
   - component: {fileID: 871037144}
+  - component: {fileID: 871037152}
   m_Layer: 0
   m_Name: IRENE
   m_TagString: Untagged
@@ -86887,6 +86914,18 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
+--- !u!114 &871037152
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 871037142}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 99a830c4bcb317b4c8227a3bb7fe0dc6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::NPC_PauseMovement
 --- !u!1 &878132468
 GameObject:
   m_ObjectHideFlags: 0
@@ -88780,8 +88819,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 730146072}
   - {fileID: 871037143}
+  - {fileID: 730146072}
   m_Father: {fileID: 457900619}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1150898885
@@ -88801,6 +88840,7 @@ GameObject:
   - component: {fileID: 1150898889}
   - component: {fileID: 1150898888}
   - component: {fileID: 1150898887}
+  - component: {fileID: 1150898895}
   m_Layer: 0
   m_Name: REX
   m_TagString: Untagged
@@ -89042,6 +89082,18 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
+--- !u!114 &1150898895
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1150898885}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 99a830c4bcb317b4c8227a3bb7fe0dc6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::NPC_PauseMovement
 --- !u!1 &1154438737
 GameObject:
   m_ObjectHideFlags: 0
@@ -89377,8 +89429,9 @@ GameObject:
   - component: {fileID: 1290184339}
   - component: {fileID: 1290184338}
   - component: {fileID: 1290184337}
-  - component: {fileID: 1290184336}
   - component: {fileID: 1290184335}
+  - component: {fileID: 1290184336}
+  - component: {fileID: 1290184343}
   m_Layer: 0
   m_Name: SKYLER
   m_TagString: Untagged
@@ -89620,6 +89673,18 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
+--- !u!114 &1290184343
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1290184333}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 99a830c4bcb317b4c8227a3bb7fe0dc6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::NPC_PauseMovement
 --- !u!1 &1331685859
 GameObject:
   m_ObjectHideFlags: 0
@@ -90179,8 +90244,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 748071200}
   - {fileID: 1290184334}
+  - {fileID: 748071200}
   m_Father: {fileID: 457900619}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1449500124
@@ -92018,8 +92083,9 @@ GameObject:
   - component: {fileID: 1787443701}
   - component: {fileID: 1787443700}
   - component: {fileID: 1787443699}
-  - component: {fileID: 1787443698}
   - component: {fileID: 1787443697}
+  - component: {fileID: 1787443698}
+  - component: {fileID: 1787443705}
   m_Layer: 0
   m_Name: SAM
   m_TagString: Untagged
@@ -92261,6 +92327,18 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
+--- !u!114 &1787443705
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1787443695}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 99a830c4bcb317b4c8227a3bb7fe0dc6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::NPC_PauseMovement
 --- !u!1 &1789667666
 GameObject:
   m_ObjectHideFlags: 0
