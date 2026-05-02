@@ -32,6 +32,9 @@ public class MapController_Manual : MonoBehaviour
 
     public void HighlighArea(string areaName)
     {
+        if (string.IsNullOrEmpty(areaName))
+            return;
+
         foreach (Image area in mapImages)
         {
             area.color = dimmedColour;
@@ -43,11 +46,9 @@ public class MapController_Manual : MonoBehaviour
         {
             currentArea.color = highlighColour;
 
-            playerIconTransform.position = currentArea.GetComponent<RectTransform>().position;
+            if (playerIconTransform != null)
+                playerIconTransform.position = currentArea.GetComponent<RectTransform>().position;
         }
-        else
-        {
-            Debug.LogWarning($"Area '{areaName}' not found in map images.");
-        }
+        // Silenciosamente ignora areas que no existen en este mapa
     }
 }

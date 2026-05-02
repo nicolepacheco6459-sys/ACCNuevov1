@@ -24,7 +24,7 @@ public class NPC_PauseMovement : MonoBehaviour
             waypointMover.enabled = !shouldPause;
         }
 
-        if (rb2D != null && shouldPause)
+        if (rb2D != null && shouldPause && rb2D.bodyType != RigidbodyType2D.Static)
         {
             rb2D.linearVelocity = Vector2.zero;
         }
