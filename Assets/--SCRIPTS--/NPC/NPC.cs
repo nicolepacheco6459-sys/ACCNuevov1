@@ -10,6 +10,8 @@ public class NPC : MonoBehaviour, IInteractable
     private int dialogueIndex;
     private bool isTyping, isDialogueActive;
 
+    public bool IsDialogueActive => isDialogueActive;
+
     private void Start()
     {
         dialogueUI = DialogueController.Instance;
