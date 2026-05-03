@@ -32,7 +32,7 @@ namespace KissMyAssets.VisualNovelCore.Runtime
             {
                 OptionView optionView = Instantiate(_optionPrefab, _optionLayoutGroup.transform);
 
-                // 🔥 LLAMADA CORRECTA (SIN INDEX)
+                // LLAMADA CORRECTA (SIN INDEX)
                 tasks.Add(optionView.WaitForChoice(option));
 
                 _spawnedOptions.Add(optionView);
