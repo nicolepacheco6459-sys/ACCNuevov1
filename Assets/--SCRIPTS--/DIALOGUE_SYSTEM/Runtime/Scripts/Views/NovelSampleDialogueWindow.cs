@@ -32,6 +32,24 @@ namespace KissMyAssets.VisualNovelCore.Runtime
                 _choiceView.gameObject.SetActive(false);
 
             await PlayDialogueList(_dialogueScenes);
+
+            // CERRAR DIÁLOGO AL FINAL
+            CloseDialogue();
+        }
+        void CloseDialogue()
+        {
+            Debug.Log("🔴 Cerrando diálogo");
+
+            if (_replicaView != null)
+                _replicaView.gameObject.SetActive(false);
+
+            if (_choiceView != null)
+                _choiceView.gameObject.SetActive(false);
+
+            if (_skipButton != null)
+                _skipButton.gameObject.SetActive(false);
+
+            gameObject.SetActive(false);
         }
 
         // =========================
