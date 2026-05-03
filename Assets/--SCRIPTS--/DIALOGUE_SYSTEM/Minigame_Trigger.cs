@@ -14,14 +14,14 @@ public class MinigameTrigger : MonoBehaviour, IInteractable
             return false;
         }
 
-        return GameProgressManager.Instance.IsMinigameUnlocked(minigameID);
+        return GameProgressManager.Instance.IsUnlocked(minigameID);
     }
 
     public void Interact()
     {
         if (!CanInteract())
         {
-            Debug.Log("Minijuego aún bloqueado");
+            Debug.Log("Minijuego bloqueado");
             return;
         }
 

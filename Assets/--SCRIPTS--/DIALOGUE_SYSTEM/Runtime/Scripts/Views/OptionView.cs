@@ -11,51 +11,45 @@ namespace KissMyAssets.VisualNovelCore.Runtime
         [SerializeField] private Button _button;
         [SerializeField] private TextMeshProUGUI _text;
 
-        public async UniTask<Guid> WaitForChoice(ChoiceOptionModel optionModel, int optionIndex)
+        public async UniTask<Guid> WaitForChoice(ChoiceOptionModel optionModel)
         {
             var completionSource = new UniTaskCompletionSource<Guid>();
 
-            // Texto visible de la opción
             _text.text = optionModel.DialogueText.Text;
 
-            Action onClickAction = () =>
+            _button.onClick.RemoveAllListeners();
+
+            _button.onClick.AddListener(() =>
             {
                 Debug.Log("Opción elegida: " + _text.text);
 
-                // 🔥 AFINIDAD SEGÚN POSICIÓN
-                int affinity = GetAffinityByIndex(optionIndex);
+                int affinity = GetAffinityByText(_text.text);
 
-                // 🔥 APLICAR AFINIDAD
                 if (AffinityChoiceHandler.Instance != null)
                 {
                     AffinityChoiceHandler.Instance.ApplyChoiceValue(affinity);
                 }
 
-                // 🔥 CONTINUAR DIÁLOGO
                 completionSource.TrySetResult(optionModel.RelatedNodeId);
-            };
+            });
 
-            _button.onClick.AddListener(onClickAction.Invoke);
-
-            var result = await completionSource.Task;
-
-            _button.onClick.RemoveListener(onClickAction.Invoke);
-
-            return result;
+            return await completionSource.Task;
         }
 
-        // =========================
-        // AFINIDAD POR ÍNDICE
-        // =========================
-        private int GetAffinityByIndex(int index)
+        private int GetAffinityByText(string text)
         {
-            switch (index)
-            {
-                case 0: return 10;   // buena
-                case 1: return 5;    // neutral
-                case 2: return -5;   // mala
-                default: return 0;
-            }
+            text = text.ToLower();
+
+            if (text.Contains("sí") || text.Contains("claro"))
+                return 10;
+
+            if (text.Contains("creo") || text.Contains("tal vez"))
+                return 5;
+
+            if (text.Contains("no") || text.Contains("exager"))
+                return -5;
+
+            return 0;
         }
     }
 }

@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using KissMyAssets.VisualNovelCore.Runtime;
+using Cysharp.Threading.Tasks;
 
 public class KMA_DialogueManager : MonoBehaviour
 {
@@ -7,12 +8,14 @@ public class KMA_DialogueManager : MonoBehaviour
 
     public NovelSampleDialogueWindow dialogueWindow;
 
+    public bool IsPlaying { get; private set; } = false;
+
     private void Awake()
     {
         Instance = this;
     }
 
-    public async void StartDialogue()
+    public async UniTask StartDialogueAsync()
     {
         if (dialogueWindow == null)
         {
@@ -22,6 +25,18 @@ public class KMA_DialogueManager : MonoBehaviour
 
         Debug.Log("▶ Iniciando diálogo KMA");
 
+        IsPlaying = true;
+
         await dialogueWindow.PlayDialogues();
+
+        IsPlaying = false;
+
+        Debug.Log("✔ Diálogo terminado");
+    }
+
+    // Mantener compatibilidad con tu sistema actual
+    public void StartDialogue()
+    {
+        StartDialogueAsync().Forget();
     }
 }
