@@ -3464,7 +3464,7 @@ GameObject:
   - component: {fileID: 351410608}
   - component: {fileID: 351410607}
   m_Layer: 0
-  m_Name: PLAYER
+  m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -29476,9 +29476,9 @@ MonoBehaviour:
   goToMinigame1: {fileID: 0}
   goToMinigame2: {fileID: 0}
   goToMinigame3: {fileID: 0}
-  minigame1ID: 
-  minigame2ID: 
-  minigame3ID: 
+  minigame1ID: MG_Music
+  minigame2ID: MG_Music
+  minigame3ID: MG_Music
   goodEnding: {fileID: 11400000, guid: 224ff673f8be0e2458befd3873bc1256, type: 2}
   neutralEnding: {fileID: 11400000, guid: 2cb779498326fd64b98e4f4865ce7afd, type: 2}
   badEnding: {fileID: 11400000, guid: bd843afe6c033374bbe42a825ec0cbe4, type: 2}
@@ -94468,7 +94468,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 96eb6ce8b33f5a641bab69b4658bf3ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MinigameTrigger
-  minigameID: Memory_MG
+  minigameID: MG_Memory
   sceneName: MG_Memory
 --- !u!61 &2111652517
 BoxCollider2D:

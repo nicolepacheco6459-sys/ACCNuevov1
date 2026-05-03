@@ -49,13 +49,14 @@ public class NPCInteractionSystem : MonoBehaviour, IInteractable
             return;
         }
 
-        // Afinidad + UI
         if (AffinityChoiceHandler.Instance != null)
             AffinityChoiceHandler.Instance.currentCharacterID = characterID;
 
         AffinityUI.Instance?.SetCharacter(characterID);
 
         int stage = CharacterProgress.Instance.GetProgress(characterID);
+
+        Debug.Log($"📊 {characterID} está en stage {stage}");
 
         switch (stage)
         {
@@ -66,17 +67,23 @@ public class NPCInteractionSystem : MonoBehaviour, IInteractable
 
                 if (!GameProgressManager.Instance.IsUnlocked(minigame1ID))
                 {
-                    PlayDialogue(dialogueStage1, () =>
-                    {
-                        GameProgressManager.Instance.UnlockMinigame(minigame1ID);
-                    });
+                    Debug.Log("🎬 Iniciando diálogo Stage 1");
+
+                    PlayDialogue(dialogueStage1);
+
+                    // 🔥 DESBLOQUEO SEGURO
+                    StartCoroutine(UnlockAfterDialogue(minigame1ID));
                 }
                 else if (!GameProgressManager.Instance.IsCompleted(minigame1ID))
                 {
+                    Debug.Log("📍 Mostrando diálogo de ir al minijuego 1");
+
                     PlayDialogue(goToMinigame1);
                 }
                 else
                 {
+                    Debug.Log("⬆️ Avanzando a Stage 1");
+
                     CharacterProgress.Instance.IncreaseProgress(characterID);
                     ResetInteraction();
                 }
@@ -90,17 +97,22 @@ public class NPCInteractionSystem : MonoBehaviour, IInteractable
 
                 if (!GameProgressManager.Instance.IsUnlocked(minigame2ID))
                 {
-                    PlayDialogue(dialogueStage2, () =>
-                    {
-                        GameProgressManager.Instance.UnlockMinigame(minigame2ID);
-                    });
+                    Debug.Log("🎬 Iniciando diálogo Stage 2");
+
+                    PlayDialogue(dialogueStage2);
+
+                    StartCoroutine(UnlockAfterDialogue(minigame2ID));
                 }
                 else if (!GameProgressManager.Instance.IsCompleted(minigame2ID))
                 {
+                    Debug.Log("📍 Mostrando diálogo de ir al minijuego 2");
+
                     PlayDialogue(goToMinigame2);
                 }
                 else
                 {
+                    Debug.Log("⬆️ Avanzando a Stage 2");
+
                     CharacterProgress.Instance.IncreaseProgress(characterID);
                     ResetInteraction();
                 }
@@ -114,17 +126,22 @@ public class NPCInteractionSystem : MonoBehaviour, IInteractable
 
                 if (!GameProgressManager.Instance.IsUnlocked(minigame3ID))
                 {
-                    PlayDialogue(dialogueStage3, () =>
-                    {
-                        GameProgressManager.Instance.UnlockMinigame(minigame3ID);
-                    });
+                    Debug.Log("🎬 Iniciando diálogo Stage 3");
+
+                    PlayDialogue(dialogueStage3);
+
+                    StartCoroutine(UnlockAfterDialogue(minigame3ID));
                 }
                 else if (!GameProgressManager.Instance.IsCompleted(minigame3ID))
                 {
+                    Debug.Log("📍 Mostrando diálogo de ir al minijuego 3");
+
                     PlayDialogue(goToMinigame3);
                 }
                 else
                 {
+                    Debug.Log("⬆️ Avanzando a FINAL");
+
                     CharacterProgress.Instance.IncreaseProgress(characterID);
                     ResetInteraction();
                 }
@@ -141,12 +158,25 @@ public class NPCInteractionSystem : MonoBehaviour, IInteractable
     }
 
     // =========================
+    // DESBLOQUEO SEGURO
+    // =========================
+    IEnumerator UnlockAfterDialogue(string minigameID)
+    {
+        yield return new WaitForSeconds(1.5f);
+
+        Debug.Log("🔥 DESBLOQUEANDO MINIJUEGO: " + minigameID);
+
+        GameProgressManager.Instance.UnlockMinigame(minigameID);
+    }
+
+    // =========================
     // FINALES
     // =========================
-
     void LaunchEnding()
     {
         int affinity = AffinitySystem.Instance.GetAffinity(characterID);
+
+        Debug.Log($"💘 Afinidad final: {affinity}");
 
         if (affinity >= 50)
             PlayDialogue(goodEnding);
@@ -161,8 +191,7 @@ public class NPCInteractionSystem : MonoBehaviour, IInteractable
     // =========================
     // DIÁLOGO
     // =========================
-
-    void PlayDialogue(DialogueSceneConfig dialogue, System.Action onComplete = null)
+    void PlayDialogue(DialogueSceneConfig dialogue)
     {
         if (KMA_DialogueManager.Instance == null)
         {
@@ -192,25 +221,6 @@ public class NPCInteractionSystem : MonoBehaviour, IInteractable
             .SetValue(window, new List<DialogueSceneConfig> { dialogue });
 
         KMA_DialogueManager.Instance.StartDialogue();
-
-        //  Esperar a que termine el diálogo
-        StartCoroutine(WaitForDialogueEnd(onComplete));
-    }
-
-    IEnumerator WaitForDialogueEnd(System.Action onComplete)
-    {
-        // Espera a que el diálogo INICIE
-        yield return new WaitForSeconds(0.2f);
-
-        // Espera a que el diálogo termine realmente (cuando UI se oculta)
-        while (KMA_DialogueManager.Instance != null &&
-               KMA_DialogueManager.Instance.dialogueWindow.gameObject.activeSelf)
-        {
-            yield return null;
-        }
-
-        onComplete?.Invoke();
-        ResetInteraction();
     }
 
     void ResetInteraction()
