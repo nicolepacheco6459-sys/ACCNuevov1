@@ -3,12 +3,16 @@
   "WorkspaceRootPath": "C:\\Users\\PC\\OneDrive\\Documentos\\GitHub\\ACCNuevov1\\ACCNuevov1\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{F4CE6D2E-657E-ED62-8B09-60BDE3224795}|Assembly-CSharp.csproj|c:\\users\\pc\\onedrive\\documentos\\github\\accnuevov1\\accnuevov1\\assets\\--scripts--\\dialogue_system\\runtime\\scripts\\views\\novelsampledialoguewindow.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F4CE6D2E-657E-ED62-8B09-60BDE3224795}|Assembly-CSharp.csproj|solutionrelative:assets\\--scripts--\\dialogue_system\\runtime\\scripts\\views\\novelsampledialoguewindow.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{F4CE6D2E-657E-ED62-8B09-60BDE3224795}|Assembly-CSharp.csproj|C:\\Users\\PC\\OneDrive\\Documentos\\GitHub\\ACCNuevov1\\ACCNuevov1\\assets\\--scripts--\\dialogue_system\\npc_interaction_system.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{F4CE6D2E-657E-ED62-8B09-60BDE3224795}|Assembly-CSharp.csproj|solutionrelative:assets\\--scripts--\\dialogue_system\\npc_interaction_system.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F4CE6D2E-657E-ED62-8B09-60BDE3224795}|Assembly-CSharp.csproj|C:\\Users\\PC\\OneDrive\\Documentos\\GitHub\\ACCNuevov1\\ACCNuevov1\\assets\\--scripts--\\dialogue_system\\minigame_trigger.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F4CE6D2E-657E-ED62-8B09-60BDE3224795}|Assembly-CSharp.csproj|solutionrelative:assets\\--scripts--\\dialogue_system\\minigame_trigger.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F4CE6D2E-657E-ED62-8B09-60BDE3224795}|Assembly-CSharp.csproj|c:\\users\\pc\\onedrive\\documentos\\github\\accnuevov1\\accnuevov1\\assets\\--scripts--\\dialogue_system\\runtime\\scripts\\views\\novelsampledialoguewindow.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F4CE6D2E-657E-ED62-8B09-60BDE3224795}|Assembly-CSharp.csproj|solutionrelative:assets\\--scripts--\\dialogue_system\\runtime\\scripts\\views\\novelsampledialoguewindow.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{F4CE6D2E-657E-ED62-8B09-60BDE3224795}|Assembly-CSharp.csproj|C:\\Users\\PC\\OneDrive\\Documentos\\GitHub\\ACCNuevov1\\ACCNuevov1\\assets\\--scripts--\\dialogue_system\\runtime\\scripts\\views\\optionview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -25,10 +29,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{F4CE6D2E-657E-ED62-8B09-60BDE3224795}|Assembly-CSharp.csproj|C:\\Users\\PC\\OneDrive\\Documentos\\GitHub\\ACCNuevov1\\ACCNuevov1\\assets\\--scripts--\\dialogue_system\\npc_dialogue_controller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{F4CE6D2E-657E-ED62-8B09-60BDE3224795}|Assembly-CSharp.csproj|solutionrelative:assets\\--scripts--\\dialogue_system\\npc_dialogue_controller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F4CE6D2E-657E-ED62-8B09-60BDE3224795}|Assembly-CSharp.csproj|C:\\Users\\PC\\OneDrive\\Documentos\\GitHub\\ACCNuevov1\\ACCNuevov1\\assets\\--scripts--\\dialogue_system\\minigame_trigger.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F4CE6D2E-657E-ED62-8B09-60BDE3224795}|Assembly-CSharp.csproj|solutionrelative:assets\\--scripts--\\dialogue_system\\minigame_trigger.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{F4CE6D2E-657E-ED62-8B09-60BDE3224795}|Assembly-CSharp.csproj|C:\\Users\\PC\\OneDrive\\Documentos\\GitHub\\ACCNuevov1\\ACCNuevov1\\assets\\--scripts--\\dialogue_system\\minigame_result.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -106,17 +106,17 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "NPC_Interaction_System.cs",
               "DocumentMoniker": "C:\\Users\\PC\\OneDrive\\Documentos\\GitHub\\ACCNuevov1\\ACCNuevov1\\Assets\\--SCRIPTS--\\DIALOGUE_SYSTEM\\NPC_Interaction_System.cs",
               "RelativeDocumentMoniker": "Assets\\--SCRIPTS--\\DIALOGUE_SYSTEM\\NPC_Interaction_System.cs",
               "ToolTip": "C:\\Users\\PC\\OneDrive\\Documentos\\GitHub\\ACCNuevov1\\ACCNuevov1\\Assets\\--SCRIPTS--\\DIALOGUE_SYSTEM\\NPC_Interaction_System.cs",
               "RelativeToolTip": "Assets\\--SCRIPTS--\\DIALOGUE_SYSTEM\\NPC_Interaction_System.cs",
-              "ViewState": "AgIAADUAAAAAAAAAAAAuwEQAAAAbAAAAAAAAAA==",
+              "ViewState": "AgIAAMsAAAAAAAAAAAAAwOUAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-04-24T22:08:39.37Z",
               "EditorCaption": ""
@@ -147,7 +147,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
               "Title": "NovelSampleDialogueWindow.cs",
               "DocumentMoniker": "C:\\Users\\PC\\OneDrive\\Documentos\\GitHub\\ACCNuevov1\\ACCNuevov1\\Assets\\--SCRIPTS--\\DIALOGUE_SYSTEM\\Runtime\\Scripts\\Views\\NovelSampleDialogueWindow.cs",
               "RelativeDocumentMoniker": "Assets\\--SCRIPTS--\\DIALOGUE_SYSTEM\\Runtime\\Scripts\\Views\\NovelSampleDialogueWindow.cs",
@@ -172,7 +172,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "ChoiceView.cs",
               "DocumentMoniker": "C:\\Users\\PC\\OneDrive\\Documentos\\GitHub\\ACCNuevov1\\ACCNuevov1\\Assets\\--SCRIPTS--\\DIALOGUE_SYSTEM\\Runtime\\Scripts\\Views\\ChoiceView.cs",
               "RelativeDocumentMoniker": "Assets\\--SCRIPTS--\\DIALOGUE_SYSTEM\\Runtime\\Scripts\\Views\\ChoiceView.cs",
@@ -184,7 +184,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "OptionView.cs",
               "DocumentMoniker": "C:\\Users\\PC\\OneDrive\\Documentos\\GitHub\\ACCNuevov1\\ACCNuevov1\\Assets\\--SCRIPTS--\\DIALOGUE_SYSTEM\\Runtime\\Scripts\\Views\\OptionView.cs",
               "RelativeDocumentMoniker": "Assets\\--SCRIPTS--\\DIALOGUE_SYSTEM\\Runtime\\Scripts\\Views\\OptionView.cs",
@@ -220,19 +220,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 1,
               "Title": "Minigame_Trigger.cs",
               "DocumentMoniker": "C:\\Users\\PC\\OneDrive\\Documentos\\GitHub\\ACCNuevov1\\ACCNuevov1\\Assets\\--SCRIPTS--\\DIALOGUE_SYSTEM\\Minigame_Trigger.cs",
               "RelativeDocumentMoniker": "Assets\\--SCRIPTS--\\DIALOGUE_SYSTEM\\Minigame_Trigger.cs",
               "ToolTip": "C:\\Users\\PC\\OneDrive\\Documentos\\GitHub\\ACCNuevov1\\ACCNuevov1\\Assets\\--SCRIPTS--\\DIALOGUE_SYSTEM\\Minigame_Trigger.cs",
               "RelativeToolTip": "Assets\\--SCRIPTS--\\DIALOGUE_SYSTEM\\Minigame_Trigger.cs",
-              "ViewState": "AgIAAAkAAAAAAAAAAAAQwB4AAAABAAAAAAAAAA==",
+              "ViewState": "AgIAAB4AAAAAAAAAAAAAADUAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-30T14:32:14.806Z"
+              "WhenOpened": "2026-04-30T14:32:14.806Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 6,
               "Title": "NPC_Dialogue_Controller.cs",
               "DocumentMoniker": "C:\\Users\\PC\\OneDrive\\Documentos\\GitHub\\ACCNuevov1\\ACCNuevov1\\Assets\\--SCRIPTS--\\DIALOGUE_SYSTEM\\NPC_Dialogue_Controller.cs",
               "RelativeDocumentMoniker": "Assets\\--SCRIPTS--\\DIALOGUE_SYSTEM\\NPC_Dialogue_Controller.cs",
@@ -244,7 +245,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 5,
               "Title": "KMA_DialogueManager.cs",
               "DocumentMoniker": "C:\\Users\\PC\\OneDrive\\Documentos\\GitHub\\ACCNuevov1\\ACCNuevov1\\Assets\\--SCRIPTS--\\DIALOGUE_SYSTEM\\KMA_DialogueManager.cs",
               "RelativeDocumentMoniker": "Assets\\--SCRIPTS--\\DIALOGUE_SYSTEM\\KMA_DialogueManager.cs",

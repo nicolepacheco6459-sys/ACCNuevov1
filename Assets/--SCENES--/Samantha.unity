@@ -4265,11 +4265,11 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 769754428}
   - {fileID: 1827991142}
   - {fileID: 1483567886}
   - {fileID: 40563325}
   - {fileID: 1559845463}
-  - {fileID: 769754428}
   m_Father: {fileID: 16197428}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -4290,7 +4290,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _dialogueScenes:
-  - {fileID: 11400000, guid: 52c51590be125524f988ddb23425104b, type: 2}
+  - {fileID: 11400000, guid: 191126ff90af8094ba103042ef7131e6, type: 2}
   _background: {fileID: 769754429}
   _skipButton: {fileID: 40563326}
   _actorsView: {fileID: 1559845464}
@@ -5036,6 +5036,8 @@ GameObject:
   - component: {fileID: 769754428}
   - component: {fileID: 769754430}
   - component: {fileID: 769754429}
+  - component: {fileID: 769754432}
+  - component: {fileID: 769754431}
   m_Layer: 5
   m_Name: Background_empty
   m_TagString: Untagged
@@ -5075,7 +5077,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -5100,6 +5102,33 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 769754427}
   m_CullTransparentMesh: 1
+--- !u!114 &769754431
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 769754427}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a7ecf0c58a865b44ab850bd4f059e759, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::KissMyAssets.VisualNovelCore.Runtime.SmartBackgroundView
+  _fitInParent: 0
+--- !u!114 &769754432
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 769754427}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86710e43de46f6f4bac7c8e50813a599, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.AspectRatioFitter
+  m_AspectMode: 0
+  m_AspectRatio: 1
 --- !u!1 &770166172
 GameObject:
   m_ObjectHideFlags: 0
@@ -42811,14 +42840,14 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1559845462}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a1deaf555be08a14496489d4b7319f09, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::KissMyAssets.VisualNovelCore.Runtime.ActorsView
-  _leftActor: {fileID: 769754429}
-  _centralActor: {fileID: 769754429}
-  _rightActor: {fileID: 769754429}
+  _leftActor: {fileID: 1857491628}
+  _centralActor: {fileID: 1857491628}
+  _rightActor: {fileID: 1857491628}
 --- !u!1 &1564135077
 GameObject:
   m_ObjectHideFlags: 0

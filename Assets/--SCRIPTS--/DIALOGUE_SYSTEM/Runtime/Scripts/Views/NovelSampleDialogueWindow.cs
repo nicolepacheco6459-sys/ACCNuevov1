@@ -129,10 +129,29 @@ namespace KissMyAssets.VisualNovelCore.Runtime
 
         public async UniTask TryToChangeBackground(BackgroundHolderModel backgroundModel)
         {
-            if (_background != null)
-                _background.sprite = backgroundModel.BackgroundSprite;
+            if (_background == null) return;
 
-            await UniTask.Yield();
+            var sprite = backgroundModel.BackgroundSprite;
+
+            Debug.Log("🎨 Aplicando background: " + (sprite != null ? sprite.name : "NULL"));
+
+            _background.sprite = sprite;
+
+            if (sprite != null)
+            {
+                _background.enabled = true;
+                _background.color = Color.white;
+
+                //  asegura tamaño correcto
+                _background.SetNativeSize();
+            }
+            else
+            {
+                // evita pantalla blanca
+                _background.enabled = false;
+            }
+
+            await Cysharp.Threading.Tasks.UniTask.Yield();
         }
 
         // =========================
