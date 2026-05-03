@@ -864,7 +864,7 @@ GameObject:
   - component: {fileID: 1027835188}
   - component: {fileID: 1027835187}
   m_Layer: 5
-  m_Name: Image
+  m_Name: Fondo
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1089,12 +1089,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 1847444329}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 39b301d7226445c47bdfbc2f6f349d46, type: 3}
+  m_Script: {fileID: 11500000, guid: 94ddb72d2fcd16344a381ef702117585, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::ScoreManager
-  hitSFX: {fileID: 0}
-  missSFX: {fileID: 0}
-  scoreText: {fileID: 0}
+  m_EditorClassIdentifier: Assembly-CSharp::ScoreManager_CARDS
+  timeForLevelToComplete: 60
+  timerImage: {fileID: 1868674149}
+  timeText: {fileID: 909651224}
 --- !u!1 &1868674147
 GameObject:
   m_ObjectHideFlags: 0
