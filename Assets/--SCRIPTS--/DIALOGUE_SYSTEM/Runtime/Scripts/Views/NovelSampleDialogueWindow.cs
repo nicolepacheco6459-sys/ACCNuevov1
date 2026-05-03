@@ -23,7 +23,6 @@ namespace KissMyAssets.VisualNovelCore.Runtime
         // =========================
         public async UniTask PlayDialogues()
         {
-            // 🔥 ASEGURAR QUE TODO EL UI ESTÉ ACTIVO
             gameObject.SetActive(true);
 
             if (_replicaView != null)
@@ -89,7 +88,6 @@ namespace KissMyAssets.VisualNovelCore.Runtime
 
             var result = await _choiceView.ShowChoice(showInfo);
 
-            // 🔥 NO apagar opciones automáticamente
             return result;
         }
 
@@ -103,8 +101,6 @@ namespace KissMyAssets.VisualNovelCore.Runtime
 
             await _replicaView.ShowReplica(showInfo);
             await WaitForSkip();
-
-            // 🔥 NO apagar el panel
         }
 
         public async UniTask TryToChageActors(ActorsHolderModel actorsModel)
@@ -121,30 +117,39 @@ namespace KissMyAssets.VisualNovelCore.Runtime
             await UniTask.Yield();
         }
 
+        // =========================
+        // FIX: WAIT FOR SKIP (SIN BLOQUEAR CLICK)
+        // =========================
         public async UniTask WaitForSkip()
         {
-            if (_skipButton != null)
-                _skipButton.gameObject.SetActive(true);
+            if (_skipButton == null)
+                return;
 
-            while (true)
+            _skipButton.gameObject.SetActive(true);
+
+            var taskSource = new UniTaskCompletionSource();
+
+            void OnSkip()
             {
-                // 🖱 Click
-                if (Input.GetMouseButtonDown(0))
-                    break;
-
-                // ⌨️ Tecla E
-                if (Input.GetKeyDown(KeyCode.E))
-                    break;
-
-                // ⌨️ Space (opcional)
-                if (Input.GetKeyDown(KeyCode.Space))
-                    break;
-
-                await Cysharp.Threading.Tasks.UniTask.Yield();
+                taskSource.TrySetResult();
             }
 
-            if (_skipButton != null)
-                _skipButton.gameObject.SetActive(false);
+            _skipButton.onClick.AddListener(OnSkip);
+
+            // También permitir teclado sin romper UI
+            while (!taskSource.Task.Status.IsCompleted())
+            {
+                if (Input.GetKeyDown(KeyCode.E) || Input.GetKeyDown(KeyCode.Space))
+                {
+                    taskSource.TrySetResult();
+                    break;
+                }
+
+                await UniTask.Yield();
+            }
+
+            _skipButton.onClick.RemoveListener(OnSkip);
+            _skipButton.gameObject.SetActive(false);
         }
     }
 }
