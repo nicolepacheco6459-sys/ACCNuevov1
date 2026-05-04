@@ -5,7 +5,8 @@ public class GameProgressManager : MonoBehaviour
 {
     public static GameProgressManager Instance;
 
-    private Dictionary<string, bool> unlockedMinigames = new();
+    private Dictionary<string, bool> unlocked = new();
+    private Dictionary<string, bool> completed = new();
 
     private void Awake()
     {
@@ -14,12 +15,21 @@ public class GameProgressManager : MonoBehaviour
 
     public void UnlockMinigame(string id)
     {
-        unlockedMinigames[id] = true;
-        Debug.Log("Minijuego desbloqueado: " + id);
+        unlocked[id] = true;
     }
 
-    public bool IsMinigameUnlocked(string id)
+    public void CompleteMinigame(string id)
     {
-        return unlockedMinigames.ContainsKey(id) && unlockedMinigames[id];
+        completed[id] = true;
+    }
+
+    public bool IsUnlocked(string id)
+    {
+        return unlocked.ContainsKey(id) && unlocked[id];
+    }
+
+    public bool IsCompleted(string id)
+    {
+        return completed.ContainsKey(id) && completed[id];
     }
 }

@@ -23,7 +23,6 @@ namespace KissMyAssets.VisualNovelCore.Runtime
         // =========================
         public async UniTask PlayDialogues()
         {
-            // 🔥 ASEGURAR QUE TODO EL UI ESTÉ ACTIVO
             gameObject.SetActive(true);
 
             if (_replicaView != null)
@@ -33,6 +32,24 @@ namespace KissMyAssets.VisualNovelCore.Runtime
                 _choiceView.gameObject.SetActive(false);
 
             await PlayDialogueList(_dialogueScenes);
+
+            // CERRAR DIÁLOGO AL FINAL
+            CloseDialogue();
+        }
+        void CloseDialogue()
+        {
+            Debug.Log("🔴 Cerrando diálogo");
+
+            if (_replicaView != null)
+                _replicaView.gameObject.SetActive(false);
+
+            if (_choiceView != null)
+                _choiceView.gameObject.SetActive(false);
+
+            if (_skipButton != null)
+                _skipButton.gameObject.SetActive(false);
+
+            gameObject.SetActive(false);
         }
 
         // =========================
@@ -89,7 +106,6 @@ namespace KissMyAssets.VisualNovelCore.Runtime
 
             var result = await _choiceView.ShowChoice(showInfo);
 
-            // 🔥 NO apagar opciones automáticamente
             return result;
         }
 
@@ -103,8 +119,6 @@ namespace KissMyAssets.VisualNovelCore.Runtime
 
             await _replicaView.ShowReplica(showInfo);
             await WaitForSkip();
-
-            // 🔥 NO apagar el panel
         }
 
         public async UniTask TryToChageActors(ActorsHolderModel actorsModel)
@@ -115,36 +129,64 @@ namespace KissMyAssets.VisualNovelCore.Runtime
 
         public async UniTask TryToChangeBackground(BackgroundHolderModel backgroundModel)
         {
-            if (_background != null)
-                _background.sprite = backgroundModel.BackgroundSprite;
+            if (_background == null) return;
 
-            await UniTask.Yield();
-        }
+            var sprite = backgroundModel.BackgroundSprite;
 
-        public async UniTask WaitForSkip()
-        {
-            if (_skipButton != null)
-                _skipButton.gameObject.SetActive(true);
+            Debug.Log("🎨 Aplicando background: " + (sprite != null ? sprite.name : "NULL"));
 
-            while (true)
+            _background.sprite = sprite;
+
+            if (sprite != null)
             {
-                // 🖱 Click
-                if (Input.GetMouseButtonDown(0))
-                    break;
+                _background.enabled = true;
+                _background.color = Color.white;
 
-                // ⌨️ Tecla E
-                if (Input.GetKeyDown(KeyCode.E))
-                    break;
-
-                // ⌨️ Space (opcional)
-                if (Input.GetKeyDown(KeyCode.Space))
-                    break;
-
-                await Cysharp.Threading.Tasks.UniTask.Yield();
+                //  asegura tamaño correcto
+                _background.SetNativeSize();
+            }
+            else
+            {
+                // evita pantalla blanca
+                _background.enabled = false;
             }
 
-            if (_skipButton != null)
-                _skipButton.gameObject.SetActive(false);
+            await Cysharp.Threading.Tasks.UniTask.Yield();
+        }
+
+        // =========================
+        // FIX: WAIT FOR SKIP (SIN BLOQUEAR CLICK)
+        // =========================
+        public async UniTask WaitForSkip()
+        {
+            if (_skipButton == null)
+                return;
+
+            _skipButton.gameObject.SetActive(true);
+
+            var taskSource = new UniTaskCompletionSource();
+
+            void OnSkip()
+            {
+                taskSource.TrySetResult();
+            }
+
+            _skipButton.onClick.AddListener(OnSkip);
+
+            // También permitir teclado sin romper UI
+            while (!taskSource.Task.Status.IsCompleted())
+            {
+                if (Input.GetKeyDown(KeyCode.E) || Input.GetKeyDown(KeyCode.Space))
+                {
+                    taskSource.TrySetResult();
+                    break;
+                }
+
+                await UniTask.Yield();
+            }
+
+            _skipButton.onClick.RemoveListener(OnSkip);
+            _skipButton.gameObject.SetActive(false);
         }
     }
 }

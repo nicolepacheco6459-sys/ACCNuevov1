@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using KissMyAssets.VisualNovelCore.Runtime;
+using System.Collections;
 using System.Collections.Generic;
 
 public class NPCInteractionSystem : MonoBehaviour, IInteractable
@@ -7,10 +8,20 @@ public class NPCInteractionSystem : MonoBehaviour, IInteractable
     [Header("ID del personaje")]
     public string characterID;
 
-    [Header("Dialogues por etapa")]
+    [Header("Dialogos principales")]
     public DialogueSceneConfig dialogueStage1;
     public DialogueSceneConfig dialogueStage2;
     public DialogueSceneConfig dialogueStage3;
+
+    [Header("Dialogos de minijuego")]
+    public DialogueSceneConfig goToMinigame1;
+    public DialogueSceneConfig goToMinigame2;
+    public DialogueSceneConfig goToMinigame3;
+
+    [Header("Minijuegos")]
+    public string minigame1ID;
+    public string minigame2ID;
+    public string minigame3ID;
 
     [Header("Finales")]
     public DialogueSceneConfig goodEnding;
@@ -19,14 +30,7 @@ public class NPCInteractionSystem : MonoBehaviour, IInteractable
 
     private bool isInteracting = false;
 
-    // =========================
-    // INTERFACE
-    // =========================
-
-    public bool CanInteract()
-    {
-        return !isInteracting;
-    }
+    public bool CanInteract() => !isInteracting;
 
     public void Interact()
     {
@@ -36,75 +40,143 @@ public class NPCInteractionSystem : MonoBehaviour, IInteractable
         HandleInteraction();
     }
 
-    // =========================
-    // LÓGICA PRINCIPAL
-    // =========================
-
     void HandleInteraction()
     {
-        // 🔥 VALIDACIÓN IMPORTANTE
         if (string.IsNullOrEmpty(characterID))
         {
-            Debug.LogError("NPC sin characterID asignado");
+            Debug.LogError("NPC sin characterID");
+            ResetInteraction();
             return;
         }
 
-        // 🔥 ASIGNAR PERSONAJE ACTUAL PARA AFINIDAD
         if (AffinityChoiceHandler.Instance != null)
-        {
             AffinityChoiceHandler.Instance.currentCharacterID = characterID;
-        }
 
-        // 🔥 ACTUALIZAR UI DE AFINIDAD
-        if (AffinityUI.Instance != null)
-        {
-            AffinityUI.Instance.SetCharacter(characterID);
-        }
+        AffinityUI.Instance?.SetCharacter(characterID);
 
-        // 🔥 OBTENER PROGRESO
-        int stage = 0;
+        int stage = CharacterProgress.Instance.GetProgress(characterID);
 
-        if (CharacterProgress.Instance != null)
-        {
-            stage = CharacterProgress.Instance.GetProgress(characterID);
-        }
-        else
-        {
-            Debug.LogWarning("CharacterProgress no encontrado");
-        }
+        Debug.Log($"📊 {characterID} está en stage {stage}");
 
-        // 🔥 SELECCIÓN DE DIÁLOGO
-        if (stage == 0)
+        switch (stage)
         {
-            PlayDialogue(dialogueStage1);
+            // =========================
+            // STAGE 0
+            // =========================
+            case 0:
+
+                if (!GameProgressManager.Instance.IsUnlocked(minigame1ID))
+                {
+                    Debug.Log("🎬 Iniciando diálogo Stage 1");
+
+                    PlayDialogue(dialogueStage1);
+
+                    // 🔥 DESBLOQUEO SEGURO
+                    StartCoroutine(UnlockAfterDialogue(minigame1ID));
+                }
+                else if (!GameProgressManager.Instance.IsCompleted(minigame1ID))
+                {
+                    Debug.Log("📍 Mostrando diálogo de ir al minijuego 1");
+
+                    PlayDialogue(goToMinigame1);
+                }
+                else
+                {
+                    Debug.Log("⬆️ Avanzando a Stage 1");
+
+                    CharacterProgress.Instance.IncreaseProgress(characterID);
+                    ResetInteraction();
+                }
+
+                break;
+
+            // =========================
+            // STAGE 1
+            // =========================
+            case 1:
+
+                if (!GameProgressManager.Instance.IsUnlocked(minigame2ID))
+                {
+                    Debug.Log("🎬 Iniciando diálogo Stage 2");
+
+                    PlayDialogue(dialogueStage2);
+
+                    StartCoroutine(UnlockAfterDialogue(minigame2ID));
+                }
+                else if (!GameProgressManager.Instance.IsCompleted(minigame2ID))
+                {
+                    Debug.Log("📍 Mostrando diálogo de ir al minijuego 2");
+
+                    PlayDialogue(goToMinigame2);
+                }
+                else
+                {
+                    Debug.Log("⬆️ Avanzando a Stage 2");
+
+                    CharacterProgress.Instance.IncreaseProgress(characterID);
+                    ResetInteraction();
+                }
+
+                break;
+
+            // =========================
+            // STAGE 2
+            // =========================
+            case 2:
+
+                if (!GameProgressManager.Instance.IsUnlocked(minigame3ID))
+                {
+                    Debug.Log("🎬 Iniciando diálogo Stage 3");
+
+                    PlayDialogue(dialogueStage3);
+
+                    StartCoroutine(UnlockAfterDialogue(minigame3ID));
+                }
+                else if (!GameProgressManager.Instance.IsCompleted(minigame3ID))
+                {
+                    Debug.Log("📍 Mostrando diálogo de ir al minijuego 3");
+
+                    PlayDialogue(goToMinigame3);
+                }
+                else
+                {
+                    Debug.Log("⬆️ Avanzando a FINAL");
+
+                    CharacterProgress.Instance.IncreaseProgress(characterID);
+                    ResetInteraction();
+                }
+
+                break;
+
+            // =========================
+            // FINAL
+            // =========================
+            default:
+                LaunchEnding();
+                break;
         }
-        else if (stage == 1)
-        {
-            PlayDialogue(dialogueStage2);
-        }
-        else if (stage == 2)
-        {
-            PlayDialogue(dialogueStage3);
-        }
-        else
-        {
-            LaunchEnding();
-        }
+    }
+
+    // =========================
+    // DESBLOQUEO SEGURO
+    // =========================
+    IEnumerator UnlockAfterDialogue(string minigameID)
+    {
+        yield return new WaitForSeconds(1.5f);
+
+        Debug.Log("🔥 DESBLOQUEANDO MINIJUEGO: " + minigameID);
+
+        GameProgressManager.Instance.UnlockMinigame(minigameID);
     }
 
     // =========================
     // FINALES
     // =========================
-
     void LaunchEnding()
     {
-        if (AffinitySystem.Instance == null)
-        {
-            Debug.LogError("AffinitySystem no encontrado");
-            return;
-        }
-
         int affinity = AffinitySystem.Instance.GetAffinity(characterID);
+
+        Debug.Log($"💘 Afinidad final: {affinity}");
 
         if (affinity >= 50)
             PlayDialogue(goodEnding);
@@ -112,17 +184,19 @@ public class NPCInteractionSystem : MonoBehaviour, IInteractable
             PlayDialogue(neutralEnding);
         else
             PlayDialogue(badEnding);
+
+        ResetInteraction();
     }
 
     // =========================
-    // EJECUTAR DIÁLOGO
+    // DIÁLOGO
     // =========================
-
     void PlayDialogue(DialogueSceneConfig dialogue)
     {
         if (KMA_DialogueManager.Instance == null)
         {
             Debug.LogError("KMA_DialogueManager no encontrado");
+            ResetInteraction();
             return;
         }
 
@@ -130,26 +204,23 @@ public class NPCInteractionSystem : MonoBehaviour, IInteractable
 
         if (window == null)
         {
-            Debug.LogError("DialogueWindow no es NovelSampleDialogueWindow");
+            Debug.LogError("DialogueWindow incorrecto");
+            ResetInteraction();
             return;
         }
 
         if (dialogue == null)
         {
-            Debug.LogError("DialogueSceneConfig no asignado en NPC");
+            Debug.LogError("DialogueSceneConfig no asignado");
+            ResetInteraction();
             return;
         }
 
-        // 🔥 CAMBIAR DIÁLOGO DINÁMICAMENTE
         window.GetType()
             .GetField("_dialogueScenes", System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance)
             .SetValue(window, new List<DialogueSceneConfig> { dialogue });
 
-        // 🔥 INICIAR DIÁLOGO
         KMA_DialogueManager.Instance.StartDialogue();
-
-        // 🔥 LIBERAR INTERACCIÓN DESPUÉS DE UN MOMENTO
-        Invoke(nameof(ResetInteraction), 1.5f);
     }
 
     void ResetInteraction()
@@ -157,5 +228,3 @@ public class NPCInteractionSystem : MonoBehaviour, IInteractable
         isInteracting = false;
     }
 }
-
-

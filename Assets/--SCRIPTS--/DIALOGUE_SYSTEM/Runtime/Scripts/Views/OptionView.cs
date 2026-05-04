@@ -11,51 +11,93 @@ namespace KissMyAssets.VisualNovelCore.Runtime
         [SerializeField] private Button _button;
         [SerializeField] private TextMeshProUGUI _text;
 
-        public async UniTask<Guid> WaitForChoice(ChoiceOptionModel optionModel, int optionIndex)
+        private void Awake()
+        {
+            // 🔧 Auto-reparar referencias si faltan
+            if (_button == null)
+            {
+                _button = GetComponent<Button>();
+                Debug.LogWarning("🔧 Button auto-asignado en " + gameObject.name);
+            }
+
+            if (_text == null)
+            {
+                _text = GetComponentInChildren<TextMeshProUGUI>();
+                Debug.LogWarning("🔧 Text auto-asignado en " + gameObject.name);
+            }
+        }
+
+        private void Start()
+        {
+            // 🔍 DEBUG DE UI
+            RectTransform rt = GetComponent<RectTransform>();
+
+            Debug.Log($"[OptionView INIT] {gameObject.name}");
+            Debug.Log($"➡ Tamaño: {rt.rect.width} x {rt.rect.height}");
+            Debug.Log($"➡ Botón asignado: {_button != null}");
+            Debug.Log($"➡ Texto asignado: {_text != null}");
+        }
+
+        public async UniTask<Guid> WaitForChoice(ChoiceOptionModel optionModel)
         {
             var completionSource = new UniTaskCompletionSource<Guid>();
 
-            // Texto visible de la opción
-            _text.text = optionModel.DialogueText.Text;
+            if (_text != null)
+                _text.text = optionModel.DialogueText.Text;
+            else
+                Debug.LogError("❌ TextMeshPro no asignado en OptionView");
 
-            Action onClickAction = () =>
+            if (_button == null)
             {
-                Debug.Log("Opción elegida: " + _text.text);
+                Debug.LogError("❌ Button no asignado en OptionView");
+                return optionModel.RelatedNodeId;
+            }
 
-                // 🔥 AFINIDAD SEGÚN POSICIÓN
-                int affinity = GetAffinityByIndex(optionIndex);
+            // 🔥 LIMPIAR listeners
+            _button.onClick.RemoveAllListeners();
 
-                // 🔥 APLICAR AFINIDAD
+            // 🔥 DEBUG VISUAL
+            Debug.Log($"🟡 Opción creada: {_text.text}");
+
+            // 🔥 EVENTO CLICK
+            _button.onClick.AddListener(() =>
+            {
+                Debug.Log("🟢 CLICK DETECTADO EN BOTÓN");
+                Debug.Log("➡ Opción elegida: " + _text.text);
+
+                int affinity = GetAffinityByText(_text.text);
+
+                Debug.Log("➡ Afinidad aplicada: " + affinity);
+
                 if (AffinityChoiceHandler.Instance != null)
                 {
                     AffinityChoiceHandler.Instance.ApplyChoiceValue(affinity);
                 }
+                else
+                {
+                    Debug.LogWarning("⚠️ AffinityChoiceHandler no encontrado");
+                }
 
-                // 🔥 CONTINUAR DIÁLOGO
                 completionSource.TrySetResult(optionModel.RelatedNodeId);
-            };
+            });
 
-            _button.onClick.AddListener(onClickAction.Invoke);
-
-            var result = await completionSource.Task;
-
-            _button.onClick.RemoveListener(onClickAction.Invoke);
-
-            return result;
+            return await completionSource.Task;
         }
 
-        // =========================
-        // AFINIDAD POR ÍNDICE
-        // =========================
-        private int GetAffinityByIndex(int index)
+        private int GetAffinityByText(string text)
         {
-            switch (index)
-            {
-                case 0: return 10;   // buena
-                case 1: return 5;    // neutral
-                case 2: return -5;   // mala
-                default: return 0;
-            }
+            text = text.ToLower();
+
+            if (text.Contains("sí") || text.Contains("claro"))
+                return 10;
+
+            if (text.Contains("creo") || text.Contains("tal vez"))
+                return 5;
+
+            if (text.Contains("no") || text.Contains("exager"))
+                return -5;
+
+            return 0;
         }
     }
 }

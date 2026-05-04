@@ -8,7 +8,7 @@ public class MinigameResult : MonoBehaviour
     public void WinGame()
     {
         AffinitySystem.Instance.AddAffinity(characterID, 15);
-        CharacterProgress.Instance.AdvanceProgress(characterID);
+        CharacterProgress.Instance.IncreaseProgress(characterID);
 
         SceneManager.LoadScene("MainScene"); // regresa al juego
     }
@@ -16,7 +16,7 @@ public class MinigameResult : MonoBehaviour
     public void LoseGame()
     {
         AffinitySystem.Instance.AddAffinity(characterID, 5);
-        CharacterProgress.Instance.AdvanceProgress(characterID);
+        CharacterProgress.Instance.IncreaseProgress(characterID);
 
         SceneManager.LoadScene("MainScene");
     }

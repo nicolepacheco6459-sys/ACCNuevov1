@@ -1,5 +1,3 @@
-using System.Collections;   
-using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerInput : MonoBehaviour
@@ -13,7 +11,7 @@ public class PlayerInput : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetMouseButtonDown(0) && !GameManager.instance.HasPicked())
+        if (Input.GetMouseButtonDown(0) && !GameManager_CARDS.instance.HasPicked())
         {
             RaycastHit hit;
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
@@ -24,7 +22,7 @@ public class PlayerInput : MonoBehaviour
 
                 Card currentCard = hit.transform.GetComponent<Card>();
                 currentCard.FlipOpen(true);
-                GameManager.instance.AddCardToPickedList(currentCard);
+                GameManager_CARDS.instance.AddCardToPickedList(currentCard);
             }
         }
     }

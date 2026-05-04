@@ -28,18 +28,14 @@ namespace KissMyAssets.VisualNovelCore.Runtime
         {
             List<UniTask<Guid>> tasks = new();
 
-            int index = 0;
-
             foreach (var option in showInfo.ChoiceOptionsHolder.Options)
             {
                 OptionView optionView = Instantiate(_optionPrefab, _optionLayoutGroup.transform);
 
-                // 🔥 PASAMOS EL ÍNDICE DE LA OPCIÓN
-                tasks.Add(optionView.WaitForChoice(option, index));
+                // LLAMADA CORRECTA (SIN INDEX)
+                tasks.Add(optionView.WaitForChoice(option));
 
                 _spawnedOptions.Add(optionView);
-
-                index++;
             }
 
             return tasks;
