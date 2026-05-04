@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 using UnityEngine.UI;
@@ -14,8 +13,8 @@ public class ScoreManager_CARDS: MonoBehaviour
 
     void Start()
     {
+        timeForLevelToComplete = DifficultyManager.instance.GetLevelTime();
         StartCoroutine("Timer");
-
     }
 
     IEnumerator Timer()
@@ -31,7 +30,7 @@ public class ScoreManager_CARDS: MonoBehaviour
             timeText.text = tempTime.ToString();
         }
         // GAME OVER
-        GameManager.instance.GameOver();
+        GameManager_CARDS.instance.GameOver();
 
     }
 
