@@ -1,27 +1,37 @@
 ﻿using Melanchall.DryWetMidi.Core;
 using Melanchall.DryWetMidi.Interaction;
-using Melanchall.DryWetMidi.MusicTheory;
 using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.IO;
-using System.Net;
 using UnityEngine;
 using UnityEngine.Networking;
-
 
 public class SongManager : MonoBehaviour
 {
     public static SongManager instance;
+
+    [Header("Audio")]
     public AudioSource audioSource;
+    public float songDelayInSeconds = 1f;
+
+    [Header("Lanes")]
     public Lane[] lanes;
-    public float songDelayInSeconds;
-    public double marginOfError; // in seconds
 
-    public int inputDlayInMiliseconds;
-    
+    [Header("Timing")]
+    public double marginOfError;
+    public int inputDelayInMilliseconds;
 
+    // ✅ ENUM SEPARADO (SIN HEADER)
+    public enum Difficulty { Easy, Medium, Hard }
+
+    [Header("Difficulty")]
+    public Difficulty difficulty;
+
+    [Header("MIDI")]
     public string fileLocation;
+
+    [Header("Note Movement")]
     public float noteTime;
     public float noteSpawnY;
     public float noteTapY;
@@ -35,12 +45,19 @@ public class SongManager : MonoBehaviour
     }
 
     public static MidiFile midiFile;
-    // Start is called before the first frame update 
 
     void Start()
     {
         instance = this;
-        if (Application.streamingAssetsPath.StartsWith("http://") || Application.streamingAssetsPath.StartsWith("https://"))
+
+        SetupDifficulty();
+
+        // 🔥 Valores clave para que se vean las notas
+        noteSpawnY = 5f;
+        noteTapY = -3f;
+
+        if (Application.streamingAssetsPath.StartsWith("http://") ||
+            Application.streamingAssetsPath.StartsWith("https://"))
         {
             StartCoroutine(ReadFromWebSite());
         }
@@ -49,7 +66,29 @@ public class SongManager : MonoBehaviour
             ReadFromFile();
         }
     }
-    private void ReadFromFile()
+
+    void SetupDifficulty()
+    {
+        switch (difficulty)
+        {
+            case Difficulty.Easy:
+                marginOfError = 0.25;
+                noteTime = 1.5f;
+                break;
+
+            case Difficulty.Medium:
+                marginOfError = 0.15;
+                noteTime = 1.2f;
+                break;
+
+            case Difficulty.Hard:
+                marginOfError = 0.08;
+                noteTime = 0.9f;
+                break;
+        }
+    }
+
+    void ReadFromFile()
     {
         string path = Path.Combine(Application.streamingAssetsPath, fileLocation);
 
@@ -63,9 +102,10 @@ public class SongManager : MonoBehaviour
 
         Debug.Log("MIDI cargado correctamente");
 
-        GetDataFromMidi(); // ← ESTA LÍNEA FALTABA
+        GetDataFromMidi();
     }
-    private IEnumerator ReadFromWebSite()
+
+    IEnumerator ReadFromWebSite()
     {
         using (UnityWebRequest www = UnityWebRequest.Get(Application.streamingAssetsPath + "/" + fileLocation))
         {
@@ -78,23 +118,14 @@ public class SongManager : MonoBehaviour
             else
             {
                 byte[] results = www.downloadHandler.data;
+
                 using (var stream = new MemoryStream(results))
                 {
                     midiFile = MidiFile.Read(stream);
                     GetDataFromMidi();
-                    foreach (var note in midiFile.GetNotes())
-                    {
-                        Debug.Log("Nota MIDI detectada: " + note.NoteName);
-                    }
                 }
             }
         }
-  
-    }
-
-    private object SendWebRequest()
-    {
-        throw new NotImplementedException();
     }
 
     public void GetDataFromMidi()
@@ -103,20 +134,18 @@ public class SongManager : MonoBehaviour
 
         Debug.Log("Total notas MIDI: " + notes.Count);
 
-        foreach (var note in notes)
-        {
-            Debug.Log("Nota detectada: " + note.NoteName + " / Numero: " + note.NoteNumber);
-        }
-
         var array = new Melanchall.DryWetMidi.Interaction.Note[notes.Count];
         notes.CopyTo(array, 0);
 
         foreach (var lane in lanes)
+        {
             lane.SetTimeStamps(array);
+        }
 
-        Invoke(nameof(StartSong), songDelayInSeconds);
+        
     }
-    public void StartSong() 
+
+    public void StartSong()
     {
         audioSource.Play();
     }
@@ -125,11 +154,4 @@ public class SongManager : MonoBehaviour
     {
         return (double)instance.audioSource.timeSamples / instance.audioSource.clip.frequency;
     }
-
-    // Update is called once per frame
-    private void Update()
-    {
-        
-    }
-    
 }

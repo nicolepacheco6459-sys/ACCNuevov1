@@ -1,8 +1,6 @@
-using Melanchall.DryWetMidi.Interaction;
+﻿using Melanchall.DryWetMidi.Interaction;
 using System;
-using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class Lane : MonoBehaviour
@@ -10,87 +8,119 @@ public class Lane : MonoBehaviour
     public Melanchall.DryWetMidi.MusicTheory.NoteName noteRestriction;
     public KeyCode input;
     public GameObject notePrefab;
+
     List<Note> notes = new List<Note>();
     public List<double> timeStamps = new List<double>();
 
+    [Header("Sprites")]
+    public Sprite leftSprite;
+    public Sprite downSprite;
+    public Sprite upSprite;
+    public Sprite rightSprite;
+
+    public enum Direction
+    {
+        Left,
+        Down,
+        Up,
+        Right
+    }
+
+    public Direction direction;
+
     int spawnIndex = 0;
     int inputIndex = 0;
-    private bool canBeHit;
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
     public void SetTimeStamps(Melanchall.DryWetMidi.Interaction.Note[] notes)
     {
         foreach (var note in notes)
         {
             if (note.NoteName == noteRestriction)
             {
-                var metricTimeSpan = TimeConverter.ConvertTo<MetricTimeSpan>(note.Time, SongManager.midiFile.GetTempoMap());    
-                timeStamps.Add((double)metricTimeSpan.Minutes * 60f + metricTimeSpan.Seconds + (double)metricTimeSpan.Milliseconds / 1000f);
+                var metricTimeSpan = TimeConverter.ConvertTo<MetricTimeSpan>(
+                    note.Time,
+                    SongManager.midiFile.GetTempoMap()
+                );
+
+                timeStamps.Add(
+                    (double)metricTimeSpan.Minutes * 60f +
+                    metricTimeSpan.Seconds +
+                    (double)metricTimeSpan.Milliseconds / 1000f
+                );
             }
         }
     }
-    // Update is called once per frame
+
     void Update()
     {
+        notes.RemoveAll(n => n == null);
+
+        // SPAWN DE NOTAS
         if (spawnIndex < timeStamps.Count)
         {
-            if(SongManager.GetAudioSourceTime() >= timeStamps[spawnIndex] - SongManager.instance.noteTime)
+            if (SongManager.GetAudioSourceTime() >= timeStamps[spawnIndex] - SongManager.instance.noteTime)
             {
-                var note = Instantiate(notePrefab, transform);
-                notes.Add(note.GetComponent<Note>());
-                note.GetComponent<Note>().assignedTime = (float)timeStamps[spawnIndex];
+                var noteObj = Instantiate(notePrefab, transform);
+                Note noteScript = noteObj.GetComponent<Note>();
+
+                noteScript.assignedTime = (float)timeStamps[spawnIndex];
+                noteScript.SetDirection(direction, GetSpriteByDirection());
+
+                notes.Add(noteScript);
                 spawnIndex++;
             }
         }
-    
-        if (inputIndex < timeStamps.Count)
-        {
-            double timeStamp = timeStamps[inputIndex];
-            double marginOfError = SongManager.instance.marginOfError;
-            double audioTime = SongManager.GetAudioSourceTime() - (SongManager.instance.inputDlayInMiliseconds / 1000.0);
 
-            if (Input.GetKeyDown(input))
+        // INPUT DEL JUGADOR
+        if (Input.GetKeyDown(input))
+        {
+            if (notes.Count > inputIndex)
             {
-                if(Math.Abs(audioTime - timeStamp) < marginOfError)
+                Note note = notes[inputIndex];
+
+                if (note.CanBeHit())
                 {
-                    Hit();
-                    print($"Nota {inputIndex} perfecta");
-                    Destroy(notes[inputIndex].gameObject);
-                    inputIndex++;
+                    Hit("Perfect");
+                    Destroy(note.gameObject);
+                    notes.RemoveAt(inputIndex);
                 }
                 else
                 {
-                    print($"Fallaste en {inputIndex} la nota. Diferencia de tiempo: {Math.Abs(audioTime - timeStamp)}");
+                    Miss();
+
+                    if (notes.Count > inputIndex && notes[inputIndex] != null)
+                    {
+                        Destroy(notes[inputIndex].gameObject);
+                        notes.RemoveAt(inputIndex);
+                    }
                 }
             }
-            if (timeStamp + marginOfError <= audioTime)
-            {
-                Miss();
-                print($"Fallaste {inputIndex} la nota");
-                inputIndex++;
-            }
         }
-        if (Input.GetKeyDown(KeyCode.F)) // o la tecla de la lane
+
+        if (spawnIndex >= timeStamps.Count && notes.Count == 0)
         {
-            if (canBeHit)
-            {
-                ScoreManager.Hit();
-                Destroy(gameObject);
-            }
-            else
-            {
-                ScoreManager.Miss();
-            }
+            SongManager.instance.audioSource.Stop();
+            FindFirstObjectByType<GameManager_MUSIC>().GameOver();
         }
+
     }
 
-    private void Hit()
+    // SPRITE SEGÚN DIRECCIÓN
+    Sprite GetSpriteByDirection()
     {
-        ScoreManager.Hit();  
+        switch (direction)
+        {
+            case Direction.Left: return leftSprite;
+            case Direction.Down: return downSprite;
+            case Direction.Up: return upSprite;
+            case Direction.Right: return rightSprite;
+        }
+        return null;
+    }
+
+    private void Hit(string accuracy)
+    {
+        ScoreManager.Hit(accuracy);
     }
 
     private void Miss()
