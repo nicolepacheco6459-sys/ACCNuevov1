@@ -1,16 +1,40 @@
 using UnityEngine;
 
-public class Tile_MATCH3 : MonoBehaviour
+public class Tile : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    public int x;
+    public int y;
+
+    public int iconID;
+
+    public BoardManager board;
+
+    private SpriteRenderer spriteRenderer;
+
+    private void Awake()
     {
-        
+        spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
-    // Update is called once per frame
-    void Update()
+    public void Setup(
+        int newX,
+        int newY,
+        int newID,
+        Sprite sprite,
+        BoardManager newBoard)
     {
-        
+        x = newX;
+        y = newY;
+
+        iconID = newID;
+
+        board = newBoard;
+
+        spriteRenderer.sprite = sprite;
+    }
+
+    private void OnMouseDown()
+    {
+        board.SelectTile(this);
     }
 }
