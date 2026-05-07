@@ -3,46 +3,111 @@ using UnityEngine;
 
 public static class MatchFinder
 {
-    public static List<Tile> FindMatches(Tile[,] grid, int width, int height)
+    public static List<Tile> FindMatches(
+        Tile[,] grid,
+        int width,
+        int height)
     {
         List<Tile> matches = new List<Tile>();
 
+        // =========================
+        // HORIZONTAL
+        // =========================
+
         for (int y = 0; y < height; y++)
         {
-            for (int x = 0; x < width - 2; x++)
-            {
-                Tile a = grid[x, y];
-                Tile b = grid[x + 1, y];
-                Tile c = grid[x + 2, y];
+            int matchCount = 1;
 
-                if (a != null && b != null && c != null)
+            for (int x = 0; x < width - 1; x++)
+            {
+                Tile current = grid[x, y];
+                Tile next = grid[x + 1, y];
+
+                if (current != null &&
+                    next != null &&
+                    current.iconID == next.iconID)
                 {
-                    if (a.iconID == b.iconID && b.iconID == c.iconID)
+                    matchCount++;
+                }
+                else
+                {
+                    if (matchCount >= 3)
                     {
-                        if (!matches.Contains(a)) matches.Add(a);
-                        if (!matches.Contains(b)) matches.Add(b);
-                        if (!matches.Contains(c)) matches.Add(c);
+                        for (int i = 0; i < matchCount; i++)
+                        {
+                            Tile match =
+                                grid[x - i, y];
+
+                            if (!matches.Contains(match))
+                                matches.Add(match);
+                        }
                     }
+
+                    matchCount = 1;
+                }
+            }
+
+            // Final fila
+            if (matchCount >= 3)
+            {
+                for (int i = 0; i < matchCount; i++)
+                {
+                    Tile match =
+                        grid[(width - 1) - i, y];
+
+                    if (!matches.Contains(match))
+                        matches.Add(match);
                 }
             }
         }
 
+        // =========================
+        // VERTICAL
+        // =========================
+
         for (int x = 0; x < width; x++)
         {
-            for (int y = 0; y < height - 2; y++)
-            {
-                Tile a = grid[x, y];
-                Tile b = grid[x, y + 1];
-                Tile c = grid[x, y + 2];
+            int matchCount = 1;
 
-                if (a != null && b != null && c != null)
+            for (int y = 0; y < height - 1; y++)
+            {
+                Tile current = grid[x, y];
+                Tile next = grid[x, y + 1];
+
+                if (current != null &&
+                    next != null &&
+                    current.iconID == next.iconID)
                 {
-                    if (a.iconID == b.iconID && b.iconID == c.iconID)
+                    matchCount++;
+                }
+                else
+                {
+                    if (matchCount >= 3)
                     {
-                        if (!matches.Contains(a)) matches.Add(a);
-                        if (!matches.Contains(b)) matches.Add(b);
-                        if (!matches.Contains(c)) matches.Add(c);
+                        for (int i = 0; i < matchCount; i++)
+                        {
+                            Tile match =
+                                grid[x, y - i];
+
+                            if (!matches.Contains(match))
+                                matches.Add(match);
+                        }
                     }
+
+                    matchCount = 1;
+                }
+            }
+
+            // Final columna
+            if (matchCount >= 3)
+            {
+                for (int i = 0; i < matchCount; i++)
+                {
+                    Tile match =
+                        grid[x, (height - 1) - i];
+
+                    if (!matches.Contains(match))
+                        matches.Add(match);
                 }
             }
         }

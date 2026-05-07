@@ -6,6 +6,8 @@ using UnityEngine;
 
 public class BoardManager : MonoBehaviour
 {
+    private Cell[,] cells; 
+
     [Header("Board")]
     public int width;
     public int height;
@@ -50,49 +52,114 @@ public class BoardManager : MonoBehaviour
 
     void GenerateBoard(int iconCount)
     {
-        float offsetX = (width - 1) / 2f;
-        float offsetY = (height - 1) / 2f;
+        // =========================
+        // LIMPIAR TABLERO ANTERIOR
+        // =========================
+
+        foreach (Transform child in boardParent)
+        {
+            Destroy(child.gameObject);
+        }
+
+        // =========================
+        // CREAR ARRAYS
+        // =========================
+
+        grid = new Tile[width, height];
+
+        cells = new Cell[width, height];
+
+        // =========================
+        // GENERAR TABLERO
+        // =========================
 
         for (int y = 0; y < height; y++)
         {
             for (int x = 0; x < width; x++)
             {
-                Vector3 position = new Vector3(
-                    (x - offsetX) * tileSpacing,
-                    (y - offsetY) * tileSpacing,
-                    0
-                );
+                // Posición del tablero
+                Vector3 position =
+                    GetWorldPosition(x, y);
 
-                bool isBlocked = blockedPositions.Contains(new Vector2Int(x, y));
+                // =========================
+                // REVISAR BLOQUEADA
+                // =========================
+
+                bool isBlocked =
+                    blockedPositions.Contains(
+                        new Vector2Int(x, y)
+                    );
 
                 GameObject selectedCell;
 
+                // =========================
+                // ELEGIR CELDA
+                // =========================
+
                 if (isBlocked)
                 {
-                    selectedCell = blockedCellPrefab;
+                    selectedCell =
+                        blockedCellPrefab;
                 }
                 else
                 {
-                    bool isDark = (x + y) % 2 == 0;
+                    bool isDark =
+                        (x + y) % 2 == 0;
 
-                    selectedCell = isDark
+                    selectedCell =
+                        isDark
                         ? darkCellPrefab
                         : lightCellPrefab;
                 }
 
-                Instantiate(
-                    selectedCell,
-                    position,
-                    Quaternion.identity,
-                    boardParent
-                );
+                // =========================
+                // CREAR CELDA
+                // =========================
+
+                GameObject cellObj =
+                    Instantiate(
+                        selectedCell,
+                        position,
+                        Quaternion.identity,
+                        boardParent
+                    );
+
+                // =========================
+                // GUARDAR CELL
+                // =========================
+
+                Cell cell =
+                    cellObj.GetComponent<Cell>();
+
+                cell.x = x;
+                cell.y = y;
+
+                cells[x, y] = cell;
+
+                // =========================
+                // SI BLOQUEADA
+                // NO CREAR TILE
+                // =========================
 
                 if (isBlocked)
                     continue;
 
-                SpawnTile(x, y, iconCount, position);
+                // =========================
+                // CREAR TILE
+                // =========================
+
+                SpawnTile(
+                    x,
+                    y,
+                    iconCount,
+                    position
+                );
             }
         }
+
+        // =========================
+        // EVITAR MATCHES INICIALES
+        // =========================
 
         RemoveStartingMatches(iconCount);
     }
@@ -107,6 +174,8 @@ public class BoardManager : MonoBehaviour
         );
 
         Tile tile = tileObj.GetComponent<Tile>();
+
+        tile.board = this;
 
         int randomID = Random.Range(0, iconCount);
 
@@ -150,28 +219,53 @@ public class BoardManager : MonoBehaviour
 
     public void SelectTile(Tile tile)
     {
+        Debug.Log("CLICK TILE: " + tile.x + "," + tile.y);
+
         if (isBusy)
             return;
 
+        // Primera selección
         if (selectedTile == null)
         {
+            Debug.Log("PRIMERA SELECCION");
+
             selectedTile = tile;
+
+            selectedTile.SetSelected(true);
+
             return;
         }
 
+        // Misma pieza
         if (selectedTile == tile)
         {
+            Debug.Log("DESELECCION");
+
+            selectedTile.SetSelected(false);
+
             selectedTile = null;
+
             return;
         }
 
+        // Son adyacentes
         if (AreAdjacent(selectedTile, tile))
         {
+            Debug.Log("SWAP");
+
+            selectedTile.SetSelected(false);
+
             StartCoroutine(SwapTiles(selectedTile, tile));
         }
         else
         {
+            Debug.Log("CAMBIO SELECCION");
+
+            selectedTile.SetSelected(false);
+
             selectedTile = tile;
+
+            selectedTile.SetSelected(true);
         }
     }
 
@@ -184,120 +278,213 @@ public class BoardManager : MonoBehaviour
     {
         isBusy = true;
 
-        Vector3 aPos = a.transform.position;
-        Vector3 bPos = b.transform.position;
+        // Guardar posiciones
+        int ax = a.x;
+        int ay = a.y;
 
-        a.transform.DOMove(bPos, 0.2f);
-        b.transform.DOMove(aPos, 0.2f);
+        int bx = b.x;
+        int by = b.y;
+
+        Vector3 aWorldPos = a.transform.position;
+        Vector3 bWorldPos = b.transform.position;
+
+        // =========================
+        // SWAP LOGICO PRIMERO
+        // =========================
+
+        grid[ax, ay] = b;
+        grid[bx, by] = a;
+
+        a.x = bx;
+        a.y = by;
+
+        b.x = ax;
+        b.y = ay;
+
+        // =========================
+        // SWAP VISUAL
+        // =========================
+
+        a.transform.DOMove(bWorldPos, 0.2f);
+        b.transform.DOMove(aWorldPos, 0.2f);
 
         yield return new WaitForSeconds(0.25f);
 
-        int tempX = a.x;
-        int tempY = a.y;
+        // =========================
+        // BUSCAR MATCHES
+        // =========================
 
-        grid[a.x, a.y] = b;
-        grid[b.x, b.y] = a;
+        List<Tile> matches =
+            MatchFinder.FindMatches(
+                grid,
+                width,
+                height
+            );
 
-        a.x = b.x;
-        a.y = b.y;
-
-        b.x = tempX;
-        b.y = tempY;
-
-        List<Tile> matches = MatchFinder.FindMatches(grid, width, height);
+        // =========================
+        // SI HAY MATCH
+        // =========================
 
         if (matches.Count > 0)
         {
-            yield return StartCoroutine(ClearMatches(matches));
+            yield return StartCoroutine(
+                ClearMatches(matches)
+            );
         }
         else
         {
-            a.transform.DOMove(aPos, 0.2f);
-            b.transform.DOMove(bPos, 0.2f);
+            // REGRESAR LOGICO
+            grid[ax, ay] = a;
+            grid[bx, by] = b;
+
+            a.x = ax;
+            a.y = ay;
+
+            b.x = bx;
+            b.y = by;
+
+            // REGRESAR VISUAL
+            a.transform.DOMove(aWorldPos, 0.2f);
+            b.transform.DOMove(bWorldPos, 0.2f);
 
             yield return new WaitForSeconds(0.25f);
-
-            grid[a.x, a.y] = b;
-            grid[b.x, b.y] = a;
-
-            tempX = a.x;
-            tempY = a.y;
-
-            a.x = b.x;
-            a.y = b.y;
-
-            b.x = tempX;
-            b.y = tempY;
         }
 
         selectedTile = null;
 
-        isBusy = false;
+        
     }
 
     IEnumerator ClearMatches(List<Tile> matches)
     {
-        GameManager_MATCH3.Instance.AddScore(matches.Count * 50);
+        GameManager_MATCH3.Instance.AddScore(
+            matches.Count * 50
+        );
+
+        // =========================
+        // ELIMINAR MATCHES
+        // =========================
 
         foreach (Tile tile in matches)
         {
-            grid[tile.x, tile.y] = null;
+            if (tile == null)
+                continue;
 
+            int x = tile.x;
+            int y = tile.y;
+
+            // Limpiar grid PRIMERO
+            grid[x, y] = null;
+
+            // Destruir visualmente
             Destroy(tile.gameObject);
         }
 
+        // Esperar frame real
+        yield return null;
+
+        // Esperar poquito visualmente
         yield return new WaitForSeconds(0.2f);
 
-        yield return StartCoroutine(CollapseBoard());
+        // =========================
+        // COLAPSAR
+        // =========================
+
+        yield return StartCoroutine(
+            CollapseBoard()
+        );
     }
 
     IEnumerator CollapseBoard()
     {
-        for (int x = 0; x < width; x++)
+        bool movedTile = true;
+
+        // =========================
+        // HACER CAER TODO
+        // =========================
+
+        while (movedTile)
         {
-            for (int y = 0; y < height; y++)
+            movedTile = false;
+
+            for (int x = 0; x < width; x++)
             {
-                if (grid[x, y] == null &&
-                    !blockedPositions.Contains(new Vector2Int(x, y)))
+                for (int y = 0; y < height - 1; y++)
                 {
-                    for (int ny = y + 1; ny < height; ny++)
+                    // espacio vacío
+                    if (grid[x, y] == null &&
+                        !blockedPositions.Contains(
+                            new Vector2Int(x, y)))
                     {
-                        if (grid[x, ny] != null)
+                        // buscar arriba
+                        for (int ny = y + 1; ny < height; ny++)
                         {
-                            Tile tileAbove = grid[x, ny];
+                            if (grid[x, ny] != null)
+                            {
+                                Tile fallingTile =
+                                    grid[x, ny];
 
-                            grid[x, y] = tileAbove;
-                            grid[x, ny] = null;
+                                // mover grid
+                                grid[x, y] = fallingTile;
+                                grid[x, ny] = null;
 
-                            tileAbove.y = y;
+                                // actualizar coords
+                                fallingTile.y = y;
+                                fallingTile.x = x;
 
-                            tileAbove.transform.DOMove(
-                                new Vector3(
-                                    (tileAbove.x - (width - 1) / 2f) * tileSpacing,
-                                    (y - (height - 1) / 2f) * tileSpacing,
-                                    0
-                                ),
-                                0.2f
-                            );
+                                // posición visual
+                                Vector3 position =
+                                    GetWorldPosition(x, y);
+                                
 
-                            break;
+                                // mover visual
+                                fallingTile.transform.DOMove(
+                                    position,
+                                    0.2f
+                                );
+
+                                movedTile = true;
+
+                                break;
+                            }
                         }
                     }
                 }
             }
+
+            yield return new WaitForSeconds(0.05f);
         }
 
         yield return new WaitForSeconds(0.3f);
 
+        // =========================
+        // RELLENAR
+        // =========================
+
         RefillBoard();
 
-        yield return new WaitForSeconds(0.3f);
+        yield return new WaitForSeconds(0.4f);
 
-        List<Tile> matches = MatchFinder.FindMatches(grid, width, height);
+        // =========================
+        // BUSCAR NUEVOS MATCHES
+        // =========================
+
+        List<Tile> matches =
+            MatchFinder.FindMatches(
+                grid,
+                width,
+                height
+            );
 
         if (matches.Count > 0)
         {
-            yield return StartCoroutine(ClearMatches(matches));
+            yield return StartCoroutine(
+                ClearMatches(matches)
+            );
+        }
+        else
+        {
+            isBusy = false;
         }
     }
 
@@ -307,25 +494,30 @@ public class BoardManager : MonoBehaviour
         {
             for (int y = 0; y < height; y++)
             {
-                if (grid[x, y] == null &&
-                    !blockedPositions.Contains(new Vector2Int(x, y)))
+                if (grid[x, y] == null)
                 {
-                    Vector3 spawnPos = new Vector3(
-                        (x - (width - 1) / 2f) * tileSpacing,
-                        ((height + 1) - (height - 1) / 2f) * tileSpacing,
-                        0
-                    );
+                    Vector3 targetPos =
+                        GetWorldPosition(x, y);
 
-                    GameObject tileObj = Instantiate(
-                        tilePrefab,
-                        spawnPos,
-                        Quaternion.identity,
-                        boardParent
-                    );
+                    Vector3 spawnPos =
+                        targetPos + Vector3.up * 5f;
 
-                    Tile tile = tileObj.GetComponent<Tile>();
+                    GameObject tileObj =
+                        Instantiate(
+                            tilePrefab,
+                            spawnPos,
+                            Quaternion.identity,
+                            boardParent
+                        );
 
-                    int randomID = Random.Range(0, iconSprites.Length);
+                    Tile tile =
+                        tileObj.GetComponent<Tile>();
+
+                    int randomID =
+                        Random.Range(
+                            0,
+                            iconSprites.Length
+                        );
 
                     tile.Setup(
                         x,
@@ -335,18 +527,30 @@ public class BoardManager : MonoBehaviour
                         this
                     );
 
+                    tile.board = this;
+
                     grid[x, y] = tile;
 
                     tile.transform.DOMove(
-                        new Vector3(
-                            (x - (width - 1) / 2f) * tileSpacing,
-                            (y - (height - 1) / 2f) * tileSpacing,
-                            0
-                        ),
-                        0.25f
+                        targetPos,
+                        0.2f
                     );
                 }
             }
         }
+    }
+    Vector3 GetWorldPosition(int x, int y)
+    {
+        float offsetX =
+            (width - 1) / 2f;
+
+        float offsetY =
+            (height - 1) / 2f;
+
+        return new Vector3(
+            (x - offsetX) * tileSpacing,
+            (y - offsetY) * tileSpacing,
+            0
+        );
     }
 }
