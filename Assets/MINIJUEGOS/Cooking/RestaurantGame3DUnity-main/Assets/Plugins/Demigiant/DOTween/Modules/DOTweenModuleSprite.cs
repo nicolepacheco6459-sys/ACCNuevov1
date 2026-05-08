@@ -54,7 +54,7 @@ namespace DG.Tweening
                 float colorDuration = i == len - 1
                     ? duration - s.Duration(false) // Verifies that total duration is correct
                     : duration * (i == 0 ? c.time : c.time - colors[i - 1].time);
-                s.Append(target.DOColor(c.color, colorDuration).SetEase(Ease.Linear));
+                s.Append(DOTweenModuleSprite.DOColor(target, c.color, colorDuration).SetEase(Ease.Linear));
             }
             s.SetTarget(target);
             return s;
