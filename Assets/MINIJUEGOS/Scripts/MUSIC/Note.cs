@@ -1,61 +1,54 @@
-using System.Collections;   
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class Note : MonoBehaviour
 {
-    double timeInstanted; 
-    public float assignedTime; 
+    double timeInstantiated;
+    public float assignedTime;
+
+    SpriteRenderer sr;
+
+    public void SetDirection(Lane.Direction dir, Sprite sprite)
+    {
+        sr = GetComponent<SpriteRenderer>();
+        sr.sprite = sprite;
+    }
+
     void Start()
     {
-        timeInstanted = SongManager.GetAudioSourceTime();
-    }
-    bool canBeHit = false;
-
-    void OnTriggerEnter2D(Collider2D other)
-    {
-        if (other.CompareTag("HitZone"))
-            canBeHit = true;
+        timeInstantiated = SongManager.GetAudioSourceTime();
+        sr = GetComponent<SpriteRenderer>();
+        sr.enabled = false; // se activa cuando empieza a moverse
     }
 
-    void OnTriggerExit2D(Collider2D other)
-    {
-        if (other.CompareTag("HitZone"))
-            canBeHit = false;
-    }
-    // Update is called once per frame
     void Update()
     {
-        double timeSinceInstantiated = SongManager.GetAudioSourceTime() - timeInstanted;
+        double timeSinceInstantiated = SongManager.GetAudioSourceTime() - timeInstantiated;
+
+        // t controla el progreso de la nota (0 = spawn, 1 = tap zone)
         float t = (float)(timeSinceInstantiated / (SongManager.instance.noteTime * 2));
 
-        
         if (t > 1)
         {
             Destroy(gameObject);
-        }
-        else
-        {
-            transform.localPosition = Vector3.Lerp(
-                Vector3.up * SongManager.instance.noteSpawnY,
-                Vector3.up * SongManager.instance.noteTapY,
-                t
-            );
-            GetComponent<SpriteRenderer>().enabled = true;
-        }
-        if (Input.GetKeyDown(KeyCode.F)) // o la tecla de la lane
-        {
-            if (canBeHit)
-            {
-                ScoreManager.Hit();
-                Destroy(gameObject);
-            }
-            else
-            {
-                ScoreManager.Miss();
-            }
+            return;
         }
 
+        // Movimiento limpio y consistente
+        transform.localPosition = Vector3.Lerp(
+            new Vector3(0, SongManager.instance.noteSpawnY, 0),
+            new Vector3(0, SongManager.instance.noteTapY, 0),
+            t
+        );
+
+        // Activar render cuando ya está en movimiento
+        if (!sr.enabled)
+            sr.enabled = true;
     }
-
+    public bool CanBeHit()
+    {
+        float distance = Mathf.Abs(transform.localPosition.y - SongManager.instance.noteTapY);
+        return distance < 0.5f; // ajusta este valor
+    }
 }

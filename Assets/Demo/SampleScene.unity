@@ -664,9 +664,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0b30303bf99605e46b42a4dd564cde33, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ScoreManager
+  maxMisses: 10
+  gameManager: {fileID: 0}
   hitSFX: {fileID: 1226030250}
   missSFX: {fileID: 476360982}
   scoreText: {fileID: 32120556}
+  feedbackText: {fileID: 0}
 --- !u!65 &358397044
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1249,6 +1252,11 @@ MonoBehaviour:
   input: 273
   notePrefab: {fileID: 7692518406420447846, guid: 2f7657cb1ac3d034f9e1df4e70d9cb13, type: 3}
   timeStamps: []
+  leftSprite: {fileID: 0}
+  downSprite: {fileID: 0}
+  upSprite: {fileID: 0}
+  rightSprite: {fileID: 0}
+  direction: 0
 --- !u!4 &693882083
 Transform:
   m_ObjectHideFlags: 0
@@ -1297,6 +1305,11 @@ MonoBehaviour:
   input: 275
   notePrefab: {fileID: 5092111471794848913, guid: 3889e34e4d4bc654a97a3ce9c419812b, type: 3}
   timeStamps: []
+  leftSprite: {fileID: 0}
+  downSprite: {fileID: 0}
+  upSprite: {fileID: 0}
+  rightSprite: {fileID: 0}
+  direction: 0
 --- !u!4 &1141964152
 Transform:
   m_ObjectHideFlags: 0
@@ -1474,6 +1487,11 @@ MonoBehaviour:
   input: 276
   notePrefab: {fileID: 945946047422489941, guid: 3e71439c93a7f5b47aacd8d60e79974b, type: 3}
   timeStamps: []
+  leftSprite: {fileID: 0}
+  downSprite: {fileID: 0}
+  upSprite: {fileID: 0}
+  rightSprite: {fileID: 0}
+  direction: 0
 --- !u!4 &1507066512
 Transform:
   m_ObjectHideFlags: 0
@@ -1522,6 +1540,11 @@ MonoBehaviour:
   input: 274
   notePrefab: {fileID: 1387232583725608651, guid: 47d2b49ed792b764592daeb6c9ea675c, type: 3}
   timeStamps: []
+  leftSprite: {fileID: 0}
+  downSprite: {fileID: 0}
+  upSprite: {fileID: 0}
+  rightSprite: {fileID: 0}
+  direction: 0
 --- !u!4 &1542744004
 Transform:
   m_ObjectHideFlags: 0
@@ -1567,14 +1590,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SongManager
   audioSource: {fileID: 443334544}
+  songDelayInSeconds: 0
   lanes:
   - {fileID: 1507066511}
   - {fileID: 693882082}
   - {fileID: 1542744003}
   - {fileID: 1141964151}
-  songDelayInSeconds: 0
   marginOfError: 0.15
-  inputDlayInMiliseconds: 0
+  inputDelayInMilliseconds: 0
+  difficulty: 0
   fileLocation: cool_music.mid
   noteTime: 0.6
   noteSpawnY: 7
