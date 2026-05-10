@@ -8,6 +8,7 @@ public class Enemy : MonoBehaviour
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player").transform;
+        Destroy(gameObject, 20f);
     }
 
     void Update()
