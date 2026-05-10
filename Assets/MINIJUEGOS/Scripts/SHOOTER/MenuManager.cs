@@ -32,6 +32,6 @@ public class MenuManager : MonoBehaviour
         hudPanel.SetActive(true);
 
         playerHealth.SetupHealth();
-        gameManager_.StartGame();
+        gameManager.StartGame();
     }
 }
