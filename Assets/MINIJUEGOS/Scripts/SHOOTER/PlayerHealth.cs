@@ -42,6 +42,6 @@ public class PlayerHealth : MonoBehaviour
     {
         Time.timeScale = 0f;
 
-        gameOverPanel.SetActive(true);
+        GameManager_SHOOTER.instance.GameOver();
     }
 }

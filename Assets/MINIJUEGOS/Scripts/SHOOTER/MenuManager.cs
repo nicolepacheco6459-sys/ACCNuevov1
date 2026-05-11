@@ -1,5 +1,5 @@
-using DG.Tweening.Core.Easing;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class MenuManager : MonoBehaviour
 {
@@ -9,29 +9,19 @@ public class MenuManager : MonoBehaviour
     public PlayerHealth playerHealth;
     public GameManager_SHOOTER gameManager;
 
-    public void EasyMode()
+    public void StartButton()
     {
-        StartGame(5);
-    }
-
-    public void MediumMode()
-    {
-        StartGame(4);
-    }
-
-    public void HardMode()
-    {
-        StartGame(3);
-    }
-
-    void StartGame(int health)
-    {
-        DifficultySettings.startHealth = health;
-
         mainMenuPanel.SetActive(false);
+
         hudPanel.SetActive(true);
 
         playerHealth.SetupHealth();
+
         gameManager.StartGame();
+    }
+
+    public void ExitButton()
+    {
+        SceneManager.LoadScene("Samantha");
     }
 }
