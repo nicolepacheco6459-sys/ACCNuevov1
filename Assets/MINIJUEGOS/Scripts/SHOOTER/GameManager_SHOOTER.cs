@@ -23,6 +23,11 @@ public class GameManager_SHOOTER : MonoBehaviour
 
     private bool gameStarted = false;
 
+    public float GetRemainingTime()
+    {
+        return timer;
+    }
+
     void Awake()
     {
         instance = this;

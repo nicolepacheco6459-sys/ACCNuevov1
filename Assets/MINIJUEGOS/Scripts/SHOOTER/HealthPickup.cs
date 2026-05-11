@@ -2,12 +2,23 @@ using UnityEngine;
 
 public class HealthPickup : MonoBehaviour
 {
-    void OnTriggerEnter2D(Collider2D other)
+    private void OnTriggerEnter2D(Collider2D other)
     {
+        Debug.Log("TOCANDO ALGO");
+
         if (other.CompareTag("Player"))
         {
-            other.GetComponent<PlayerHealth>().Heal();
-            Destroy(gameObject);
+            Debug.Log("PLAYER TOCO VIDA");
+
+            PlayerHealth playerHealth =
+                other.GetComponent<PlayerHealth>();
+
+            if (playerHealth != null)
+            {
+                playerHealth.Heal();
+
+                Destroy(gameObject);
+            }
         }
     }
 }

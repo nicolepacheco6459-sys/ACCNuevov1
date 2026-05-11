@@ -12,6 +12,7 @@ public class PlayerHealth : MonoBehaviour
     public void SetupHealth()
     {
         maxHealth = DifficultySettings.startHealth;
+
         currentHealth = maxHealth;
 
         heartUI.UpdateHearts(currentHealth);
