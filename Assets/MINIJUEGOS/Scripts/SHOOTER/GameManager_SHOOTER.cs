@@ -70,7 +70,7 @@ public class GameManager_SHOOTER : MonoBehaviour
 
         if (timer <= 0)
         {
-            NextLevel();
+            YouWin();
         }
     }
 
@@ -101,24 +101,17 @@ public class GameManager_SHOOTER : MonoBehaviour
         }
     }
 
-    void NextLevel()
-    {
-        currentLevel++;
-
-        if (currentLevel > 3)
-        {
-            YouWin();
-            return;
-        }
-
-        timer = levelDuration;
-
-        SetupLevel();
-    }
-
     void YouWin()
     {
-        ShooterProgress.currentLevel++;
+        gameStarted = false;
+
+        spawner.enabled = false;
+        healthSpawner.enabled = false;
+
+        if (ShooterProgress.currentLevel < 3)
+        {
+            ShooterProgress.currentLevel++;
+        }
 
         SceneManager.LoadScene("Samantha");
     }
