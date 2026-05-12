@@ -6,7 +6,7 @@ public class StartMenuController : MonoBehaviour
 
     public void OnStartClick()
     {
-        SceneManager.LoadScene("PLAYGROUND_Nicole");
+        SceneManager.LoadScene("PLAYGROUND_Nicole"); // Esta escena tiene que ser cambiada a production una vez finalizado el juego
     }
 
     public void OnExitClick()
@@ -16,4 +16,6 @@ public class StartMenuController : MonoBehaviour
 #endif
         Application.Quit();
     }
+
+
 }
