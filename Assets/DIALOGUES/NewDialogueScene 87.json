@@ -70,13 +70,13 @@
                         "rid": 1006
                     },
                     "<Position>k__BackingField": {
-                        "x": 165.99996948242188,
-                        "y": 207.6000213623047
+                        "x": -27.600006103515626,
+                        "y": 172.4000244140625
                     },
                     "<NextNode>k__BackingField": {
                         "_value": "a628c051-c601-4f7a-8bae-b206f6739c2c"
                     },
-                    "<Text>k__BackingField": ""
+                    "<Text>k__BackingField": "(Leonardo observa el entorno antes de hablar.)"
                 }
             },
             {
@@ -99,13 +99,13 @@
                         "rid": 1007
                     },
                     "<Position>k__BackingField": {
-                        "x": 579.5999755859375,
-                        "y": 144.4000244140625
+                        "x": 476.4000244140625,
+                        "y": 334.800048828125
                     },
                     "<NextNode>k__BackingField": {
                         "_value": "51eb4742-cdfb-4b99-9c93-962a81da4343"
                     },
-                    "<Text>k__BackingField": ""
+                    "<Text>k__BackingField": "Entreno en las CANCHAS. Ven si quieres aprender."
                 }
             },
             {
@@ -134,7 +134,7 @@
                     "<NextNode>k__BackingField": {
                         "_value": "69b06255-aead-4411-9a9c-fea3c189589d"
                     },
-                    "<Text>k__BackingField": ""
+                    "<Text>k__BackingField": "No es opcional si llegas."
                 }
             },
             {
@@ -216,6 +216,9 @@
                     "<Actors>k__BackingField": [
                         {
                             "rid": 1011
+                        },
+                        {
+                            "rid": 1012
                         }
                     ]
                 }
@@ -230,7 +233,10 @@
                 "data": {
                     "<Actors>k__BackingField": [
                         {
-                            "rid": 1012
+                            "rid": 1013
+                        },
+                        {
+                            "rid": 1014
                         }
                     ]
                 }
@@ -285,9 +291,39 @@
                 },
                 "data": {
                     "<ActorDataId>k__BackingField": {
+                        "_value": "a14dce0c-ad05-413a-b1f2-92017614d5d1"
+                    },
+                    "<Alignment>k__BackingField": 0,
+                    "<ActorEmotion>k__BackingField": 0
+                }
+            },
+            {
+                "rid": 1013,
+                "type": {
+                    "class": "DialogueActorData",
+                    "ns": "KissMyAssets.VisualNovelCore.Runtime",
+                    "asm": "Assembly-CSharp"
+                },
+                "data": {
+                    "<ActorDataId>k__BackingField": {
                         "_value": "ccbf9ae4-a2f4-43bc-b713-4ff815b878de"
                     },
                     "<Alignment>k__BackingField": 1,
+                    "<ActorEmotion>k__BackingField": 0
+                }
+            },
+            {
+                "rid": 1014,
+                "type": {
+                    "class": "DialogueActorData",
+                    "ns": "KissMyAssets.VisualNovelCore.Runtime",
+                    "asm": "Assembly-CSharp"
+                },
+                "data": {
+                    "<ActorDataId>k__BackingField": {
+                        "_value": "a14dce0c-ad05-413a-b1f2-92017614d5d1"
+                    },
+                    "<Alignment>k__BackingField": 0,
                     "<ActorEmotion>k__BackingField": 0
                 }
             }

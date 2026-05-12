@@ -129,7 +129,7 @@
                     "<NextNode>k__BackingField": {
                         "_value": "e96b3805-efa4-4593-b0ca-0cbf5ed0f668"
                     },
-                    "<Text>k__BackingField": "Aria sonríe, pero sus manos juegan nerviosamente con su libreta."
+                    "<Text>k__BackingField": "(Aria sonríe, pero sus manos juegan nerviosamente con su libreta.)"
                 }
             },
             {
@@ -212,9 +212,6 @@
                     "<Actors>k__BackingField": [
                         {
                             "rid": 1010
-                        },
-                        {
-                            "rid": 1011
                         }
                     ]
                 }
@@ -229,10 +226,10 @@
                 "data": {
                     "<Actors>k__BackingField": [
                         {
-                            "rid": 1012
+                            "rid": 1011
                         },
                         {
-                            "rid": 1013
+                            "rid": 1012
                         }
                     ]
                 }
@@ -247,10 +244,10 @@
                 "data": {
                     "<Actors>k__BackingField": [
                         {
-                            "rid": 1014
+                            "rid": 1013
                         },
                         {
-                            "rid": 1015
+                            "rid": 1014
                         }
                     ]
                 }
@@ -264,9 +261,9 @@
                 },
                 "data": {
                     "<ActorDataId>k__BackingField": {
-                        "_value": "1f02cf57-eefd-4b6c-bb6d-b887ff5fe235"
+                        "_value": "ccbf9ae4-a2f4-43bc-b713-4ff815b878de"
                     },
-                    "<Alignment>k__BackingField": 0,
+                    "<Alignment>k__BackingField": 1,
                     "<ActorEmotion>k__BackingField": 0
                 }
             },
@@ -279,9 +276,9 @@
                 },
                 "data": {
                     "<ActorDataId>k__BackingField": {
-                        "_value": "ccbf9ae4-a2f4-43bc-b713-4ff815b878de"
+                        "_value": "1f02cf57-eefd-4b6c-bb6d-b887ff5fe235"
                     },
-                    "<Alignment>k__BackingField": 1,
+                    "<Alignment>k__BackingField": 0,
                     "<ActorEmotion>k__BackingField": 0
                 }
             },
@@ -294,9 +291,9 @@
                 },
                 "data": {
                     "<ActorDataId>k__BackingField": {
-                        "_value": "1f02cf57-eefd-4b6c-bb6d-b887ff5fe235"
+                        "_value": "ccbf9ae4-a2f4-43bc-b713-4ff815b878de"
                     },
-                    "<Alignment>k__BackingField": 0,
+                    "<Alignment>k__BackingField": 1,
                     "<ActorEmotion>k__BackingField": 0
                 }
             },
@@ -309,21 +306,6 @@
                 },
                 "data": {
                     "<ActorDataId>k__BackingField": {
-                        "_value": "ccbf9ae4-a2f4-43bc-b713-4ff815b878de"
-                    },
-                    "<Alignment>k__BackingField": 1,
-                    "<ActorEmotion>k__BackingField": 0
-                }
-            },
-            {
-                "rid": 1014,
-                "type": {
-                    "class": "DialogueActorData",
-                    "ns": "KissMyAssets.VisualNovelCore.Runtime",
-                    "asm": "Assembly-CSharp"
-                },
-                "data": {
-                    "<ActorDataId>k__BackingField": {
                         "_value": "1f02cf57-eefd-4b6c-bb6d-b887ff5fe235"
                     },
                     "<Alignment>k__BackingField": 0,
@@ -331,7 +313,7 @@
                 }
             },
             {
-                "rid": 1015,
+                "rid": 1014,
                 "type": {
                     "class": "DialogueActorData",
                     "ns": "KissMyAssets.VisualNovelCore.Runtime",

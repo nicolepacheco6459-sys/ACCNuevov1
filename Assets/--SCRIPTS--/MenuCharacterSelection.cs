@@ -6,41 +6,33 @@ using UnityEngine.SceneManagement;
 public class MenuCharacterSelection : MonoBehaviour
 {
     private int index;
-    [SerializeField] private UnityEngine.UI.Image image;
-    [SerializeField] private TextMeshProUGUI nameText;
+    [SerializeField] private Image imagen;
+    [SerializeField] private TextMeshProUGUI nombre;
 
-    private CharacterSelection characterSelection;
+    private ChooseCharacterGameManager gameManager;
 
     private void Start()
     {
-        characterSelection = CharacterSelection.Instance;
+        gameManager = ChooseCharacterGameManager.Instance;
 
-        if (characterSelection == null)
-        {
-            Debug.LogError("CharacterSelection instance not found. Make sure CharacterSelection is in the scene.");
-            return;
-        }
+        index = PlayerPrefs.GetInt("JugadorIndex");
 
-        index = PlayerPrefs.GetInt("PlayerIndex");
-
-        if (index > characterSelection.characters.Count - 1)
+        if(index > gameManager.personajes.Count - 1)
         {
             index = 0;
         }
-
-        ChangeScreen();
     }
 
-    private void ChangeScreen()
+    private void CambiarPantalla()
     {
-        PlayerPrefs.SetInt("PlayerIndex", index);
-        image.sprite = characterSelection.characters[index].image;
-        nameText.text = characterSelection.characters[index].characterName;
+        PlayerPrefs.SetInt("JugadorIndex", index);
+        imagen.sprite = gameManager.personajes[index].imagen;
+        nombre.text = gameManager.personajes[index].nombre;
     }
 
-    public void NextCharacter()
+    public void SiguientePersonaje()
     {
-        if (index == characterSelection.characters.Count - 1)
+        if(index == gameManager.personajes.Count - 1)
         {
             index = 0;
         }
@@ -48,26 +40,25 @@ public class MenuCharacterSelection : MonoBehaviour
         {
             index += 1;
         }
-
-        ChangeScreen();
+        CambiarPantalla();
     }
 
-    public void PrevCharacter()
+    public void AnteriorPersonaje()
     {
         if (index == 0)
         {
-            index = characterSelection.characters.Count - 1;
+            index = gameManager.personajes.Count - 1;
         }
         else
         {
             index -= 1;
         }
-
-        ChangeScreen();
+        CambiarPantalla();
     }
 
-    public void StartGame()
+    public void IniciarJuego()
     {
-        UnityEngine.SceneManagement.SceneManager.LoadScene(UnityEngine.SceneManagement.SceneManager.GetActiveScene().buildIndex + 1);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
+
 }
