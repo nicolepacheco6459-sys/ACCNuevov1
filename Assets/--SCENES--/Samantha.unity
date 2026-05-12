@@ -2312,6 +2312,50 @@ RectTransform:
   m_AnchoredPosition: {x: -4.999939, y: 0}
   m_SizeDelta: {x: -20, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &112315157
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 112315159}
+  - component: {fileID: 112315158}
+  m_Layer: 0
+  m_Name: '-----Debug manager----- '
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &112315158
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 112315157}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 394acf820d671874abf90542d1486af8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::GenderDebug
+--- !u!4 &112315159
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 112315157}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 158.47887, y: 222.92664, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &138919421
 GameObject:
   m_ObjectHideFlags: 0
@@ -2322,7 +2366,7 @@ GameObject:
   m_Component:
   - component: {fileID: 138919422}
   m_Layer: 0
-  m_Name: --UI Dialogue System---
+  m_Name: -----UI Dialogue System---
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -27920,6 +27964,99 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!1 &966117843
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 966117844}
+  - component: {fileID: 966117846}
+  - component: {fileID: 966117845}
+  m_Layer: 0
+  m_Name: Shooter_MG  (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &966117844
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 966117843}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -10.03, y: 5.35, z: 0}
+  m_LocalScale: {x: 3.036979, y: 8.327383, z: 3.5775704}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1070755566}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &966117845
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 966117843}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 96eb6ce8b33f5a641bab69b4658bf3ca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::MinigameTrigger
+  minigameID: MG_Shooter
+  sceneName: MG_Shooter
+--- !u!61 &966117846
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 966117843}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Size: {x: 1, y: 1}
+  m_EdgeRadius: 0
 --- !u!1 &1004638710
 GameObject:
   m_ObjectHideFlags: 0
@@ -28056,15 +28193,18 @@ MonoBehaviour:
   dialogueStage1: {fileID: 11400000, guid: bcda14dc2717ed0429bd91f139427994, type: 2}
   dialogueStage2: {fileID: 11400000, guid: 977e6538824289145b6bee59d6a41460, type: 2}
   dialogueStage3: {fileID: 11400000, guid: 08b122831645bc64e8081400456aab2e, type: 2}
-  goToMinigame1: {fileID: 0}
-  goToMinigame2: {fileID: 0}
-  goToMinigame3: {fileID: 0}
-  minigame1ID: MG_Racing
-  minigame2ID: MG_Racing
-  minigame3ID: MG_Racing
-  goodEnding: {fileID: 11400000, guid: 0f986bb220a9fe5408658006fb0b8a84, type: 2}
-  neutralEnding: {fileID: 11400000, guid: 07fdfc67c9ffa7b4d92d436997808bac, type: 2}
-  badEnding: {fileID: 11400000, guid: 551f54a6b919d6048b15bcad313c26fe, type: 2}
+  goToMinigame1: {fileID: 11400000, guid: f7c59371cb00446408a1ce2c0a9e00dd, type: 2}
+  goToMinigame2: {fileID: 11400000, guid: a0a463c538654354898a3a40ebf0e04a, type: 2}
+  goToMinigame3: {fileID: 11400000, guid: 3afddfafbbf3c6d4d9ac9fb2517720c1, type: 2}
+  minigame1ID: MG_Shooter
+  minigame2ID: MG_Shooter
+  minigame3ID: MG_Shooter
+  maleGoodEnding: {fileID: 11400000, guid: 3bc2ce314d1b21b4c820f72eb3627ef9, type: 2}
+  maleNeutralEnding: {fileID: 11400000, guid: 52b8a2891cb26f44cb330c7fba1b1cd0, type: 2}
+  maleBadEnding: {fileID: 11400000, guid: 42afa1f4f6bb94343987b7ea67faf359, type: 2}
+  femaleGoodEnding: {fileID: 11400000, guid: 0f986bb220a9fe5408658006fb0b8a84, type: 2}
+  femaleNeutralEnding: {fileID: 11400000, guid: 07fdfc67c9ffa7b4d92d436997808bac, type: 2}
+  femaleBadEnding: {fileID: 11400000, guid: 551f54a6b919d6048b15bcad313c26fe, type: 2}
 --- !u!114 &1047703030
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -28361,6 +28501,7 @@ Transform:
   - {fileID: 659135623}
   - {fileID: 1511682419}
   - {fileID: 785281353}
+  - {fileID: 966117844}
   - {fileID: 1293080419}
   - {fileID: 308089216}
   m_Father: {fileID: 0}
@@ -29060,7 +29201,7 @@ MonoBehaviour:
   m_StreamingVersion: 20241001
   m_LegacyPriority: 0
   Target:
-    TrackingTarget: {fileID: 0}
+    TrackingTarget: {fileID: 351410605}
     LookAtTarget: {fileID: 0}
     CustomLookAtTarget: 0
   Lens:
@@ -29278,15 +29419,18 @@ MonoBehaviour:
   dialogueStage1: {fileID: 11400000, guid: 191126ff90af8094ba103042ef7131e6, type: 2}
   dialogueStage2: {fileID: 11400000, guid: 2f1d0c054a8ec6342a72a3331e7e17f6, type: 2}
   dialogueStage3: {fileID: 11400000, guid: c799111491ff7de4fa1704021add4348, type: 2}
-  goToMinigame1: {fileID: 0}
-  goToMinigame2: {fileID: 0}
-  goToMinigame3: {fileID: 0}
+  goToMinigame1: {fileID: 11400000, guid: 78da75e5e9f64f24eb5bfb5ad8e36774, type: 2}
+  goToMinigame2: {fileID: 11400000, guid: dc4d358d9be26564883fd2c9e039e962, type: 2}
+  goToMinigame3: {fileID: 11400000, guid: 664189531426b034bbaa2fd20c918b8a, type: 2}
   minigame1ID: MG_Match3
   minigame2ID: MG_Match3
   minigame3ID: MG_Match3
-  goodEnding: {fileID: 11400000, guid: b24c81f4d1da3ee45a01b96893afdb64, type: 2}
-  neutralEnding: {fileID: 11400000, guid: b6a99d5239338964988dfa89fcbefa12, type: 2}
-  badEnding: {fileID: 11400000, guid: d9e9db5fa0e22594282bf8c9ba135dc3, type: 2}
+  maleGoodEnding: {fileID: 11400000, guid: 1b9e8096fe8319f4abc1bcf9240062fc, type: 2}
+  maleNeutralEnding: {fileID: 11400000, guid: 19fc2917efa542b41a66e677fb7047ad, type: 2}
+  maleBadEnding: {fileID: 11400000, guid: 430683d3209b8fe48b9f326b066b0921, type: 2}
+  femaleGoodEnding: {fileID: 11400000, guid: b24c81f4d1da3ee45a01b96893afdb64, type: 2}
+  femaleNeutralEnding: {fileID: 11400000, guid: b6a99d5239338964988dfa89fcbefa12, type: 2}
+  femaleBadEnding: {fileID: 11400000, guid: d9e9db5fa0e22594282bf8c9ba135dc3, type: 2}
 --- !u!114 &1249786228
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -29879,15 +30023,18 @@ MonoBehaviour:
   dialogueStage1: {fileID: 11400000, guid: 3d51e46aae409024882741e9ce6be1ee, type: 2}
   dialogueStage2: {fileID: 11400000, guid: 515d94d8b24123c4e88b5fea6755a8a5, type: 2}
   dialogueStage3: {fileID: 11400000, guid: 5a6c8b78a7242f641896664e66d9caf6, type: 2}
-  goToMinigame1: {fileID: 0}
-  goToMinigame2: {fileID: 0}
-  goToMinigame3: {fileID: 0}
+  goToMinigame1: {fileID: 11400000, guid: 3771f50f9d112c44088deb60a2e6b7ae, type: 2}
+  goToMinigame2: {fileID: 11400000, guid: 2c24f250c9041294694049d076be5552, type: 2}
+  goToMinigame3: {fileID: 11400000, guid: d34c5a642c813a8439bc15d3bd4a9a1a, type: 2}
   minigame1ID: MG_Music
   minigame2ID: MG_Music
   minigame3ID: MG_Music
-  goodEnding: {fileID: 11400000, guid: 224ff673f8be0e2458befd3873bc1256, type: 2}
-  neutralEnding: {fileID: 11400000, guid: 2cb779498326fd64b98e4f4865ce7afd, type: 2}
-  badEnding: {fileID: 11400000, guid: bd843afe6c033374bbe42a825ec0cbe4, type: 2}
+  maleGoodEnding: {fileID: 11400000, guid: 415dbf413aaa1754eaaff38f4053055c, type: 2}
+  maleNeutralEnding: {fileID: 11400000, guid: 9030f37e92d674f479378739d712c01f, type: 2}
+  maleBadEnding: {fileID: 11400000, guid: 0615cc933ad23f042a07e1afc2746c46, type: 2}
+  femaleGoodEnding: {fileID: 11400000, guid: 224ff673f8be0e2458befd3873bc1256, type: 2}
+  femaleNeutralEnding: {fileID: 11400000, guid: 2cb779498326fd64b98e4f4865ce7afd, type: 2}
+  femaleBadEnding: {fileID: 11400000, guid: bd843afe6c033374bbe42a825ec0cbe4, type: 2}
 --- !u!114 &1298664503
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -42234,14 +42381,17 @@ MonoBehaviour:
   dialogueStage2: {fileID: 11400000, guid: 64393fbb4df99034ea76c29370868619, type: 2}
   dialogueStage3: {fileID: 11400000, guid: 7719c398c0716124c95b0d2ffac1f489, type: 2}
   goToMinigame1: {fileID: 11400000, guid: 992494b93f695f14e996b126451c7ab5, type: 2}
-  goToMinigame2: {fileID: 0}
-  goToMinigame3: {fileID: 0}
+  goToMinigame2: {fileID: 11400000, guid: 2a631433c1cc0444787aae2905dc551d, type: 2}
+  goToMinigame3: {fileID: 11400000, guid: 07d11cc2ce3e34c408be39efb459d4f4, type: 2}
   minigame1ID: MG_Cooking
   minigame2ID: MG_Cooking
   minigame3ID: MG_Cooking
-  goodEnding: {fileID: 11400000, guid: 6c43ee668916a2c4f852398fe414b15c, type: 2}
-  neutralEnding: {fileID: 11400000, guid: 97c7b7604d83ed748917963263210999, type: 2}
-  badEnding: {fileID: 11400000, guid: 282e3bcc5c1a39940a23814cb9faf3c5, type: 2}
+  maleGoodEnding: {fileID: 11400000, guid: e60fbc71586fb7d4b9aa5908a444fac9, type: 2}
+  maleNeutralEnding: {fileID: 11400000, guid: 757e9e2b4812bab4bb2d3fbcce82516e, type: 2}
+  maleBadEnding: {fileID: 11400000, guid: 8601c74d0e1823d47ab5c4d23e577ed9, type: 2}
+  femaleGoodEnding: {fileID: 11400000, guid: 6c43ee668916a2c4f852398fe414b15c, type: 2}
+  femaleNeutralEnding: {fileID: 11400000, guid: 97c7b7604d83ed748917963263210999, type: 2}
+  femaleBadEnding: {fileID: 11400000, guid: 282e3bcc5c1a39940a23814cb9faf3c5, type: 2}
 --- !u!114 &1379578890
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -45118,15 +45268,18 @@ MonoBehaviour:
   dialogueStage1: {fileID: 11400000, guid: a10476000e980764e90fc4bfbef87ff3, type: 2}
   dialogueStage2: {fileID: 11400000, guid: 5687ccd83bbe1634a81de861b617328a, type: 2}
   dialogueStage3: {fileID: 11400000, guid: c972079026c3c064dab9a40804151c0e, type: 2}
-  goToMinigame1: {fileID: 0}
-  goToMinigame2: {fileID: 0}
-  goToMinigame3: {fileID: 0}
+  goToMinigame1: {fileID: 11400000, guid: 8648a5dd98c78f94a9980d1dc1c40269, type: 2}
+  goToMinigame2: {fileID: 11400000, guid: 5b617e3ed51b26946bd4a1e885058091, type: 2}
+  goToMinigame3: {fileID: 11400000, guid: 585c13c240eb7484fa858a8fab6a6721, type: 2}
   minigame1ID: MG_Shooter
   minigame2ID: MG_Shooter
   minigame3ID: MG_Shooter
-  goodEnding: {fileID: 11400000, guid: 8b78175e46def4c468e5ab1e950bc47a, type: 2}
-  neutralEnding: {fileID: 11400000, guid: 8c8ba40e84e498141acf0c8c3bd071af, type: 2}
-  badEnding: {fileID: 11400000, guid: a8275bd2a619204428da889a8b15dd48, type: 2}
+  maleGoodEnding: {fileID: 11400000, guid: 9c790f1489bd8b94d8c3f96007f97390, type: 2}
+  maleNeutralEnding: {fileID: 11400000, guid: 8b7dfffc359c5a54e89bb9da09868d5e, type: 2}
+  maleBadEnding: {fileID: 11400000, guid: 103697573d5126b41bbe1d7d5add1b10, type: 2}
+  femaleGoodEnding: {fileID: 11400000, guid: 8b78175e46def4c468e5ab1e950bc47a, type: 2}
+  femaleNeutralEnding: {fileID: 11400000, guid: 8c8ba40e84e498141acf0c8c3bd071af, type: 2}
+  femaleBadEnding: {fileID: 11400000, guid: a8275bd2a619204428da889a8b15dd48, type: 2}
 --- !u!114 &1865684313
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -94242,9 +94395,12 @@ MonoBehaviour:
   minigame1ID: MG_Memory
   minigame2ID: MG_Memory
   minigame3ID: MG_Memory
-  goodEnding: {fileID: 11400000, guid: c01aa1ff12649ec4b8c54d8baf932541, type: 2}
-  neutralEnding: {fileID: 11400000, guid: 4e23e84f0dca6f34bad21ef0489c7e84, type: 2}
-  badEnding: {fileID: 11400000, guid: dfd39880b28a4b845ba58ba219ae7e22, type: 2}
+  maleGoodEnding: {fileID: 11400000, guid: 221dabbedd7c6b74d8cbca3bb9511b76, type: 2}
+  maleNeutralEnding: {fileID: 11400000, guid: 78203f4064c2c0d459b87806aefffe04, type: 2}
+  maleBadEnding: {fileID: 11400000, guid: a3a7c62ceaa008c4e96e534536305c59, type: 2}
+  femaleGoodEnding: {fileID: 11400000, guid: dfd39880b28a4b845ba58ba219ae7e22, type: 2}
+  femaleNeutralEnding: {fileID: 11400000, guid: 4e23e84f0dca6f34bad21ef0489c7e84, type: 2}
+  femaleBadEnding: {fileID: 11400000, guid: c01aa1ff12649ec4b8c54d8baf932541, type: 2}
 --- !u!114 &1947197187
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -95232,3 +95388,4 @@ SceneRoots:
   - {fileID: 1354237893}
   - {fileID: 1070755566}
   - {fileID: 138919422}
+  - {fileID: 112315159}

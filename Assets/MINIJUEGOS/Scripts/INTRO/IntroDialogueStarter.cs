@@ -1,5 +1,7 @@
 ﻿using UnityEngine;
+using UnityEngine.SceneManagement;
 using KissMyAssets.VisualNovelCore.Runtime;
+using System.Collections;
 using System.Collections.Generic;
 
 public class IntroDialogueStarter : MonoBehaviour
@@ -32,7 +34,7 @@ public class IntroDialogueStarter : MonoBehaviour
             return;
         }
 
-        //  LISTA DE TODOS LOS DIÁLOGOS
+        //  Lista de diálogos
         List<DialogueSceneConfig> introDialogues = new List<DialogueSceneConfig>();
 
         if (intro1 != null) introDialogues.Add(intro1);
@@ -41,16 +43,37 @@ public class IntroDialogueStarter : MonoBehaviour
         if (intro4 != null) introDialogues.Add(intro4);
         if (intro5 != null) introDialogues.Add(intro5);
 
-        // ASIGNAR AL WINDOW
+        //  Asignar diálogos
         window.GetType()
             .GetField("_dialogueScenes",
                 System.Reflection.BindingFlags.NonPublic |
                 System.Reflection.BindingFlags.Instance)
             .SetValue(window, introDialogues);
 
-        //  INICIAR
+        //  Iniciar diálogo
         KMA_DialogueManager.Instance.StartDialogue();
 
-        Debug.Log("🎬 Intro iniciada con " + introDialogues.Count + " diálogos.");
+        Debug.Log("Intro iniciada");
+
+        //  Esperar a que termine TODO
+        StartCoroutine(WaitForIntroEnd());
+    }
+
+    IEnumerator WaitForIntroEnd()
+    {
+        // Esperar un frame para evitar falso positivo
+        yield return new WaitForSeconds(0.2f);
+
+        //  Esperar hasta que el dialogue window se cierre
+        while (KMA_DialogueManager.Instance != null &&
+               KMA_DialogueManager.Instance.dialogueWindow.gameObject.activeSelf)
+        {
+            yield return null;
+        }
+
+        Debug.Log("Intro terminada");
+
+        //  Cargar siguiente escena
+        SceneManager.LoadScene("Choose Character");
     }
 }

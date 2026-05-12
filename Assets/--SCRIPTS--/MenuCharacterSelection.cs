@@ -1,4 +1,4 @@
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using UnityEngine.SceneManagement;
@@ -17,10 +17,13 @@ public class MenuCharacterSelection : MonoBehaviour
 
         index = PlayerPrefs.GetInt("JugadorIndex");
 
-        if(index > gameManager.personajes.Count - 1)
+        if (index > gameManager.personajes.Count - 1)
         {
             index = 0;
         }
+
+        // IMPORTANTE
+        CambiarPantalla();
     }
 
     private void CambiarPantalla()
@@ -58,7 +61,20 @@ public class MenuCharacterSelection : MonoBehaviour
 
     public void IniciarJuego()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+
+        PlayerPrefs.SetInt("JugadorIndex", index);
+
+        Debug.Log(" Personaje guardado: " + gameManager.personajes[index].nombre);
+
+        if (index == 1)
+        {
+            Debug.Log("Género guardado: FEMENINO");
+        }
+        else
+        {
+            Debug.Log("Género guardado: MASCULINO");
+        }
+        SceneManager.LoadScene("Samantha");
     }
 
 }

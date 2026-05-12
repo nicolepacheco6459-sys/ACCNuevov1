@@ -314,6 +314,9 @@
                     "<Actors>k__BackingField": [
                         {
                             "rid": 1016
+                        },
+                        {
+                            "rid": 1017
                         }
                     ]
                 }
@@ -328,10 +331,13 @@
                 "data": {
                     "<Actors>k__BackingField": [
                         {
-                            "rid": 1017
+                            "rid": 1018
                         },
                         {
-                            "rid": 1018
+                            "rid": 1019
+                        },
+                        {
+                            "rid": 1020
                         }
                     ]
                 }
@@ -346,10 +352,13 @@
                 "data": {
                     "<Actors>k__BackingField": [
                         {
-                            "rid": 1019
+                            "rid": 1021
                         },
                         {
-                            "rid": 1020
+                            "rid": 1022
+                        },
+                        {
+                            "rid": 1023
                         }
                     ]
                 }
@@ -375,10 +384,13 @@
                 "data": {
                     "<Actors>k__BackingField": [
                         {
-                            "rid": 1021
+                            "rid": 1024
                         },
                         {
-                            "rid": 1022
+                            "rid": 1025
+                        },
+                        {
+                            "rid": 1026
                         }
                     ]
                 }
@@ -393,10 +405,13 @@
                 "data": {
                     "<Actors>k__BackingField": [
                         {
-                            "rid": 1023
+                            "rid": 1027
                         },
                         {
-                            "rid": 1024
+                            "rid": 1028
+                        },
+                        {
+                            "rid": 1029
                         }
                     ]
                 }
@@ -436,9 +451,9 @@
                 },
                 "data": {
                     "<ActorDataId>k__BackingField": {
-                        "_value": "ccbf9ae4-a2f4-43bc-b713-4ff815b878de"
+                        "_value": "0920f311-c476-4c11-9dcf-62586b9c8524"
                     },
-                    "<Alignment>k__BackingField": 1,
+                    "<Alignment>k__BackingField": 2,
                     "<ActorEmotion>k__BackingField": 0
                 }
             },
@@ -451,9 +466,9 @@
                 },
                 "data": {
                     "<ActorDataId>k__BackingField": {
-                        "_value": "1f02cf57-eefd-4b6c-bb6d-b887ff5fe235"
+                        "_value": "ccbf9ae4-a2f4-43bc-b713-4ff815b878de"
                     },
-                    "<Alignment>k__BackingField": 0,
+                    "<Alignment>k__BackingField": 1,
                     "<ActorEmotion>k__BackingField": 0
                 }
             },
@@ -466,9 +481,9 @@
                 },
                 "data": {
                     "<ActorDataId>k__BackingField": {
-                        "_value": "ccbf9ae4-a2f4-43bc-b713-4ff815b878de"
+                        "_value": "1f02cf57-eefd-4b6c-bb6d-b887ff5fe235"
                     },
-                    "<Alignment>k__BackingField": 1,
+                    "<Alignment>k__BackingField": 0,
                     "<ActorEmotion>k__BackingField": 0
                 }
             },
@@ -481,9 +496,9 @@
                 },
                 "data": {
                     "<ActorDataId>k__BackingField": {
-                        "_value": "1f02cf57-eefd-4b6c-bb6d-b887ff5fe235"
+                        "_value": "0920f311-c476-4c11-9dcf-62586b9c8524"
                     },
-                    "<Alignment>k__BackingField": 0,
+                    "<Alignment>k__BackingField": 2,
                     "<ActorEmotion>k__BackingField": 0
                 }
             },
@@ -526,9 +541,9 @@
                 },
                 "data": {
                     "<ActorDataId>k__BackingField": {
-                        "_value": "1f02cf57-eefd-4b6c-bb6d-b887ff5fe235"
+                        "_value": "0920f311-c476-4c11-9dcf-62586b9c8524"
                     },
-                    "<Alignment>k__BackingField": 0,
+                    "<Alignment>k__BackingField": 2,
                     "<ActorEmotion>k__BackingField": 0
                 }
             },
@@ -544,6 +559,81 @@
                         "_value": "ccbf9ae4-a2f4-43bc-b713-4ff815b878de"
                     },
                     "<Alignment>k__BackingField": 1,
+                    "<ActorEmotion>k__BackingField": 0
+                }
+            },
+            {
+                "rid": 1025,
+                "type": {
+                    "class": "DialogueActorData",
+                    "ns": "KissMyAssets.VisualNovelCore.Runtime",
+                    "asm": "Assembly-CSharp"
+                },
+                "data": {
+                    "<ActorDataId>k__BackingField": {
+                        "_value": "1f02cf57-eefd-4b6c-bb6d-b887ff5fe235"
+                    },
+                    "<Alignment>k__BackingField": 0,
+                    "<ActorEmotion>k__BackingField": 0
+                }
+            },
+            {
+                "rid": 1026,
+                "type": {
+                    "class": "DialogueActorData",
+                    "ns": "KissMyAssets.VisualNovelCore.Runtime",
+                    "asm": "Assembly-CSharp"
+                },
+                "data": {
+                    "<ActorDataId>k__BackingField": {
+                        "_value": "0920f311-c476-4c11-9dcf-62586b9c8524"
+                    },
+                    "<Alignment>k__BackingField": 2,
+                    "<ActorEmotion>k__BackingField": 0
+                }
+            },
+            {
+                "rid": 1027,
+                "type": {
+                    "class": "DialogueActorData",
+                    "ns": "KissMyAssets.VisualNovelCore.Runtime",
+                    "asm": "Assembly-CSharp"
+                },
+                "data": {
+                    "<ActorDataId>k__BackingField": {
+                        "_value": "1f02cf57-eefd-4b6c-bb6d-b887ff5fe235"
+                    },
+                    "<Alignment>k__BackingField": 0,
+                    "<ActorEmotion>k__BackingField": 0
+                }
+            },
+            {
+                "rid": 1028,
+                "type": {
+                    "class": "DialogueActorData",
+                    "ns": "KissMyAssets.VisualNovelCore.Runtime",
+                    "asm": "Assembly-CSharp"
+                },
+                "data": {
+                    "<ActorDataId>k__BackingField": {
+                        "_value": "ccbf9ae4-a2f4-43bc-b713-4ff815b878de"
+                    },
+                    "<Alignment>k__BackingField": 1,
+                    "<ActorEmotion>k__BackingField": 0
+                }
+            },
+            {
+                "rid": 1029,
+                "type": {
+                    "class": "DialogueActorData",
+                    "ns": "KissMyAssets.VisualNovelCore.Runtime",
+                    "asm": "Assembly-CSharp"
+                },
+                "data": {
+                    "<ActorDataId>k__BackingField": {
+                        "_value": "0920f311-c476-4c11-9dcf-62586b9c8524"
+                    },
+                    "<Alignment>k__BackingField": 2,
                     "<ActorEmotion>k__BackingField": 0
                 }
             }

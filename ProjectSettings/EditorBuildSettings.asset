@@ -17,7 +17,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/--SCENES--/-SEPARADOS-/Choose Character.unity
     guid: 5cc824b447cde074582f642ba77ad9c3
-  - enabled: 1
+  - enabled: 0
     path: Assets/--SCENES--/-SEPARADOS-/PLAYGROUND_Nicole.unity
     guid: 5a2fbf9724156c04aa89cfc038eff9c3
   - enabled: 1
@@ -38,6 +38,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/--SCENES--/MG_Cooking.unity
     guid: d1c3109bdb54ad54c8a2b2838528e640
+  - enabled: 1
+    path: Assets/--SCENES--/INTRO.unity
+    guid: 487d925ddae3fab40881fcf915ca300a
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   m_UseUCBPForAssetBundles: 0

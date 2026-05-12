@@ -23,10 +23,15 @@ public class NPCInteractionSystem : MonoBehaviour, IInteractable
     public string minigame2ID;
     public string minigame3ID;
 
-    [Header("Finales")]
-    public DialogueSceneConfig goodEnding;
-    public DialogueSceneConfig neutralEnding;
-    public DialogueSceneConfig badEnding;
+    [Header("Finales Masculino")]
+    public DialogueSceneConfig maleGoodEnding;
+    public DialogueSceneConfig maleNeutralEnding;
+    public DialogueSceneConfig maleBadEnding;
+
+    [Header("Finales Femenino")]
+    public DialogueSceneConfig femaleGoodEnding;
+    public DialogueSceneConfig femaleNeutralEnding;
+    public DialogueSceneConfig femaleBadEnding;
 
     private bool isInteracting = false;
 
@@ -176,14 +181,43 @@ public class NPCInteractionSystem : MonoBehaviour, IInteractable
     {
         int affinity = AffinitySystem.Instance.GetAffinity(characterID);
 
-        Debug.Log($"💘 Afinidad final: {affinity}");
+        bool isFemale = PlayerCharacterData.IsFemale();
 
+        Debug.Log(" Afinidad final: " + affinity);
+        Debug.Log(" Género jugador: " + (isFemale ? "Femenino" : "Masculino"));
+
+        // =========================
+        // GOOD ENDING
+        // =========================
         if (affinity >= 50)
-            PlayDialogue(goodEnding);
+        {
+            if (isFemale)
+                PlayDialogue(femaleGoodEnding);
+            else
+                PlayDialogue(maleGoodEnding);
+        }
+
+        // =========================
+        // NEUTRAL ENDING
+        // =========================
         else if (affinity >= 20)
-            PlayDialogue(neutralEnding);
+        {
+            if (isFemale)
+                PlayDialogue(femaleNeutralEnding);
+            else
+                PlayDialogue(maleNeutralEnding);
+        }
+
+        // =========================
+        // BAD ENDING
+        // =========================
         else
-            PlayDialogue(badEnding);
+        {
+            if (isFemale)
+                PlayDialogue(femaleBadEnding);
+            else
+                PlayDialogue(maleBadEnding);
+        }
 
         ResetInteraction();
     }

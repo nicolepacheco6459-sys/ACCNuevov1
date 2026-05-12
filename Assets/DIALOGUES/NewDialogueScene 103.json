@@ -34,6 +34,24 @@
         },
         {
             "rid": 1005
+        },
+        {
+            "rid": 1006
+        },
+        {
+            "rid": 1007
+        },
+        {
+            "rid": 1008
+        },
+        {
+            "rid": 1009
+        },
+        {
+            "rid": 1010
+        },
+        {
+            "rid": 1011
         }
     ],
     "references": {
@@ -67,49 +85,20 @@
                         }
                     },
                     "<ActorsHolder>k__BackingField": {
-                        "rid": 1006
+                        "rid": 1012
                     },
                     "<Position>k__BackingField": {
-                        "x": 630.7999877929688,
-                        "y": 389.20001220703127
+                        "x": 741.800048828125,
+                        "y": 386.20001220703127
                     },
                     "<NextNode>k__BackingField": {
-                        "_value": "f8c4240e-092f-488f-8911-7fbe07c11aa9"
+                        "_value": "6ece3be5-c256-41aa-863b-f109a1021f65"
                     },
-                    "<Text>k__BackingField": ""
+                    "<Text>k__BackingField": "Esto no es para mí.\r\n"
                 }
             },
             {
                 "rid": 1002,
-                "type": {
-                    "class": "DialogueReplicaNodeData",
-                    "ns": "KissMyAssets.VisualNovelCore.Runtime",
-                    "asm": "Assembly-CSharp"
-                },
-                "data": {
-                    "<NodeId>k__BackingField": {
-                        "_value": "f8c4240e-092f-488f-8911-7fbe07c11aa9"
-                    },
-                    "<BackgroundHolder>k__BackingField": {
-                        "<BackgroundId>k__BackingField": {
-                            "_value": "00000000-0000-0000-0000-000000000000"
-                        }
-                    },
-                    "<ActorsHolder>k__BackingField": {
-                        "rid": 1007
-                    },
-                    "<Position>k__BackingField": {
-                        "x": 863.5999755859375,
-                        "y": 120.4000244140625
-                    },
-                    "<NextNode>k__BackingField": {
-                        "_value": "9bcaacbd-4f99-41b8-b677-e237de6910b1"
-                    },
-                    "<Text>k__BackingField": ""
-                }
-            },
-            {
-                "rid": 1003,
                 "type": {
                     "class": "DialogueReplicaNodeData",
                     "ns": "KissMyAssets.VisualNovelCore.Runtime",
@@ -125,20 +114,20 @@
                         }
                     },
                     "<ActorsHolder>k__BackingField": {
-                        "rid": 1008
+                        "rid": 1013
                     },
                     "<Position>k__BackingField": {
-                        "x": 197.9999542236328,
-                        "y": 206.8000030517578
+                        "x": 105.99993896484375,
+                        "y": 425.79998779296877
                     },
                     "<NextNode>k__BackingField": {
                         "_value": "97a3f4b6-dd0d-4934-b5fa-ba572be2cfe2"
                     },
-                    "<Text>k__BackingField": ""
+                    "<Text>k__BackingField": "(La azotea está vacía antes de que te des cuenta. No hubo despedida larga, ni escena dramática. Solo una decisión tomada sin ruido… como todo lo que Skyler hace cuando ya no quiere quedarse.)"
                 }
             },
             {
-                "rid": 1004,
+                "rid": 1003,
                 "type": {
                     "class": "DialogueStartNodeData",
                     "ns": "KissMyAssets.VisualNovelCore.Runtime",
@@ -157,8 +146,8 @@
                         "rid": 1000
                     },
                     "<Position>k__BackingField": {
-                        "x": 80.39996337890625,
-                        "y": 489.20001220703127
+                        "x": -142.60003662109376,
+                        "y": 498.20001220703127
                     },
                     "<NextNode>k__BackingField": {
                         "_value": "a769965b-de96-470b-ba20-cb3052616518"
@@ -166,41 +155,122 @@
                 }
             },
             {
-                "rid": 1005,
+                "rid": 1004,
                 "type": {
-                    "class": "DialogueEndNodeData",
+                    "class": "DialogueChoiceNodeData",
                     "ns": "KissMyAssets.VisualNovelCore.Runtime",
                     "asm": "Assembly-CSharp"
                 },
                 "data": {
                     "<NodeId>k__BackingField": {
-                        "_value": "9bcaacbd-4f99-41b8-b677-e237de6910b1"
+                        "_value": "6ece3be5-c256-41aa-863b-f109a1021f65"
                     },
                     "<BackgroundHolder>k__BackingField": {
                         "<BackgroundId>k__BackingField": {
-                            "_value": ""
+                            "_value": "00000000-0000-0000-0000-000000000000"
                         }
                     },
                     "<ActorsHolder>k__BackingField": {
-                        "rid": 1009
+                        "rid": 1014
                     },
                     "<Position>k__BackingField": {
-                        "x": 1111.60009765625,
-                        "y": 568.4000244140625
-                    }
+                        "x": 1285.0,
+                        "y": 277.5
+                    },
+                    "<Text>k__BackingField": "",
+                    "<Options>k__BackingField": [
+                        {
+                            "<RelatedNodeId>k__BackingField": {
+                                "_value": "039d9a6c-6831-4cf5-8be0-8d26d83a4b2a"
+                            },
+                            "<Text>k__BackingField": "Espera…\r\n"
+                        },
+                        {
+                            "<RelatedNodeId>k__BackingField": {
+                                "_value": "039d9a6c-6831-4cf5-8be0-8d26d83a4b2a"
+                            },
+                            "<Text>k__BackingField": "¿Por qué?\r\n"
+                        },
+                        {
+                            "<RelatedNodeId>k__BackingField": {
+                                "_value": "039d9a6c-6831-4cf5-8be0-8d26d83a4b2a"
+                            },
+                            "<Text>k__BackingField": "(quedarte en silencio)\r\n"
+                        }
+                    ]
+                }
+            },
+            {
+                "rid": 1005,
+                "type": {
+                    "class": "DialogueReplicaNodeData",
+                    "ns": "KissMyAssets.VisualNovelCore.Runtime",
+                    "asm": "Assembly-CSharp"
+                },
+                "data": {
+                    "<NodeId>k__BackingField": {
+                        "_value": "039d9a6c-6831-4cf5-8be0-8d26d83a4b2a"
+                    },
+                    "<BackgroundHolder>k__BackingField": {
+                        "<BackgroundId>k__BackingField": {
+                            "_value": "00678a14-b640-4c3e-a952-9d8562312501"
+                        }
+                    },
+                    "<ActorsHolder>k__BackingField": {
+                        "rid": 1015
+                    },
+                    "<Position>k__BackingField": {
+                        "x": 1668.0,
+                        "y": 355.5
+                    },
+                    "<NextNode>k__BackingField": {
+                        "_value": "fb5071bf-fe00-4287-9699-d3326c45f455"
+                    },
+                    "<Text>k__BackingField": "(sin mirarte directamente)\n\r\nPorque ya empezó a sentirse como algo que me detiene.\r\n"
                 }
             },
             {
                 "rid": 1006,
                 "type": {
-                    "class": "ActorsHolderData",
+                    "class": "DialogueChoiceNodeData",
                     "ns": "KissMyAssets.VisualNovelCore.Runtime",
                     "asm": "Assembly-CSharp"
                 },
                 "data": {
-                    "<Actors>k__BackingField": [
+                    "<NodeId>k__BackingField": {
+                        "_value": "fb5071bf-fe00-4287-9699-d3326c45f455"
+                    },
+                    "<BackgroundHolder>k__BackingField": {
+                        "<BackgroundId>k__BackingField": {
+                            "_value": "00678a14-b640-4c3e-a952-9d8562312501"
+                        }
+                    },
+                    "<ActorsHolder>k__BackingField": {
+                        "rid": 1016
+                    },
+                    "<Position>k__BackingField": {
+                        "x": 2187.0,
+                        "y": 386.5
+                    },
+                    "<Text>k__BackingField": "",
+                    "<Options>k__BackingField": [
                         {
-                            "rid": 1010
+                            "<RelatedNodeId>k__BackingField": {
+                                "_value": "c8e09267-e0f3-4aeb-83b5-34a67d6447d4"
+                            },
+                            "<Text>k__BackingField": "No quiero detenerte."
+                        },
+                        {
+                            "<RelatedNodeId>k__BackingField": {
+                                "_value": "c8e09267-e0f3-4aeb-83b5-34a67d6447d4"
+                            },
+                            "<Text>k__BackingField": "No era la intención.\r\n"
+                        },
+                        {
+                            "<RelatedNodeId>k__BackingField": {
+                                "_value": "c8e09267-e0f3-4aeb-83b5-34a67d6447d4"
+                            },
+                            "<Text>k__BackingField": "Entonces vete.\r\n"
                         }
                     ]
                 }
@@ -208,20 +278,146 @@
             {
                 "rid": 1007,
                 "type": {
-                    "class": "ActorsHolderData",
+                    "class": "DialogueReplicaNodeData",
                     "ns": "KissMyAssets.VisualNovelCore.Runtime",
                     "asm": "Assembly-CSharp"
                 },
                 "data": {
-                    "<Actors>k__BackingField": [
-                        {
-                            "rid": 1011
+                    "<NodeId>k__BackingField": {
+                        "_value": "c8e09267-e0f3-4aeb-83b5-34a67d6447d4"
+                    },
+                    "<BackgroundHolder>k__BackingField": {
+                        "<BackgroundId>k__BackingField": {
+                            "_value": "00678a14-b640-4c3e-a952-9d8562312501"
                         }
-                    ]
+                    },
+                    "<ActorsHolder>k__BackingField": {
+                        "rid": 1017
+                    },
+                    "<Position>k__BackingField": {
+                        "x": 2640.0,
+                        "y": 350.5
+                    },
+                    "<NextNode>k__BackingField": {
+                        "_value": "952b2456-3d52-4bf6-a5f5-dd96dc75f005"
+                    },
+                    "<Text>k__BackingField": "Lo sé.\n\r\n(Pausa breve)\r\n"
                 }
             },
             {
                 "rid": 1008,
+                "type": {
+                    "class": "DialogueReplicaNodeData",
+                    "ns": "KissMyAssets.VisualNovelCore.Runtime",
+                    "asm": "Assembly-CSharp"
+                },
+                "data": {
+                    "<NodeId>k__BackingField": {
+                        "_value": "952b2456-3d52-4bf6-a5f5-dd96dc75f005"
+                    },
+                    "<BackgroundHolder>k__BackingField": {
+                        "<BackgroundId>k__BackingField": {
+                            "_value": "00678a14-b640-4c3e-a952-9d8562312501"
+                        }
+                    },
+                    "<ActorsHolder>k__BackingField": {
+                        "rid": 1018
+                    },
+                    "<Position>k__BackingField": {
+                        "x": 3169.0,
+                        "y": 407.5
+                    },
+                    "<NextNode>k__BackingField": {
+                        "_value": "5529e6d2-2fb2-455a-802b-19537b0b9a99"
+                    },
+                    "<Text>k__BackingField": "Pero eso no cambia cómo se siente.\n\r\n(Da un paso atrás. No hay enojo… solo decisión.)\r\n"
+                }
+            },
+            {
+                "rid": 1009,
+                "type": {
+                    "class": "DialogueReplicaNodeData",
+                    "ns": "KissMyAssets.VisualNovelCore.Runtime",
+                    "asm": "Assembly-CSharp"
+                },
+                "data": {
+                    "<NodeId>k__BackingField": {
+                        "_value": "c65781a8-abc8-4c88-841b-26eb23ed1b2b"
+                    },
+                    "<BackgroundHolder>k__BackingField": {
+                        "<BackgroundId>k__BackingField": {
+                            "_value": "00678a14-b640-4c3e-a952-9d8562312501"
+                        }
+                    },
+                    "<ActorsHolder>k__BackingField": {
+                        "rid": 1019
+                    },
+                    "<Position>k__BackingField": {
+                        "x": 4310.0,
+                        "y": 450.5
+                    },
+                    "<NextNode>k__BackingField": {
+                        "_value": "ed035b23-ac3a-44f4-af44-ba05170782e2"
+                    },
+                    "<Text>k__BackingField": "\r\n(Se va sin mirar atrás)\n\r\n(La ciudad sigue igual… pero el espacio que ocupaba ya no.)"
+                }
+            },
+            {
+                "rid": 1010,
+                "type": {
+                    "class": "DialogueReplicaNodeData",
+                    "ns": "KissMyAssets.VisualNovelCore.Runtime",
+                    "asm": "Assembly-CSharp"
+                },
+                "data": {
+                    "<NodeId>k__BackingField": {
+                        "_value": "5529e6d2-2fb2-455a-802b-19537b0b9a99"
+                    },
+                    "<BackgroundHolder>k__BackingField": {
+                        "<BackgroundId>k__BackingField": {
+                            "_value": "00678a14-b640-4c3e-a952-9d8562312501"
+                        }
+                    },
+                    "<ActorsHolder>k__BackingField": {
+                        "rid": 1020
+                    },
+                    "<Position>k__BackingField": {
+                        "x": 3696.0,
+                        "y": 418.5
+                    },
+                    "<NextNode>k__BackingField": {
+                        "_value": "c65781a8-abc8-4c88-841b-26eb23ed1b2b"
+                    },
+                    "<Text>k__BackingField": "Cuídate.\r\n"
+                }
+            },
+            {
+                "rid": 1011,
+                "type": {
+                    "class": "DialogueEndNodeData",
+                    "ns": "KissMyAssets.VisualNovelCore.Runtime",
+                    "asm": "Assembly-CSharp"
+                },
+                "data": {
+                    "<NodeId>k__BackingField": {
+                        "_value": "ed035b23-ac3a-44f4-af44-ba05170782e2"
+                    },
+                    "<BackgroundHolder>k__BackingField": {
+                        "<BackgroundId>k__BackingField": {
+                            "_value": ""
+                        }
+                    },
+                    "<ActorsHolder>k__BackingField": {
+                        "rid": 1021
+                    },
+                    "<Position>k__BackingField": {
+                        "x": 4853.0,
+                        "y": 552.5
+                    }
+                }
+            },
+            {
+                "rid": 1012,
                 "type": {
                     "class": "ActorsHolderData",
                     "ns": "KissMyAssets.VisualNovelCore.Runtime",
@@ -230,13 +426,37 @@
                 "data": {
                     "<Actors>k__BackingField": [
                         {
-                            "rid": 1012
+                            "rid": 1022
+                        },
+                        {
+                            "rid": 1023
+                        },
+                        {
+                            "rid": 1024
                         }
                     ]
                 }
             },
             {
-                "rid": 1009,
+                "rid": 1013,
+                "type": {
+                    "class": "ActorsHolderData",
+                    "ns": "KissMyAssets.VisualNovelCore.Runtime",
+                    "asm": "Assembly-CSharp"
+                },
+                "data": {
+                    "<Actors>k__BackingField": [
+                        {
+                            "rid": 1025
+                        },
+                        {
+                            "rid": 1026
+                        }
+                    ]
+                }
+            },
+            {
+                "rid": 1014,
                 "type": {
                     "class": "ActorsHolderData",
                     "ns": "KissMyAssets.VisualNovelCore.Runtime",
@@ -247,7 +467,131 @@
                 }
             },
             {
-                "rid": 1010,
+                "rid": 1015,
+                "type": {
+                    "class": "ActorsHolderData",
+                    "ns": "KissMyAssets.VisualNovelCore.Runtime",
+                    "asm": "Assembly-CSharp"
+                },
+                "data": {
+                    "<Actors>k__BackingField": [
+                        {
+                            "rid": 1027
+                        },
+                        {
+                            "rid": 1028
+                        },
+                        {
+                            "rid": 1029
+                        }
+                    ]
+                }
+            },
+            {
+                "rid": 1016,
+                "type": {
+                    "class": "ActorsHolderData",
+                    "ns": "KissMyAssets.VisualNovelCore.Runtime",
+                    "asm": "Assembly-CSharp"
+                },
+                "data": {
+                    "<Actors>k__BackingField": []
+                }
+            },
+            {
+                "rid": 1017,
+                "type": {
+                    "class": "ActorsHolderData",
+                    "ns": "KissMyAssets.VisualNovelCore.Runtime",
+                    "asm": "Assembly-CSharp"
+                },
+                "data": {
+                    "<Actors>k__BackingField": [
+                        {
+                            "rid": 1030
+                        },
+                        {
+                            "rid": 1031
+                        },
+                        {
+                            "rid": 1032
+                        }
+                    ]
+                }
+            },
+            {
+                "rid": 1018,
+                "type": {
+                    "class": "ActorsHolderData",
+                    "ns": "KissMyAssets.VisualNovelCore.Runtime",
+                    "asm": "Assembly-CSharp"
+                },
+                "data": {
+                    "<Actors>k__BackingField": [
+                        {
+                            "rid": 1033
+                        },
+                        {
+                            "rid": 1034
+                        },
+                        {
+                            "rid": 1035
+                        }
+                    ]
+                }
+            },
+            {
+                "rid": 1019,
+                "type": {
+                    "class": "ActorsHolderData",
+                    "ns": "KissMyAssets.VisualNovelCore.Runtime",
+                    "asm": "Assembly-CSharp"
+                },
+                "data": {
+                    "<Actors>k__BackingField": [
+                        {
+                            "rid": 1036
+                        },
+                        {
+                            "rid": 1037
+                        }
+                    ]
+                }
+            },
+            {
+                "rid": 1020,
+                "type": {
+                    "class": "ActorsHolderData",
+                    "ns": "KissMyAssets.VisualNovelCore.Runtime",
+                    "asm": "Assembly-CSharp"
+                },
+                "data": {
+                    "<Actors>k__BackingField": [
+                        {
+                            "rid": 1038
+                        },
+                        {
+                            "rid": 1039
+                        },
+                        {
+                            "rid": 1040
+                        }
+                    ]
+                }
+            },
+            {
+                "rid": 1021,
+                "type": {
+                    "class": "ActorsHolderData",
+                    "ns": "KissMyAssets.VisualNovelCore.Runtime",
+                    "asm": "Assembly-CSharp"
+                },
+                "data": {
+                    "<Actors>k__BackingField": []
+                }
+            },
+            {
+                "rid": 1022,
                 "type": {
                     "class": "DialogueActorData",
                     "ns": "KissMyAssets.VisualNovelCore.Runtime",
@@ -262,7 +606,37 @@
                 }
             },
             {
-                "rid": 1011,
+                "rid": 1023,
+                "type": {
+                    "class": "DialogueActorData",
+                    "ns": "KissMyAssets.VisualNovelCore.Runtime",
+                    "asm": "Assembly-CSharp"
+                },
+                "data": {
+                    "<ActorDataId>k__BackingField": {
+                        "_value": "bc670b80-4d3d-469a-ac8d-68f0f4dae8b3"
+                    },
+                    "<Alignment>k__BackingField": 0,
+                    "<ActorEmotion>k__BackingField": 0
+                }
+            },
+            {
+                "rid": 1024,
+                "type": {
+                    "class": "DialogueActorData",
+                    "ns": "KissMyAssets.VisualNovelCore.Runtime",
+                    "asm": "Assembly-CSharp"
+                },
+                "data": {
+                    "<ActorDataId>k__BackingField": {
+                        "_value": "366b7690-bcb6-42a6-bc6a-db56057ec15d"
+                    },
+                    "<Alignment>k__BackingField": 2,
+                    "<ActorEmotion>k__BackingField": 0
+                }
+            },
+            {
+                "rid": 1025,
                 "type": {
                     "class": "DialogueActorData",
                     "ns": "KissMyAssets.VisualNovelCore.Runtime",
@@ -277,7 +651,52 @@
                 }
             },
             {
-                "rid": 1012,
+                "rid": 1026,
+                "type": {
+                    "class": "DialogueActorData",
+                    "ns": "KissMyAssets.VisualNovelCore.Runtime",
+                    "asm": "Assembly-CSharp"
+                },
+                "data": {
+                    "<ActorDataId>k__BackingField": {
+                        "_value": "366b7690-bcb6-42a6-bc6a-db56057ec15d"
+                    },
+                    "<Alignment>k__BackingField": 2,
+                    "<ActorEmotion>k__BackingField": 0
+                }
+            },
+            {
+                "rid": 1027,
+                "type": {
+                    "class": "DialogueActorData",
+                    "ns": "KissMyAssets.VisualNovelCore.Runtime",
+                    "asm": "Assembly-CSharp"
+                },
+                "data": {
+                    "<ActorDataId>k__BackingField": {
+                        "_value": "bc670b80-4d3d-469a-ac8d-68f0f4dae8b3"
+                    },
+                    "<Alignment>k__BackingField": 0,
+                    "<ActorEmotion>k__BackingField": 0
+                }
+            },
+            {
+                "rid": 1028,
+                "type": {
+                    "class": "DialogueActorData",
+                    "ns": "KissMyAssets.VisualNovelCore.Runtime",
+                    "asm": "Assembly-CSharp"
+                },
+                "data": {
+                    "<ActorDataId>k__BackingField": {
+                        "_value": "366b7690-bcb6-42a6-bc6a-db56057ec15d"
+                    },
+                    "<Alignment>k__BackingField": 2,
+                    "<ActorEmotion>k__BackingField": 0
+                }
+            },
+            {
+                "rid": 1029,
                 "type": {
                     "class": "DialogueActorData",
                     "ns": "KissMyAssets.VisualNovelCore.Runtime",
@@ -288,6 +707,171 @@
                         "_value": "ccbf9ae4-a2f4-43bc-b713-4ff815b878de"
                     },
                     "<Alignment>k__BackingField": 1,
+                    "<ActorEmotion>k__BackingField": 0
+                }
+            },
+            {
+                "rid": 1030,
+                "type": {
+                    "class": "DialogueActorData",
+                    "ns": "KissMyAssets.VisualNovelCore.Runtime",
+                    "asm": "Assembly-CSharp"
+                },
+                "data": {
+                    "<ActorDataId>k__BackingField": {
+                        "_value": "bc670b80-4d3d-469a-ac8d-68f0f4dae8b3"
+                    },
+                    "<Alignment>k__BackingField": 0,
+                    "<ActorEmotion>k__BackingField": 0
+                }
+            },
+            {
+                "rid": 1031,
+                "type": {
+                    "class": "DialogueActorData",
+                    "ns": "KissMyAssets.VisualNovelCore.Runtime",
+                    "asm": "Assembly-CSharp"
+                },
+                "data": {
+                    "<ActorDataId>k__BackingField": {
+                        "_value": "ccbf9ae4-a2f4-43bc-b713-4ff815b878de"
+                    },
+                    "<Alignment>k__BackingField": 1,
+                    "<ActorEmotion>k__BackingField": 0
+                }
+            },
+            {
+                "rid": 1032,
+                "type": {
+                    "class": "DialogueActorData",
+                    "ns": "KissMyAssets.VisualNovelCore.Runtime",
+                    "asm": "Assembly-CSharp"
+                },
+                "data": {
+                    "<ActorDataId>k__BackingField": {
+                        "_value": "366b7690-bcb6-42a6-bc6a-db56057ec15d"
+                    },
+                    "<Alignment>k__BackingField": 2,
+                    "<ActorEmotion>k__BackingField": 0
+                }
+            },
+            {
+                "rid": 1033,
+                "type": {
+                    "class": "DialogueActorData",
+                    "ns": "KissMyAssets.VisualNovelCore.Runtime",
+                    "asm": "Assembly-CSharp"
+                },
+                "data": {
+                    "<ActorDataId>k__BackingField": {
+                        "_value": "bc670b80-4d3d-469a-ac8d-68f0f4dae8b3"
+                    },
+                    "<Alignment>k__BackingField": 0,
+                    "<ActorEmotion>k__BackingField": 0
+                }
+            },
+            {
+                "rid": 1034,
+                "type": {
+                    "class": "DialogueActorData",
+                    "ns": "KissMyAssets.VisualNovelCore.Runtime",
+                    "asm": "Assembly-CSharp"
+                },
+                "data": {
+                    "<ActorDataId>k__BackingField": {
+                        "_value": "366b7690-bcb6-42a6-bc6a-db56057ec15d"
+                    },
+                    "<Alignment>k__BackingField": 2,
+                    "<ActorEmotion>k__BackingField": 0
+                }
+            },
+            {
+                "rid": 1035,
+                "type": {
+                    "class": "DialogueActorData",
+                    "ns": "KissMyAssets.VisualNovelCore.Runtime",
+                    "asm": "Assembly-CSharp"
+                },
+                "data": {
+                    "<ActorDataId>k__BackingField": {
+                        "_value": "ccbf9ae4-a2f4-43bc-b713-4ff815b878de"
+                    },
+                    "<Alignment>k__BackingField": 1,
+                    "<ActorEmotion>k__BackingField": 0
+                }
+            },
+            {
+                "rid": 1036,
+                "type": {
+                    "class": "DialogueActorData",
+                    "ns": "KissMyAssets.VisualNovelCore.Runtime",
+                    "asm": "Assembly-CSharp"
+                },
+                "data": {
+                    "<ActorDataId>k__BackingField": {
+                        "_value": "366b7690-bcb6-42a6-bc6a-db56057ec15d"
+                    },
+                    "<Alignment>k__BackingField": 2,
+                    "<ActorEmotion>k__BackingField": 0
+                }
+            },
+            {
+                "rid": 1037,
+                "type": {
+                    "class": "DialogueActorData",
+                    "ns": "KissMyAssets.VisualNovelCore.Runtime",
+                    "asm": "Assembly-CSharp"
+                },
+                "data": {
+                    "<ActorDataId>k__BackingField": {
+                        "_value": "ccbf9ae4-a2f4-43bc-b713-4ff815b878de"
+                    },
+                    "<Alignment>k__BackingField": 1,
+                    "<ActorEmotion>k__BackingField": 0
+                }
+            },
+            {
+                "rid": 1038,
+                "type": {
+                    "class": "DialogueActorData",
+                    "ns": "KissMyAssets.VisualNovelCore.Runtime",
+                    "asm": "Assembly-CSharp"
+                },
+                "data": {
+                    "<ActorDataId>k__BackingField": {
+                        "_value": "bc670b80-4d3d-469a-ac8d-68f0f4dae8b3"
+                    },
+                    "<Alignment>k__BackingField": 0,
+                    "<ActorEmotion>k__BackingField": 0
+                }
+            },
+            {
+                "rid": 1039,
+                "type": {
+                    "class": "DialogueActorData",
+                    "ns": "KissMyAssets.VisualNovelCore.Runtime",
+                    "asm": "Assembly-CSharp"
+                },
+                "data": {
+                    "<ActorDataId>k__BackingField": {
+                        "_value": "ccbf9ae4-a2f4-43bc-b713-4ff815b878de"
+                    },
+                    "<Alignment>k__BackingField": 0,
+                    "<ActorEmotion>k__BackingField": 0
+                }
+            },
+            {
+                "rid": 1040,
+                "type": {
+                    "class": "DialogueActorData",
+                    "ns": "KissMyAssets.VisualNovelCore.Runtime",
+                    "asm": "Assembly-CSharp"
+                },
+                "data": {
+                    "<ActorDataId>k__BackingField": {
+                        "_value": "366b7690-bcb6-42a6-bc6a-db56057ec15d"
+                    },
+                    "<Alignment>k__BackingField": 0,
                     "<ActorEmotion>k__BackingField": 0
                 }
             }
