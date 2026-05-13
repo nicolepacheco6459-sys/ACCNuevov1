@@ -9,14 +9,17 @@ EditorBuildSettings:
     path: Assets/--SCENES--/Principal.unity
     guid: 8c9cfa26abfee488c85f1582747f6a02
   - enabled: 1
-    path: Assets/--SCENES--/Samantha.unity
-    guid: 246042a848701bd448f2b5f1da4dfe8c
-  - enabled: 1
     path: Assets/--SCENES--/-SEPARADOS-/Main Menu.unity
     guid: dd28c1026ef5b144cbcfe040a02cad6e
   - enabled: 1
+    path: Assets/--SCENES--/INTRO.unity
+    guid: 487d925ddae3fab40881fcf915ca300a
+  - enabled: 1
     path: Assets/--SCENES--/-SEPARADOS-/Choose Character.unity
     guid: 5cc824b447cde074582f642ba77ad9c3
+  - enabled: 1
+    path: Assets/--SCENES--/Samantha.unity
+    guid: 246042a848701bd448f2b5f1da4dfe8c
   - enabled: 1
     path: Assets/--SCENES--/MG_Memory.unity
     guid: 99c9720ab356a0642a771bea13969a05
@@ -32,9 +35,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/--SCENES--/MG_Cooking.unity
     guid: d1c3109bdb54ad54c8a2b2838528e640
-  - enabled: 1
-    path: Assets/--SCENES--/INTRO.unity
-    guid: 487d925ddae3fab40881fcf915ca300a
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   m_UseUCBPForAssetBundles: 0
